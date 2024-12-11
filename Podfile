@@ -15,6 +15,7 @@ end
 
 def crashlytics
 	if not ENV['USE_CRASHLYTICS'].nil?
+		pod 'FirebaseAnalytics'
 		pod 'Firebase/Analytics'
 		pod 'Firebase/Crashlytics'
 	end
@@ -26,6 +27,8 @@ target 'linphone' do
 
   # Pods for linphone
 	pod 'SVProgressHUD'
+        pod 'FirebaseAuth'
+        pod 'FirebaseFirestore'
 	pod 'SnapKit', '~> 5.6.0'
 	pod 'DropDown'
 	pod 'IQKeyboardManager'
@@ -40,7 +43,9 @@ end
 target 'msgNotificationService' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-
+	pod 'FirebaseAuth'
+	pod 'Firebase/Crashlytics'
+	pod 'FirebaseFirestore'
   # Pods for messagesNotification
   all_pods
 
@@ -49,7 +54,8 @@ end
 target 'msgNotificationContent' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-
+        pod 'FirebaseAuth'
+        pod 'FirebaseFirestore'
   # Pods for messagesNotification
   all_pods
 
@@ -58,7 +64,6 @@ end
 target 'CallUITests' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   use_frameworks!
-
   # Pods for CallUITests
   all_pods
 
@@ -67,7 +72,6 @@ end
 #target 'LocalPushProvider' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   #use_frameworks!
-
   # Pods for CallUITests
   #all_pods
 

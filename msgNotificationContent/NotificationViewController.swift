@@ -23,10 +23,12 @@ import UserNotificationsUI
 import linphonesw
 import os
 #if USE_CRASHLYTICS
-import Firebase
+import FirebaseCore
+import FirebaseAuth
+
 #endif
 
-var APP_GROUP_ID = "group.org.linphone.phone.msgNotification"
+var APP_GROUP_ID = "group.msl.linphone.phone.msgNotification"
 var isReplySent: Bool = false
 var needToStop: Bool = false
 var coreStopped: Bool = false
@@ -122,7 +124,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         let local = try lc!.createAddress(address: localAddress)
         let room = lc!.findChatRoom(peerAddr: peer, localAddr: local)
         if let room = room {
-            let chatMsg = try room.createMessage(message: replyText)
+            let chatMsg = try room.createMessageFromUtf8(message: replyText)
             chatMsg.addDelegate(delegate: self)
 			chatMsg.send()
             room.markAsRead()

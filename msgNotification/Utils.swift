@@ -20,7 +20,8 @@
 import linphonesw
 import os
 #if USE_CRASHLYTICS
-import Firebase
+import FirebaseAuth
+
 #endif
 
 enum LinphoneError: Error {

@@ -20,10 +20,10 @@
 import UserNotifications
 import linphonesw
 #if USE_CRASHLYTICS
-import Firebase
+import FirebaseAuth
 #endif
 
-var APP_GROUP_ID = "group.org.linphone.phone.msgNotification"
+var APP_GROUP_ID = "group.msl.linphone.phone.msgNotification"
 var LINPHONE_DUMMY_SUBJECT = "dummy subject"
 
 struct MsgData: Codable {
