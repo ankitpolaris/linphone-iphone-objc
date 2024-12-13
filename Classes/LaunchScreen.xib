@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" launchScreen="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,63 +13,74 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_C.png" id="xtr-QP-6We" userLabel="backgroundColor">
+                <imageView hidden="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="xtr-QP-6We" userLabel="backgroundColor">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
-                <view contentMode="scaleAspectFit" id="4JK-Mw-ZzG">
-                    <rect key="frame" x="87" y="191" width="200" height="285"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26g-dN-4NP" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="splashscreen.png" id="pz0-nR-x0f" userLabel="logoImage">
-                            <rect key="frame" x="-85" y="8" width="371" height="219"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" id="eCY-vL-IBs" userLabel="descLabel">
-                            <rect key="frame" x="-85" y="235" width="371" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText">
-                                <fragment content="The ">
-                                    <attributes>
-                                        <color key="NSColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="26" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content="libre">
-                                    <attributes>
-                                        <color key="NSColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="26" name="HelveticaNeue-Italic"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                                <fragment content=" SIP client">
-                                    <attributes>
-                                        <color key="NSColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <font key="NSFont" size="26" name="HelveticaNeue"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#mangophone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-mA-dsW" userLabel="descLabel">
+                            <rect key="frame" x="35" y="33" width="305" height="90"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="90" id="gXU-Gj-TjM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="mango_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-nR-x0f" userLabel="logoImage">
+                            <rect key="frame" x="6" y="168" width="364" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="364" id="1dc-y6-x37"/>
+                                <constraint firstAttribute="height" constant="160" id="DGX-cg-Qgj"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
+                    <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="pz0-nR-x0f" firstAttribute="centerX" secondItem="RoT-mA-dsW" secondAttribute="centerX" id="Kyz-qS-AK9"/>
+                        <constraint firstItem="pz0-nR-x0f" firstAttribute="top" secondItem="RoT-mA-dsW" secondAttribute="bottom" constant="45" id="LYY-ew-eBv"/>
+                        <constraint firstItem="RoT-mA-dsW" firstAttribute="top" secondItem="26g-dN-4NP" secondAttribute="top" constant="33" id="Z6X-Dg-nel"/>
+                        <constraint firstItem="RoT-mA-dsW" firstAttribute="centerX" secondItem="26g-dN-4NP" secondAttribute="centerX" id="xT9-Gg-ZxX"/>
+                    </constraints>
                 </view>
-                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_A.png" id="P8D-kY-xHP" userLabel="bottomBarImage">
-                    <rect key="frame" x="127" y="656" width="119" height="11"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-substract.png" translatesAutoresizingMaskIntoConstraints="NO" id="m1K-rh-c3S">
+                    <rect key="frame" x="-7" y="368" width="388" height="398"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="398" id="pMc-gm-1gz"/>
+                    </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#codewithankit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="eCY-vL-IBs" userLabel="descLabel">
+                    <rect key="frame" x="67" y="518" width="240" height="101"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="120"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="26g-dN-4NP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1an-VH-Sfi"/>
+                <constraint firstAttribute="trailing" secondItem="26g-dN-4NP" secondAttribute="trailing" id="2uJ-a3-PJd"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9dp-ap-2rq"/>
+                <constraint firstAttribute="bottom" secondItem="xtr-QP-6We" secondAttribute="bottom" id="NdZ-sX-oB1"/>
+                <constraint firstAttribute="bottom" secondItem="26g-dN-4NP" secondAttribute="bottom" id="Tkj-41-d7V"/>
+                <constraint firstAttribute="trailing" secondItem="m1K-rh-c3S" secondAttribute="trailing" constant="-6" id="Us6-fF-3VJ"/>
+                <constraint firstItem="26g-dN-4NP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Zz9-LD-LFD"/>
+                <constraint firstAttribute="trailing" secondItem="xtr-QP-6We" secondAttribute="trailing" id="fcf-l4-YVg"/>
+                <constraint firstItem="m1K-rh-c3S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-7" id="ham-Js-qm6"/>
+                <constraint firstItem="xtr-QP-6We" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pDZ-ny-VXS"/>
+                <constraint firstAttribute="bottom" secondItem="m1K-rh-c3S" secondAttribute="bottom" constant="-99" id="pQX-ps-thS"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="238.5" y="1005.5"/>
+            <point key="canvasLocation" x="345.6521739130435" y="818.88586956521749"/>
         </view>
     </objects>
     <resources>
-        <image name="color_A.png" width="2" height="2"/>
         <image name="color_C.png" width="2" height="2"/>
-        <image name="splashscreen.png" width="533" height="386"/>
+        <image name="mango_logo.png" width="190.32000732421875" height="151.19999694824219"/>
+        <image name="splash-substract.png" width="410" height="490"/>
     </resources>
 </document>

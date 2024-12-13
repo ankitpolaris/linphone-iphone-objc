@@ -667,6 +667,14 @@
 		8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D941F9F336100BEA0C1 /* check_unselected.png */; };
 		8CF25D9D1F9F76BD00BEA0C1 /* chat_group_informations.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9B1F9F76BC00BEA0C1 /* chat_group_informations.png */; };
 		8CF25D9E1F9F76BD00BEA0C1 /* chat_group_informations@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9C1F9F76BD00BEA0C1 /* chat_group_informations@2x.png */; };
+		C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
+		C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
+		C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
+		C55FDD732D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
+		C55FDD752D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
+		C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
+		C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
+		C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
 		C61B1BF22667D075001A4E4A /* menu_security_default.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF12667D075001A4E4A /* menu_security_default.png */; };
 		C61B1BF42667D202001A4E4A /* more_menu_default.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF32667D202001A4E4A /* more_menu_default.png */; };
 		C61B1BF72667EC6B001A4E4A /* ephemeral_messages_color_A.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF62667EC6B001A4E4A /* ephemeral_messages_color_A.png */; };
@@ -1912,6 +1920,8 @@
 		A53B959BF2158A56EC9BAE72 /* Pods_CallUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A843B29FA3A92B57B1A56CD7 /* Pods-CallUITests.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.distribution.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.distribution.xcconfig"; sourceTree = "<group>"; };
 		C2C514E23CC99DF19C6FB68D /* Pods-CallUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.release.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mango_logo.png; sourceTree = "<group>"; };
+		C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-substract.png"; sourceTree = "<group>"; };
 		C61B1BF12667D075001A4E4A /* menu_security_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_security_default.png; sourceTree = "<group>"; };
 		C61B1BF32667D202001A4E4A /* more_menu_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_menu_default.png; sourceTree = "<group>"; };
 		C61B1BF62667EC6B001A4E4A /* ephemeral_messages_color_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ephemeral_messages_color_A.png; sourceTree = "<group>"; };
@@ -3388,6 +3398,8 @@
 				633FED8A1D3CD5590014B822 /* speaker_default.png */,
 				633FED8B1D3CD5590014B822 /* speaker_default@2x.png */,
 				633FED8C1D3CD5590014B822 /* speaker_disabled.png */,
+				C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */,
+				C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */,
 				633FED8D1D3CD5590014B822 /* speaker_disabled@2x.png */,
 				633FED8E1D3CD5590014B822 /* speaker_selected.png */,
 				633FED8F1D3CD5590014B822 /* speaker_selected@2x.png */,
@@ -4111,7 +4123,7 @@
 				6637AF89288593AF00965733 /* Sources */,
 				6637AF8A288593AF00965733 /* Frameworks */,
 				6637AF8B288593AF00965733 /* Resources */,
-				C7EF2D368DEACA97A95F8F0B /* [CP] Embed Pods Frameworks */,
+				E079636B848D771D36D1719D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4442,6 +4454,7 @@
 				633FEEF81D3CD55A0014B822 /* numpad_star_over~ipad.png in Resources */,
 				C6A1BB3826E8815400540D50 /* menu_reply_default.png in Resources */,
 				633FEF301D3CD55A0014B822 /* route_speaker_disabled.png in Resources */,
+				C55FDD752D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				639CEAFD1A1DF4D9004DE38F /* StatusBarView.xib in Resources */,
 				633FEDE91D3CD5590014B822 /* call_status_missed~ipad@2x.png in Resources */,
 				C63F72C9285A2F1E0066163B /* voip_info.png in Resources */,
@@ -4869,6 +4882,7 @@
 				633FEF501D3CD55A0014B822 /* valid_disabled.png in Resources */,
 				633FEEB31D3CD55A0014B822 /* numpad_3_default.png in Resources */,
 				61AEBECA2191E49300F35E7F /* chevron_list_open.png in Resources */,
+				C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 				633FEE1C1D3CD5590014B822 /* chat_start_body_default~ipad.png in Resources */,
 				633FEE011D3CD5590014B822 /* camera_switch_over@2x.png in Resources */,
 				633FEEA01D3CD55A0014B822 /* numpad_0_over~ipad@2x.png in Resources */,
@@ -4969,7 +4983,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				61AE365220C00B370089D9D3 /* MainInterface.storyboard in Resources */,
+				C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4985,6 +5001,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA88A407242A6235007FEC61 /* Localizable.strings in Resources */,
+				C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
+				C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4993,9 +5011,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				EA88F3AF241BD1F700E66528 /* MainInterface.storyboard in Resources */,
 				EA88A405242A6216007FEC61 /* Localizable.strings in Resources */,
 				6112A01C243B31A700DBD5F5 /* GoogleService-Info.plist in Resources */,
+				C55FDD732D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5118,7 +5138,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C7EF2D368DEACA97A95F8F0B /* [CP] Embed Pods Frameworks */ = {
+		D880A151F70DA115B23228D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-msgNotificationService-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E079636B848D771D36D1719D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -5168,28 +5210,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CallUITests/Pods-CallUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D880A151F70DA115B23228D2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-msgNotificationService-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E08AF6A67F136A2A8D9107CA /* [CP] Check Pods Manifest.lock */ = {

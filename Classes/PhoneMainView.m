@@ -212,7 +212,7 @@ static RootViewManager *rootViewManagerInstance = nil;
 /* IPHONE X specific : hide the HomeIndcator when not used */
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define IS_IPHONE_X (IS_IPHONE && [[UIScreen mainScreen] bounds].size.height >= 812.0)
-#define IPHONE_STATUSBAR_HEIGHT (IS_IPHONE_X ? 35 : 20)
+#define IPHONE_STATUSBAR_HEIGHT (IS_IPHONE_X ? 60 : 20)
 
 - (BOOL)isIphoneXDevice{
 	return IS_IPHONE_X;
@@ -989,7 +989,7 @@ void main_view_chat_room_state_changed(LinphoneChatRoom *cr, LinphoneChatRoomSta
 -(BOOL) darkMode {
 	if (@available(iOS 13.0, *)) {
 		UITraitCollection *collection = [UITraitCollection currentTraitCollection];
-		return collection.userInterfaceStyle == UIUserInterfaceStyleDark;
+		return collection.userInterfaceStyle == UIUserInterfaceStyleLight;
 	} else {
 		return false;
 	}

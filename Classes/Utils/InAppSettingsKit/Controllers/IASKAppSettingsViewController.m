@@ -243,7 +243,7 @@ CGRect IASKCGRectSwap(CGRect rect);
 }
 
 - (BOOL)shouldAutorotate {
-	return YES;
+	return NO;
 }
 
 - (void)didReceiveMemoryWarning {

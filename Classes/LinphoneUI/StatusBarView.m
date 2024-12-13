@@ -78,8 +78,14 @@
 	[self accountUpdate:account];
 	[self updateUI:linphone_core_get_calls_nb(LC)];
 	[self updateVoicemail];
-	
-	/*if (@available(iOS 15.0, *)) {
+    // Set corner radius for titleContainerView
+    self.titleContainerView.layer.cornerRadius = 14.0;
+    self.titleContainerView.layer.masksToBounds = YES;
+    UIColor *myColor = [StatusBarView colorWithHex:@"#FF4444"];
+    self.titleContainerView.layer.borderColor = myColor.CGColor;
+    self.titleContainerView.layer.borderWidth = 1.5;
+    
+    /*if (@available(iOS 15.0, *)) {
 		[LocalPushManager.shared addActiveCallBackObserverWithAction:^(BOOL active) {
 			_localpushIndicator.hidden = !active;
 		}];
@@ -113,6 +119,33 @@
 		[securityDialog dismiss];
 		securityDialog = nil;
 	}
+}
+
++ (UIColor *)colorWithHex:(NSString *)hexString {
+    // Remove '#' if it exists
+    NSString *colorString = [hexString stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
+    
+    // Make sure the string is 6 or 8 characters long
+    if ([colorString length] == 6 || [colorString length] == 8) {
+        // Extract the RGB values
+        unsigned int hexValue;
+        [[NSScanner scannerWithString:colorString] scanHexInt:&hexValue];
+        
+        // Extract RGB values from hexValue
+        CGFloat red   = ((hexValue >> 16) & 0xFF) / 255.0;
+        CGFloat green = ((hexValue >> 8) & 0xFF) / 255.0;
+        CGFloat blue  = (hexValue & 0xFF) / 255.0;
+        
+        // If the string contains an alpha value, handle it
+        CGFloat alpha = 1.0;
+        if ([colorString length] == 8) {
+            alpha = ((hexValue >> 24) & 0xFF) / 255.0;
+        }
+        
+        return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+    }
+    
+    return [UIColor blackColor]; // Return black color if invalid hex
 }
 
 #pragma mark - Event Functions
@@ -184,12 +217,12 @@
 			return [UIImage imageNamed:@"led_error.png"];
 		case LinphoneRegistrationCleared:
 		case LinphoneRegistrationNone:
-			return [UIImage imageNamed:@"led_disconnected.png"];
+			return [UIImage imageNamed:@"bulb_disconnected.pdf"];
 		case LinphoneRegistrationProgress:
 		case LinphoneRegistrationRefreshing:
 			return [UIImage imageNamed:@"led_inprogress.png"];
 		case LinphoneRegistrationOk:
-			return [UIImage imageNamed:@"led_connected.png"];
+			return [UIImage imageNamed:@"bulb_connected.pdf"];
 	}
 }
 - (void)accountUpdate:(LinphoneAccount *)account {
@@ -236,7 +269,9 @@
 	}
 	[_registrationState setTitle:message forState:UIControlStateNormal];
 	_registrationState.accessibilityValue = message;
-	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
+//	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
+    UIImage *statusImage = [self.class imageForState:state];
+    _titleImageView.image = statusImage;
 }
 
 #pragma mark -

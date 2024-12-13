@@ -34,10 +34,14 @@
 
 @property(weak, nonatomic) IBOutlet UIView *incallView;
 @property(weak, nonatomic) IBOutlet UIView *outcallView;
+@property (weak, nonatomic) IBOutlet UIView *titleContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
+
 
 - (IBAction)onSecurityClick:(id)sender;
 - (IBAction)onQualityClick:(id)sender;
 - (IBAction)onSideMenuClick:(id)sender;
 - (IBAction)onRegistrationStateClick:(id)sender;
 + (UIImage *)imageForState:(LinphoneRegistrationState)state;
++ (UIColor *)colorWithHex:(NSString *)hexString;
 @end

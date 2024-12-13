@@ -306,7 +306,9 @@
 			[VFSUtil setVfsEnabbledWithEnabled:false groupName:kLinphoneMsgNotificationAppGroupId];
 		}
 	}
-
+    if (@available(iOS 13.0, *)) {
+        self.window.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+    }
     UIApplication *app = [UIApplication sharedApplication];
 	UIApplicationState state = app.applicationState;
 
@@ -904,13 +906,16 @@
 #pragma mark - Prevent ImagePickerView from rotating
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-	if ([[(PhoneMainView*)self.window.rootViewController currentView] equal:ImagePickerView.compositeViewDescription] || _onlyPortrait)
-	{
-		//Prevent rotation of camera
-		NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
-		[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
-		return UIInterfaceOrientationMaskPortrait;
-	} else return UIInterfaceOrientationMaskAllButUpsideDown;
+    
+//	if ([[(PhoneMainView*)self.window.rootViewController currentView] equal:ImagePickerView.compositeViewDescription] || _onlyPortrait)
+//	{
+//		//Prevent rotation of camera
+//		NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+//		[[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+//		return UIInterfaceOrientationMaskPortrait;
+//	} else return UIInterfaceOrientationMaskAllButUpsideDown;
+    
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end
