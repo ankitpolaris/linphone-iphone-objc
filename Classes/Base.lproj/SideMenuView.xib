@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,46 +43,67 @@
                                 <outletCollection property="gestureRecognizers" destination="56h-cQ-B5V" appends="YES" id="umX-R7-2IR"/>
                             </connections>
                         </view>
-                        <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1P-cG-q8h" userLabel="headerView">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMf-V7-8sP" userLabel="PurpleView">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="901"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sidebar-union.png" translatesAutoresizingMaskIntoConstraints="NO" id="lPV-CB-sp1">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="700"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-BP-LuN" userLabel="HeaderContainerView">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="158"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-2B-u1b" userLabel="nameLabel">
-                                    <rect key="frame" x="76" y="15" width="224" height="31"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" identifier="name_label"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="john.doe@sip.linphone.org" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-tK-4iV" userLabel="addressLabel">
-                                    <rect key="frame" x="76" y="54" width="208" height="38"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" identifier="side_menu_view_sip_adress"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="led_connected.png" translatesAutoresizingMaskIntoConstraints="NO" id="C88-Ag-nm7" userLabel="presenceImage">
-                                    <rect key="frame" x="284" y="58" width="16" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                </imageView>
-                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-7N-NGT" userLabel="avatarImage" customClass="UIRoundedImageView">
-                                    <rect key="frame" x="3" y="15" width="68" height="77"/>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1P-cG-q8h" userLabel="headerView">
+                                    <rect key="frame" x="16" y="22" width="266" height="114"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="XbU-2B-u1b" userLabel="nameLabel">
+                                            <rect key="frame" x="76" y="27" width="190" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="name_label"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="john.doe@sip.linphone.org" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V8A-tK-4iV" userLabel="addressLabel">
+                                            <rect key="frame" x="76" y="54" width="176" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="side_menu_view_sip_adress"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <color key="textColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-7N-NGT" userLabel="avatarImage" customClass="UIRoundedImageView">
+                                            <rect key="frame" x="11" y="36" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Kej-uL-ntg" appends="YES" id="eog-XV-xok"/>
+                                            </connections>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="led_connected.png" translatesAutoresizingMaskIntoConstraints="NO" id="C88-Ag-nm7" userLabel="presenceImage">
+                                            <rect key="frame" x="45" y="65" width="16" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                                    <gestureRecognizers/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <outletCollection property="gestureRecognizers" destination="Kej-uL-ntg" appends="YES" id="eog-XV-xok"/>
+                                        <outletCollection property="gestureRecognizers" destination="1kD-az-BAx" appends="YES" id="OGc-fj-HQy"/>
                                     </connections>
-                                </imageView>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                            <gestureRecognizers/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="1kD-az-BAx" appends="YES" id="OGc-fj-HQy"/>
-                            </connections>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ttt-1k-jAm">
-                            <rect key="frame" x="0.0" y="100" width="300" height="754"/>
+                            <rect key="frame" x="0.0" y="157" width="300" height="398"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <connections>
@@ -90,6 +111,14 @@
                                 <outlet property="delegate" destination="Yyh-z6-IGO" id="c1j-vG-TbB"/>
                             </connections>
                         </tableView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#mangophone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="3Bi-SZ-rih" userLabel="nameLabel">
+                            <rect key="frame" x="0.0" y="720" width="300" height="57"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <accessibility key="accessibilityConfiguration" identifier="name_label"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <gestureRecognizers/>
@@ -99,7 +128,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="467.39130434782612" y="140.29017857142856"/>
+            <point key="canvasLocation" x="466.66666666666669" y="139.95535714285714"/>
         </view>
         <tableViewController id="Yyh-z6-IGO" customClass="SideMenuTableView">
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -127,9 +156,7 @@
     <resources>
         <image name="avatar.png" width="414.39999389648438" height="414.39999389648438"/>
         <image name="led_connected.png" width="19.200000762939453" height="19.200000762939453"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="sidebar-union.png" width="350" height="597"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

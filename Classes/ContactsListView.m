@@ -247,7 +247,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)refreshButtons {
-	[addButton setHidden:![LinphoneManager.instance lpConfigBoolForKey:@"enable_native_address_book"] || [LinphoneManager.instance lpConfigBoolForKey:@"read_only_native_address_book"]];
+//	[addButton setHidden:![LinphoneManager.instance lpConfigBoolForKey:@"enable_native_address_book"] || [LinphoneManager.instance lpConfigBoolForKey:@"read_only_native_address_book"]];
 	if ([LinphoneManager.instance lpConfigBoolForKey:@"read_only_native_address_book"]) {
 		addButton.hidden = true;
 		deleteButton.hidden = true;

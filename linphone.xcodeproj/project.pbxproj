@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -605,7 +605,7 @@
 		63E27A321C4FECD000D332AE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E27A311C4FECD000D332AE /* LaunchScreen.xib */; };
 		63E27A521C50EDB000D332AE /* hold.mkv in Resources */ = {isa = PBXBuildFile; fileRef = 63E27A511C50EB2700D332AE /* hold.mkv */; };
 		63E59A3F1ADE70D900646FB3 /* InAppProductsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E59A3E1ADE70D900646FB3 /* InAppProductsManager.m */; };
-		63E802DB1C625AEF000D5509 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		63E802DB1C625AEF000D5509 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		63EC8D391D7438660066547B /* AssistantLinkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63EC8D3B1D7438660066547B /* AssistantLinkView.xib */; };
 		63F1DF441BCE618E00EDED90 /* UIAddressTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 63F1DF431BCE618E00EDED90 /* UIAddressTextField.m */; };
 		63FB30351A680E73008CA393 /* UIRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FB30341A680E73008CA393 /* UIRoundedImageView.m */; };
@@ -667,6 +667,74 @@
 		8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D941F9F336100BEA0C1 /* check_unselected.png */; };
 		8CF25D9D1F9F76BD00BEA0C1 /* chat_group_informations.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9B1F9F76BC00BEA0C1 /* chat_group_informations.png */; };
 		8CF25D9E1F9F76BD00BEA0C1 /* chat_group_informations@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9C1F9F76BD00BEA0C1 /* chat_group_informations@2x.png */; };
+		C5211C912D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
+		C5211C922D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
+		C5211C932D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
+		C5211C942D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
+		C5211C952D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
+		C5211C962D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
+		C5211C972D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
+		C5211C982D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
+		C5211CA42D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
+		C5211CA52D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
+		C5211CA62D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
+		C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
+		C5211CA82D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
+		C5211CA92D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
+		C5211CAA2D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
+		C5211CAB2D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
+		C5211CAC2D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
+		C5211CAD2D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
+		C5211CAE2D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
+		C5211CAF2D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
+		C5211CB02D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
+		C5211CB12D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
+		C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
+		C5211CB32D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
+		C5211CB42D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
+		C5211CB52D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
+		C5211CB62D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
+		C5211CB72D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
+		C5211CB82D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
+		C5211CB92D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
+		C5211CBA2D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
+		C5211CBB2D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
+		C5211CBC2D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
+		C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
+		C5211CBE2D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
+		C5211CBF2D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
+		C5211CC02D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
+		C5211CC12D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
+		C5211CC22D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
+		C5211CC32D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
+		C5211CC42D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
+		C5211CC52D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
+		C5211CC62D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
+		C5211CC72D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
+		C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
+		C5211CC92D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
+		C5211CCA2D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
+		C5211CCB2D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
+		C5211CCC2D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
+		C5211CCD2D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
+		C5211CCE2D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
+		C5211CCF2D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
+		C5489B6A2D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
+		C5489B6B2D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
+		C5489B6C2D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
+		C5489B6D2D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
+		C5489B6E2D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
+		C5489B6F2D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
+		C5489B702D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
+		C5489B712D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
+		C5489B722D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
+		C5489B732D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
+		C5489B742D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
+		C5489B752D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
+		C5489B762D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
+		C5489B772D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
+		C5489B782D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
+		C5489B792D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
 		C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
@@ -675,6 +743,13 @@
 		C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
 		C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
 		C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
+		C5E14F6F2D0C3CAE008C76F1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F6E2D0C3CAE008C76F1 /* FirebaseAuth */; };
+		C5E14F712D0C3CAE008C76F1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F702D0C3CAE008C76F1 /* FirebaseCore */; };
+		C5E14F732D0C3CAE008C76F1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F722D0C3CAE008C76F1 /* FirebaseCrashlytics */; };
+		C5ECF1342D11409B00F158D5 /* sidebar-union.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ECF1332D11409B00F158D5 /* sidebar-union.png */; };
+		C5ECF1352D11409B00F158D5 /* sidebar-union.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ECF1332D11409B00F158D5 /* sidebar-union.png */; };
+		C5ECF1362D11409B00F158D5 /* sidebar-union.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ECF1332D11409B00F158D5 /* sidebar-union.png */; };
+		C5ECF1372D11409B00F158D5 /* sidebar-union.png in Resources */ = {isa = PBXBuildFile; fileRef = C5ECF1332D11409B00F158D5 /* sidebar-union.png */; };
 		C61B1BF22667D075001A4E4A /* menu_security_default.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF12667D075001A4E4A /* menu_security_default.png */; };
 		C61B1BF42667D202001A4E4A /* more_menu_default.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF32667D202001A4E4A /* more_menu_default.png */; };
 		C61B1BF72667EC6B001A4E4A /* ephemeral_messages_color_A.png in Resources */ = {isa = PBXBuildFile; fileRef = C61B1BF62667EC6B001A4E4A /* ephemeral_messages_color_A.png */; };
@@ -1920,8 +1995,26 @@
 		A53B959BF2158A56EC9BAE72 /* Pods_CallUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A843B29FA3A92B57B1A56CD7 /* Pods-CallUITests.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.distribution.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.distribution.xcconfig"; sourceTree = "<group>"; };
 		C2C514E23CC99DF19C6FB68D /* Pods-CallUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.release.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C5211C8F2D0FEEB20063E223 /* dialpad-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-1.png"; sourceTree = "<group>"; };
+		C5211C902D0FEEB20063E223 /* dialpad-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-2.png"; sourceTree = "<group>"; };
+		C5211C992D0FF3590063E223 /* dialpad-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-3.png"; sourceTree = "<group>"; };
+		C5211C9A2D0FF3590063E223 /* dialpad-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-4.png"; sourceTree = "<group>"; };
+		C5211C9B2D0FF3590063E223 /* dialpad-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-5.png"; sourceTree = "<group>"; };
+		C5211C9C2D0FF3590063E223 /* dialpad-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-6.png"; sourceTree = "<group>"; };
+		C5211C9D2D0FF3590063E223 /* dialpad-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-7.png"; sourceTree = "<group>"; };
+		C5211C9E2D0FF3590063E223 /* dialpad-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-8.png"; sourceTree = "<group>"; };
+		C5211C9F2D0FF3590063E223 /* dialpad-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-9.png"; sourceTree = "<group>"; };
+		C5211CA02D0FF3590063E223 /* dialpad-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-call.png"; sourceTree = "<group>"; };
+		C5211CA12D0FF3590063E223 /* dialpad-hash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-hash.png"; sourceTree = "<group>"; };
+		C5211CA22D0FF3590063E223 /* dialpad-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-star.png"; sourceTree = "<group>"; };
+		C5211CA32D0FF3590063E223 /* dialpad-zero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-zero.png"; sourceTree = "<group>"; };
+		C5489B662D0C719100343167 /* chat-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat-icon.png"; sourceTree = "<group>"; };
+		C5489B672D0C719100343167 /* clock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-icon.png"; sourceTree = "<group>"; };
+		C5489B682D0C719100343167 /* keypad-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keypad-icon.png"; sourceTree = "<group>"; };
+		C5489B692D0C719100343167 /* person-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person-icon.png"; sourceTree = "<group>"; };
 		C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mango_logo.png; sourceTree = "<group>"; };
 		C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-substract.png"; sourceTree = "<group>"; };
+		C5ECF1332D11409B00F158D5 /* sidebar-union.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar-union.png"; sourceTree = "<group>"; };
 		C61B1BF12667D075001A4E4A /* menu_security_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_security_default.png; sourceTree = "<group>"; };
 		C61B1BF32667D202001A4E4A /* more_menu_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_menu_default.png; sourceTree = "<group>"; };
 		C61B1BF62667EC6B001A4E4A /* ephemeral_messages_color_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ephemeral_messages_color_A.png; sourceTree = "<group>"; };
@@ -2396,6 +2489,8 @@
 				F0B89C2218DC89E30050B60E /* MediaPlayer.framework in Frameworks */,
 				226EF06C15FA256B005865C7 /* MobileCoreServices.framework in Frameworks */,
 				70E542F313E147E3002BA2C0 /* OpenGLES.framework in Frameworks */,
+				C5E14F732D0C3CAE008C76F1 /* FirebaseCrashlytics in Frameworks */,
+				C5E14F6F2D0C3CAE008C76F1 /* FirebaseAuth in Frameworks */,
 				70E542F513E147EB002BA2C0 /* QuartzCore.framework in Frameworks */,
 				2264B6D211200342002C2C53 /* SystemConfiguration.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -2403,6 +2498,7 @@
 				F05BAA621A5D594E00411815 /* libz.dylib in Frameworks */,
 				344ABDF114850AE9007420B6 /* libc++.1.dylib in Frameworks */,
 				22D1B68112A3E0BE001AE361 /* libresolv.dylib in Frameworks */,
+				C5E14F712D0C3CAE008C76F1 /* FirebaseCore in Frameworks */,
 				FFB3929E755B4246D1DBE670 /* Pods_linphone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2677,7 +2773,7 @@
 			path = LinphoneUI;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				8C23BCB71D82AAC3005F19BB /* linphone.entitlements */,
@@ -2801,6 +2897,24 @@
 		633FEBE11D3CD5570014B822 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C5ECF1332D11409B00F158D5 /* sidebar-union.png */,
+				C5211C8F2D0FEEB20063E223 /* dialpad-1.png */,
+				C5211C902D0FEEB20063E223 /* dialpad-2.png */,
+				C5211C992D0FF3590063E223 /* dialpad-3.png */,
+				C5211C9A2D0FF3590063E223 /* dialpad-4.png */,
+				C5211C9B2D0FF3590063E223 /* dialpad-5.png */,
+				C5211C9C2D0FF3590063E223 /* dialpad-6.png */,
+				C5211C9D2D0FF3590063E223 /* dialpad-7.png */,
+				C5211C9E2D0FF3590063E223 /* dialpad-8.png */,
+				C5211C9F2D0FF3590063E223 /* dialpad-9.png */,
+				C5211CA02D0FF3590063E223 /* dialpad-call.png */,
+				C5211CA12D0FF3590063E223 /* dialpad-hash.png */,
+				C5211CA22D0FF3590063E223 /* dialpad-star.png */,
+				C5211CA32D0FF3590063E223 /* dialpad-zero.png */,
+				C5489B662D0C719100343167 /* chat-icon.png */,
+				C5489B672D0C719100343167 /* clock-icon.png */,
+				C5489B682D0C719100343167 /* keypad-icon.png */,
+				C5489B692D0C719100343167 /* person-icon.png */,
 				D7A4C0052A3B135800EFBD1B /* new_chat_attachment_default.png */,
 				D7A4C0072A3B135800EFBD1B /* new_chat_send_default.png */,
 				D7A4C0062A3B135800EFBD1B /* new_vr_off.png */,
@@ -4273,7 +4387,10 @@
 				es_AR,
 				cs,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			packageReferences = (
+				C5E14F6D2D0C3CAE008C76F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -4328,6 +4445,7 @@
 				615A2817217F280C0060F920 /* chat_list_indicator.png in Resources */,
 				633FEEFF1D3CD55A0014B822 /* options_add_call_disabled@2x.png in Resources */,
 				C63F72FD285A31DA0066163B /* Roboto-Regular.ttf in Resources */,
+				C5ECF1342D11409B00F158D5 /* sidebar-union.png in Resources */,
 				633FEF091D3CD55A0014B822 /* options_start_conference_disabled@2x.png in Resources */,
 				C622E3F326A81290004F5434 /* vr_pause.png in Resources */,
 				633FEE051D3CD5590014B822 /* cancel_edit_disabled@2x.png in Resources */,
@@ -4346,7 +4464,7 @@
 				633FEEE01D3CD55A0014B822 /* numpad_8_over~ipad@2x.png in Resources */,
 				633FEDDC1D3CD5590014B822 /* call_start_body_disabled~ipad.png in Resources */,
 				C63F72FF285A31DA0066163B /* Roboto-Bold.ttf in Resources */,
-				63E802DB1C625AEF000D5509 /* BuildFile in Resources */,
+				63E802DB1C625AEF000D5509 /* (null) in Resources */,
 				633FEE2E1D3CD5590014B822 /* color_F.png in Resources */,
 				633FEDC51D3CD5590014B822 /* call_hangup_disabled@2x.png in Resources */,
 				633FEEDF1D3CD55A0014B822 /* numpad_8_over~ipad.png in Resources */,
@@ -4434,6 +4552,17 @@
 				639E9C931C0DB7BE00019A75 /* FirstLoginView.xib in Resources */,
 				633FEEF61D3CD55A0014B822 /* numpad_star_over.png in Resources */,
 				633FEEE81D3CD55A0014B822 /* numpad_9_over~ipad@2x.png in Resources */,
+				C5211CC52D0FF3590063E223 /* dialpad-6.png in Resources */,
+				C5211CC62D0FF3590063E223 /* dialpad-7.png in Resources */,
+				C5211CC72D0FF3590063E223 /* dialpad-8.png in Resources */,
+				C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */,
+				C5211CC92D0FF3590063E223 /* dialpad-3.png in Resources */,
+				C5211CCA2D0FF3590063E223 /* dialpad-5.png in Resources */,
+				C5211CCB2D0FF3590063E223 /* dialpad-zero.png in Resources */,
+				C5211CCC2D0FF3590063E223 /* dialpad-4.png in Resources */,
+				C5211CCD2D0FF3590063E223 /* dialpad-9.png in Resources */,
+				C5211CCE2D0FF3590063E223 /* dialpad-hash.png in Resources */,
+				C5211CCF2D0FF3590063E223 /* dialpad-star.png in Resources */,
 				633FEEDE1D3CD55A0014B822 /* numpad_8_over@2x.png in Resources */,
 				633FEEB11D3CD55A0014B822 /* numpad_2~ipad.png in Resources */,
 				633FEE521D3CD5590014B822 /* dialer_alt_back.png in Resources */,
@@ -4451,6 +4580,8 @@
 				633FEEED1D3CD55A0014B822 /* numpad_hash_over.png in Resources */,
 				D7CF13732A2E225200D92165 /* emoji.png in Resources */,
 				633FEE1F1D3CD5590014B822 /* chat_start_body_disabled@2x.png in Resources */,
+				C5211C912D0FEEB20063E223 /* dialpad-2.png in Resources */,
+				C5211C922D0FEEB20063E223 /* dialpad-1.png in Resources */,
 				633FEEF81D3CD55A0014B822 /* numpad_star_over~ipad.png in Resources */,
 				C6A1BB3826E8815400540D50 /* menu_reply_default.png in Resources */,
 				633FEF301D3CD55A0014B822 /* route_speaker_disabled.png in Resources */,
@@ -4716,6 +4847,10 @@
 				633FEE191D3CD5590014B822 /* chat_send_over@2x.png in Resources */,
 				633FEF181D3CD55A0014B822 /* pause_small_over_selected.png in Resources */,
 				633FEE001D3CD5590014B822 /* camera_switch_over.png in Resources */,
+				C5489B762D0C719100343167 /* clock-icon.png in Resources */,
+				C5489B772D0C719100343167 /* keypad-icon.png in Resources */,
+				C5489B782D0C719100343167 /* person-icon.png in Resources */,
+				C5489B792D0C719100343167 /* chat-icon.png in Resources */,
 				C622E3F126A81290004F5434 /* vr_on.png in Resources */,
 				633FEF401D3CD55A0014B822 /* select_all_default.png in Resources */,
 				C6B4444426AAD0980076C517 /* file_picture_default.png in Resources */,
@@ -4983,8 +5118,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5211CA42D0FF3590063E223 /* dialpad-6.png in Resources */,
+				C5211CA52D0FF3590063E223 /* dialpad-7.png in Resources */,
+				C5211CA62D0FF3590063E223 /* dialpad-8.png in Resources */,
+				C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */,
+				C5211CA82D0FF3590063E223 /* dialpad-3.png in Resources */,
+				C5211CA92D0FF3590063E223 /* dialpad-5.png in Resources */,
+				C5ECF1362D11409B00F158D5 /* sidebar-union.png in Resources */,
+				C5211CAA2D0FF3590063E223 /* dialpad-zero.png in Resources */,
+				C5211CAB2D0FF3590063E223 /* dialpad-4.png in Resources */,
+				C5211CAC2D0FF3590063E223 /* dialpad-9.png in Resources */,
+				C5211CAD2D0FF3590063E223 /* dialpad-hash.png in Resources */,
+				C5211CAE2D0FF3590063E223 /* dialpad-star.png in Resources */,
 				C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				61AE365220C00B370089D9D3 /* MainInterface.storyboard in Resources */,
+				C5489B6A2D0C719100343167 /* clock-icon.png in Resources */,
+				C5211C932D0FEEB20063E223 /* dialpad-2.png in Resources */,
+				C5211C942D0FEEB20063E223 /* dialpad-1.png in Resources */,
+				C5489B6B2D0C719100343167 /* keypad-icon.png in Resources */,
+				C5489B6C2D0C719100343167 /* person-icon.png in Resources */,
+				C5489B6D2D0C719100343167 /* chat-icon.png in Resources */,
 				C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5004,6 +5157,24 @@
 				C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 				C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */,
+				C5211CBA2D0FF3590063E223 /* dialpad-6.png in Resources */,
+				C5211CBB2D0FF3590063E223 /* dialpad-7.png in Resources */,
+				C5211CBC2D0FF3590063E223 /* dialpad-8.png in Resources */,
+				C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */,
+				C5211CBE2D0FF3590063E223 /* dialpad-3.png in Resources */,
+				C5211CBF2D0FF3590063E223 /* dialpad-5.png in Resources */,
+				C5ECF1352D11409B00F158D5 /* sidebar-union.png in Resources */,
+				C5211CC02D0FF3590063E223 /* dialpad-zero.png in Resources */,
+				C5211CC12D0FF3590063E223 /* dialpad-4.png in Resources */,
+				C5211CC22D0FF3590063E223 /* dialpad-9.png in Resources */,
+				C5211CC32D0FF3590063E223 /* dialpad-hash.png in Resources */,
+				C5211CC42D0FF3590063E223 /* dialpad-star.png in Resources */,
+				C5489B722D0C719100343167 /* clock-icon.png in Resources */,
+				C5211C952D0FEEB20063E223 /* dialpad-2.png in Resources */,
+				C5211C962D0FEEB20063E223 /* dialpad-1.png in Resources */,
+				C5489B732D0C719100343167 /* keypad-icon.png in Resources */,
+				C5489B742D0C719100343167 /* person-icon.png in Resources */,
+				C5489B752D0C719100343167 /* chat-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5011,10 +5182,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5211CAF2D0FF3590063E223 /* dialpad-6.png in Resources */,
+				C5211CB02D0FF3590063E223 /* dialpad-7.png in Resources */,
+				C5211CB12D0FF3590063E223 /* dialpad-8.png in Resources */,
+				C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */,
+				C5ECF1372D11409B00F158D5 /* sidebar-union.png in Resources */,
+				C5211CB32D0FF3590063E223 /* dialpad-3.png in Resources */,
+				C5211CB42D0FF3590063E223 /* dialpad-5.png in Resources */,
+				C5211CB52D0FF3590063E223 /* dialpad-zero.png in Resources */,
+				C5211CB62D0FF3590063E223 /* dialpad-4.png in Resources */,
+				C5211CB72D0FF3590063E223 /* dialpad-9.png in Resources */,
+				C5211CB82D0FF3590063E223 /* dialpad-hash.png in Resources */,
+				C5211CB92D0FF3590063E223 /* dialpad-star.png in Resources */,
 				C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
+				C5211C972D0FEEB20063E223 /* dialpad-2.png in Resources */,
+				C5211C982D0FEEB20063E223 /* dialpad-1.png in Resources */,
 				EA88F3AF241BD1F700E66528 /* MainInterface.storyboard in Resources */,
 				EA88A405242A6216007FEC61 /* Localizable.strings in Resources */,
 				6112A01C243B31A700DBD5F5 /* GoogleService-Info.plist in Resources */,
+				C5489B6E2D0C719100343167 /* clock-icon.png in Resources */,
+				C5489B6F2D0C719100343167 /* keypad-icon.png in Resources */,
+				C5489B702D0C719100343167 /* person-icon.png in Resources */,
+				C5489B712D0C719100343167 /* chat-icon.png in Resources */,
 				C55FDD732D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5241,39 +5430,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-linphone/Pods-linphone-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/EmojiPicker/EmojiPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseAuthInterop/FirebaseAuthInterop.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseFirestore/FirebaseFirestore.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseFirestoreInternal/FirebaseFirestoreInternal.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseSharedSwift/FirebaseSharedSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-1ae1c552/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/RecaptchaInterop/RecaptchaInterop.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
-				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/linphone-sdk/linphonesw.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-54d832b6/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseRemoteConfigInterop/FirebaseRemoteConfigInterop.framework",
-				"${BUILT_PRODUCTS_DIR}/FirebaseSessions/FirebaseSessions.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk/bctoolbox-ios.framework/bctoolbox-ios",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk/bctoolbox-tester.framework/bctoolbox-tester",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk/bctoolbox.framework/bctoolbox",
@@ -5294,38 +5457,13 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmojiPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAppCheckInterop.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAuth.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseAuthInterop.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseFirestore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseFirestoreInternal.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSharedSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RecaptchaInterop.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonesw.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseRemoteConfigInterop.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSessions.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-tester.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox.framework",
@@ -6186,7 +6324,10 @@
 				IBSC_MODULE = linphoneapp;
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(inherited)",
@@ -6312,7 +6453,10 @@
 				IBSC_MODULE = linphoneapp;
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(inherited)",
@@ -6437,7 +6581,10 @@
 				IBSC_MODULE = linphoneapp;
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(inherited)",
@@ -6561,7 +6708,10 @@
 				IBSC_MODULE = linphoneapp;
 				INFOPLIST_FILE = "linphone-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
 					"$(inherited)",
@@ -7059,7 +7209,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/msgNotificationService/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -7111,7 +7265,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/msgNotificationService/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7120,7 +7278,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7162,7 +7321,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/msgNotificationService/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7171,7 +7334,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7214,7 +7378,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/msgNotificationService/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7223,7 +7391,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7270,7 +7439,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = msgNotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -7322,7 +7495,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = msgNotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7331,7 +7508,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7373,7 +7551,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = msgNotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7382,7 +7564,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7425,7 +7608,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = msgNotificationContent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -7434,7 +7621,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -7511,6 +7699,35 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5E14F6D2D0C3CAE008C76F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5E14F6E2D0C3CAE008C76F1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E14F6D2D0C3CAE008C76F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C5E14F702D0C3CAE008C76F1 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E14F6D2D0C3CAE008C76F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		C5E14F722D0C3CAE008C76F1 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5E14F6D2D0C3CAE008C76F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

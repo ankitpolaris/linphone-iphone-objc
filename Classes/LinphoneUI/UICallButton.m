@@ -99,8 +99,8 @@
 		[self setImage:[UIImage imageNamed:@"call_video_start_default.png"] forState:UIControlStateNormal];
 		[self setImage:[UIImage imageNamed:@"call_video_start_disabled.png"] forState:UIControlStateDisabled];
 	} else {
-		[self setImage:[UIImage imageNamed:@"call_audio_start_default.png"] forState:UIControlStateNormal];
-		[self setImage:[UIImage imageNamed:@"call_audio_start_disabled.png"] forState:UIControlStateDisabled];
+		[self setImage:[UIImage imageNamed:@"dialpad-call.png"] forState:UIControlStateNormal];
+		[self setImage:[UIImage imageNamed:@"dialpad-call.png"] forState:UIControlStateDisabled];
 	}
 
 	if (CallManager.instance.nextCallIsTransfer) {

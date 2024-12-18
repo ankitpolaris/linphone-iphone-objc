@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,30 +26,45 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="3">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="66"/>
+            <rect key="frame" x="0.0" y="0.0" width="360" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_C.png" id="svE-vh-ct2" userLabel="backgroundImage">
-                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6" userLabel="historyButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="25.00%" height="100.00%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-g3-h89" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="75"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGC-bf-1l1" userLabel="LineView">
+                    <rect key="frame" x="9" y="0.0" width="342" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="gTJ-Wx-yig"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="historyButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
                     <accessibility key="accessibilityConfiguration" label="History"/>
-                    <state key="normal" image="footer_history_default.png"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="tdy-Jo-saC"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="90" id="uaO-TE-Td2"/>
+                    </constraints>
+                    <state key="normal" image="clock-icon.png"/>
                     <state key="disabled" image="footer_history_disabled.png"/>
                     <state key="highlighted" backgroundImage="color_A.png"/>
                     <connections>
                         <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="22"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="8" userLabel="contactsButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="25.00%" minY="0.0%" width="25.00%" height="100.00%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2M-vv-NUX">
+                    <rect key="frame" x="22" y="45" width="46" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
+                    <rect key="frame" x="90" y="0.0" width="90" height="60"/>
                     <accessibility key="accessibilityConfiguration" label="Contacts"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="footer_contacts_default.png"/>
+                    <state key="normal" image="person-icon.png"/>
                     <state key="disabled" image="footer_contacts_disabled.png"/>
                     <state key="selected">
                         <color key="titleColor" red="0.76000285148620605" green="0.21515019237995148" blue="0.12376989424228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,90 +74,170 @@
                         <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="23"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="7" userLabel="dialerButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="50.00%" minY="0.0%" width="25.00%" height="100.00%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZS-or-bw2">
+                    <rect key="frame" x="109" y="45" width="52" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keypad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtI-xJ-cgM">
+                    <rect key="frame" x="204" y="45" width="42.333333333333343" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
+                    <rect key="frame" x="180" y="0.0" width="90" height="60"/>
                     <accessibility key="accessibilityConfiguration" label="Dialer"/>
-                    <state key="normal" image="footer_dialer_default.png"/>
+                    <state key="normal" image="keypad-icon.png"/>
                     <state key="disabled" image="footer_dialer_disabled.png"/>
                     <state key="highlighted" backgroundImage="color_A.png"/>
                     <connections>
                         <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="24"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="5" userLabel="chatButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="75.00%" minY="0.0%" width="25.00%" height="100.00%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
+                    <rect key="frame" x="270" y="0.0" width="90" height="60"/>
                     <accessibility key="accessibilityConfiguration" label="Chat"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="footer_chat_default.png"/>
+                    <state key="normal" image="chat-icon.png"/>
                     <state key="disabled" image="footer_chat_disabled.png"/>
                     <state key="highlighted" backgroundImage="color_A.png"/>
                     <connections>
                         <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="26"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_A.png" id="eC3-Hw-cqQ" userLabel="selectedButtonImage">
-                    <frame key="frameInset" minX="50.00%" width="25.00%" height="3"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hw-cqQ" userLabel="selectedButtonImage">
+                    <rect key="frame" x="180" y="72" width="90" height="3"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
-                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" id="37" userLabel="chatNotificationView" customClass="UIBouncingView">
-                    <frame key="frameInset" minX="88.06%" minY="0.0%" width="6.11%" height="33.33%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37" userLabel="chatNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="317" y="0.0" width="22" height="22"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" image="history_chat_indicator.png" id="39" userLabel="chatNotificationImage">
-                            <frame key="frameInset" width="21" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="chatNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" id="38" userLabel="chatNotificationLabel">
-                            <frame key="frameInset" width="21" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" ambiguous="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="chatNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <accessibility key="accessibilityConfiguration" label="Missed message(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
                             </accessibility>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="iwF-q5-BVm"/>
+                                <constraint firstAttribute="width" constant="21" id="zqK-TI-Epg"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="38" firstAttribute="trailing" secondItem="39" secondAttribute="trailing" id="1Wv-I9-U4P"/>
+                        <constraint firstAttribute="width" constant="22" id="C74-Lr-6bY"/>
+                        <constraint firstItem="38" firstAttribute="leading" secondItem="39" secondAttribute="leading" id="gwA-My-Kht"/>
+                        <constraint firstItem="38" firstAttribute="top" secondItem="39" secondAttribute="top" id="h42-T9-3pk"/>
+                        <constraint firstAttribute="height" constant="22" id="hgC-IS-wpG"/>
+                        <constraint firstItem="38" firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="zB4-xF-eFx"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
-                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" id="32" userLabel="historyNotificationView" customClass="UIBouncingView">
-                    <frame key="frameInset" minX="13.33%" minY="0.0%" width="6.11%" height="33.33%"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32" userLabel="historyNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="48" y="0.0" width="22" height="25"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" image="history_chat_indicator.png" id="33" userLabel="historyNotificationImage">
-                            <frame key="frameInset" width="21" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="33" userLabel="historyNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" id="34" userLabel="historyNotificationLabel">
-                            <frame key="frameInset" width="21" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="historyNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <accessibility key="accessibilityConfiguration" label="Missed call(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
                             </accessibility>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="21" id="DvR-ME-ArI"/>
+                                <constraint firstAttribute="height" constant="21" id="H1j-zr-Pcv"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="34" firstAttribute="bottom" secondItem="33" secondAttribute="bottom" id="4qt-Vf-PiU"/>
+                        <constraint firstItem="34" firstAttribute="trailing" secondItem="33" secondAttribute="trailing" id="JK1-mm-VOa"/>
+                        <constraint firstItem="34" firstAttribute="top" secondItem="33" secondAttribute="top" id="aH4-QM-9Aw"/>
+                        <constraint firstItem="34" firstAttribute="leading" secondItem="33" secondAttribute="leading" id="b0x-iK-z1u"/>
+                        <constraint firstItem="34" firstAttribute="centerY" secondItem="32" secondAttribute="centerY" id="f51-a2-Djx"/>
+                        <constraint firstItem="34" firstAttribute="centerX" secondItem="32" secondAttribute="centerX" id="f5E-H4-wNl"/>
+                        <constraint firstItem="34" firstAttribute="leading" secondItem="32" secondAttribute="leading" id="mOP-Ur-BB0"/>
+                        <constraint firstItem="34" firstAttribute="top" secondItem="32" secondAttribute="top" id="uwb-Cd-RvI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-vI-Emg">
+                    <rect key="frame" x="298.66666666666669" y="45" width="33" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qbO-g3-h89" secondAttribute="trailing" id="1SO-tF-NfI"/>
+                <constraint firstItem="7" firstAttribute="width" secondItem="8" secondAttribute="width" id="3wL-HU-zrH"/>
+                <constraint firstItem="5" firstAttribute="leading" secondItem="7" secondAttribute="trailing" id="AuF-12-FTc"/>
+                <constraint firstAttribute="bottom" secondItem="qbO-g3-h89" secondAttribute="bottom" id="Bwn-ZI-pFP"/>
+                <constraint firstItem="iul-vI-Emg" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" id="Bzi-Jh-EnF"/>
+                <constraint firstItem="iul-vI-Emg" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="Hq6-q6-zDN"/>
+                <constraint firstItem="GZS-or-bw2" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="KGe-PR-xIW"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="8" secondAttribute="trailing" id="KxF-9O-BQ3"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="3" secondAttribute="top" id="LwI-Gd-Aw5"/>
+                <constraint firstItem="6" firstAttribute="height" secondItem="8" secondAttribute="height" id="NZy-BM-ZKD"/>
+                <constraint firstItem="8" firstAttribute="width" secondItem="6" secondAttribute="width" id="RLi-kO-hlr"/>
+                <constraint firstItem="qbO-g3-h89" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="RlI-G1-KoM"/>
+                <constraint firstItem="GtI-xJ-cgM" firstAttribute="centerX" secondItem="7" secondAttribute="centerX" id="TKq-5Y-1QW"/>
+                <constraint firstItem="cGC-bf-1l1" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="9" id="UBl-Wt-U5W"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="V2s-xw-WQy"/>
+                <constraint firstItem="Y2M-vv-NUX" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="V9T-s5-6sd"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="YhB-rN-wub"/>
+                <constraint firstItem="GtI-xJ-cgM" firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="c6o-SP-WEE"/>
+                <constraint firstItem="5" firstAttribute="width" secondItem="7" secondAttribute="width" id="dMu-dW-buA"/>
+                <constraint firstItem="qbO-g3-h89" firstAttribute="top" secondItem="3" secondAttribute="top" id="gZO-zn-HjX"/>
+                <constraint firstItem="7" firstAttribute="height" secondItem="5" secondAttribute="height" id="gtl-Xa-zS4"/>
+                <constraint firstItem="8" firstAttribute="top" secondItem="3" secondAttribute="top" id="k0F-SX-xma"/>
+                <constraint firstItem="Y2M-vv-NUX" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="qHl-NJ-Vyg"/>
+                <constraint firstItem="8" firstAttribute="height" secondItem="7" secondAttribute="height" id="qhu-ST-Pfp"/>
+                <constraint firstItem="5" firstAttribute="top" secondItem="3" secondAttribute="top" id="qpN-sm-b2S"/>
+                <constraint firstAttribute="trailing" secondItem="cGC-bf-1l1" secondAttribute="trailing" constant="9" id="tSt-Z1-aBa"/>
+                <constraint firstItem="7" firstAttribute="top" secondItem="3" secondAttribute="top" id="thB-0j-MtI"/>
+                <constraint firstItem="cGC-bf-1l1" firstAttribute="top" secondItem="3" secondAttribute="top" id="uv3-BX-P1P"/>
+                <constraint firstAttribute="trailing" secondItem="37" secondAttribute="trailing" constant="21" id="vHn-32-4Wf"/>
+                <constraint firstItem="7" firstAttribute="leading" secondItem="8" secondAttribute="trailing" id="vox-1Z-oLn"/>
+                <constraint firstItem="GZS-or-bw2" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="wsV-7d-dfy"/>
+                <constraint firstItem="37" firstAttribute="top" secondItem="3" secondAttribute="top" id="z2v-R2-C14"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="226" y="-36"/>
+            <point key="canvasLocation" x="331" y="-29"/>
         </view>
         <view contentMode="scaleToFill" id="ni3-kk-RmM">
             <rect key="frame" x="0.0" y="0.0" width="90" height="333"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color_C.png" id="V07-hP-Heu" userLabel="backgroundImage">
-                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="100.00%"/>
+                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_C.png" translatesAutoresizingMaskIntoConstraints="NO" id="V07-hP-Heu" userLabel="backgroundImage">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="333"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="hlj-lf-AGD" userLabel="historyButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="0.0%" minY="0.0%" width="100.00%" height="24.93%"/>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlj-lf-AGD" userLabel="historyButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" label="History"/>
                     <state key="normal" image="footer_history_default.png"/>
@@ -150,8 +247,8 @@
                         <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="apg-Ia-q2O"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ea1-DR-JeN" userLabel="contactsButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="0.0%" minY="25.23%" width="100.00%" height="24.93%"/>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea1-DR-JeN" userLabel="contactsButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="84" width="90" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" label="Contacts"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
@@ -165,8 +262,8 @@
                         <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="Mha-05-jl6"/>
                     </connections>
                 </button>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Leo-2i-huu" userLabel="dialerButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="0.0%" minY="50.45%" width="100.00%" height="24.93%"/>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Leo-2i-huu" userLabel="dialerButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="168" width="90" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" label="Dialer"/>
                     <state key="normal" image="footer_dialer_default.png"/>
@@ -176,20 +273,20 @@
                         <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="f7N-Mt-lPq"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="color_A.png" id="Dxb-ca-vcU" userLabel="selectedButtonImage">
-                    <frame key="frameInset" minY="30.33%" width="3.33%" height="24.93%"/>
+                <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dxb-ca-vcU" userLabel="selectedButtonImage">
+                    <rect key="frame" x="0.0" y="101" width="3" height="83"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" misplaced="YES" id="Ldd-jk-0kY" userLabel="historyNotificationView" customClass="UIBouncingView">
-                    <frame key="frameInset" minX="51.11%" minY="0.0%" width="23.33%" height="24.93%"/>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ldd-jk-0kY" userLabel="historyNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="46" y="0.0" width="21" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" image="history_chat_indicator.png" id="toi-dz-eTS" userLabel="historyNotificationImage">
-                            <frame key="frameInset" width="21" height="21"/>
+                        <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" fixedFrame="YES" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="toi-dz-eTS" userLabel="historyNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" id="eU2-w3-nYr" userLabel="historyNotificationLabel">
-                            <frame key="frameInset" width="21" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eU2-w3-nYr" userLabel="historyNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <accessibility key="accessibilityConfiguration" label="Missed call(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
@@ -201,8 +298,8 @@
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="TbS-j0-yv4" userLabel="chatButton" customClass="UIIconButton">
-                    <frame key="frameInset" minX="0.0%" minY="77.78%" width="100.00%" height="24.93%"/>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-j0-yv4" userLabel="chatButton" customClass="UIIconButton">
+                    <rect key="frame" x="0.0" y="259" width="90" height="83"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" label="Chat"/>
                     <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
@@ -213,16 +310,16 @@
                         <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="B7q-6N-lWO"/>
                     </connections>
                 </button>
-                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" misplaced="YES" id="djA-EL-HUt" userLabel="chatNotificationView" customClass="UIBouncingView">
-                    <frame key="frameInset" minX="53.33%" minY="77.78%" width="23.33%" height="6.31%"/>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djA-EL-HUt" userLabel="chatNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="48" y="259" width="21" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" image="history_chat_indicator.png" id="EKN-Nr-bdt" userLabel="chatNotificationImage">
-                            <frame key="frameInset" width="21" height="21"/>
+                        <imageView userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" fixedFrame="YES" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="EKN-Nr-bdt" userLabel="chatNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" id="cWJ-ol-R0k" userLabel="chatNotificationLabel">
-                            <frame key="frameInset" width="21" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="cWJ-ol-R0k" userLabel="chatNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <accessibility key="accessibilityConfiguration" label="Missed message(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
@@ -237,25 +334,27 @@
             </subviews>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="526" y="86.5"/>
+            <point key="canvasLocation" x="803.05343511450383" y="60.91549295774648"/>
         </view>
     </objects>
     <resources>
+        <image name="chat-icon.png" width="32" height="32"/>
+        <image name="clock-icon.png" width="32" height="32"/>
         <image name="color_A.png" width="2" height="2"/>
         <image name="color_C.png" width="2" height="2"/>
-        <image name="footer_chat_default.png" width="27" height="27"/>
-        <image name="footer_chat_disabled.png" width="27" height="27"/>
-        <image name="footer_contacts_default.png" width="29" height="29"/>
-        <image name="footer_contacts_disabled.png" width="29" height="29"/>
-        <image name="footer_dialer_default.png" width="27" height="27"/>
-        <image name="footer_dialer_disabled.png" width="27" height="27"/>
-        <image name="footer_history_default.png" width="29" height="29"/>
-        <image name="footer_history_disabled.png" width="29" height="29"/>
-        <image name="history_chat_indicator.png" width="14" height="13"/>
+        <image name="footer_chat_default.png" width="44" height="44"/>
+        <image name="footer_chat_disabled.png" width="44" height="44"/>
+        <image name="footer_contacts_default.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_contacts_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_dialer_default.png" width="44" height="44"/>
+        <image name="footer_dialer_disabled.png" width="44" height="44"/>
+        <image name="footer_history_default.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="footer_history_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
+        <image name="history_chat_indicator.png" width="22.399999618530273" height="21.600000381469727"/>
+        <image name="keypad-icon.png" width="32" height="32"/>
+        <image name="person-icon.png" width="32" height="29"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

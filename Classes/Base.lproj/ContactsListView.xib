@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsListView">
             <connections>
-                <outlet property="addButton" destination="6" id="91"/>
+                <outlet property="addButton" destination="EDe-Kb-IdC" id="JLe-MB-jj3"/>
                 <outlet property="allButton" destination="4" id="27"/>
                 <outlet property="deleteButton" destination="DZc-zR-1Q7" id="M6N-vO-UIb"/>
                 <outlet property="ldapMoreResultsLabel" destination="cDH-mL-cHP" id="3d9-gp-Hog"/>
@@ -35,7 +36,7 @@
                     <rect key="frame" x="0.0" y="42" width="375" height="559"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3" userLabel="topBar">
+                        <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3" userLabel="topBar">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -163,9 +164,41 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         </view>
-                        <searchBar contentMode="redraw" fixedFrame="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-oF-d45" userLabel="searchBar">
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXN-bV-Bs7" userLabel="TopView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0H-kV-T7U">
+                                    <rect key="frame" x="14" y="14" width="137" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDe-Kb-IdC" userLabel="addButton">
+                                    <rect key="frame" x="323" y="14" width="44" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="Add contact"/>
+                                    <color key="tintColor" systemColor="systemGreenColor"/>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" systemColor="systemGreenColor"/>
+                                        <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                    </state>
+                                    <state key="disabled" image="contact_add_disabled.png"/>
+                                    <state key="highlighted" backgroundImage="color_E.png"/>
+                                    <connections>
+                                        <action selector="onAddContactClick:" destination="-1" eventType="touchUpInside" id="caY-tb-bL7"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-oF-d45" userLabel="searchBar">
                             <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="Fk3-Tl-dY0"/>
@@ -250,13 +283,17 @@
         <image name="delete_default.png" width="34.400001525878906" height="44.799999237060547"/>
         <image name="delete_disabled.png" width="34.400001525878906" height="44.799999237060547"/>
         <image name="deselect_all.png" width="43.200000762939453" height="43.200000762939453"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="select_all_default.png" width="43.200000762939453" height="43.200000762939453"/>
         <image name="select_all_disabled.png" width="43.200000762939453" height="43.200000762939453"/>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

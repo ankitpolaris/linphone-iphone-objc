@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatsListView">
             <connections>
-                <outlet property="addButton" destination="Z5G-IF-PBY" id="Tzw-rz-Bwe"/>
+                <outlet property="addButton" destination="hof-ll-Z4L" id="hSz-NJ-OdC"/>
                 <outlet property="addGroupChatButton" destination="glf-ni-nqe" id="0hy-5m-7C7"/>
                 <outlet property="backToCallButton" destination="Fac-hy-za4" id="8I3-TM-oJ7"/>
                 <outlet property="cancelForwardButton" destination="Kxx-SO-CB0" id="LFJ-NQ-YrU"/>
@@ -155,8 +156,49 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-HZ-kfT" userLabel="TopView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-GD-TOD">
+                                    <rect key="frame" x="22" y="0.0" width="111" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hof-ll-Z4L" userLabel="addButton">
+                                    <rect key="frame" x="354" y="0.0" width="60" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration" label="New discussion"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="tintColor" systemColor="systemGreenColor"/>
+                                    <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                    </state>
+                                    <state key="disabled" image="chat_add_default.png"/>
+                                    <state key="highlighted" backgroundImage="color_E.png"/>
+                                    <connections>
+                                        <action selector="onAddClick:" destination="-1" eventType="touchUpInside" id="fSM-rf-9GE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="Z0q-K9-pAx">
+                            <rect key="frame" x="0.0" y="50" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="ceI-bb-6gu"/>
+                            </connections>
+                        </searchBar>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="tableView">
-                            <rect key="frame" x="0.0" y="66" width="414" height="722"/>
+                            <rect key="frame" x="0.0" y="100" width="414" height="677"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
@@ -167,7 +209,7 @@
                             </connections>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waa-HU-xFW" userLabel="forwardTitle">
-                            <rect key="frame" x="0.0" y="66" width="414" height="66"/>
+                            <rect key="frame" x="0.0" y="110" width="414" height="66"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -175,7 +217,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No conversations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSn-PY-yf1" userLabel="emptyTableLabel">
-                            <rect key="frame" x="0.0" y="66" width="414" height="722"/>
+                            <rect key="frame" x="0.0" y="110" width="414" height="722"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -183,7 +225,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view hidden="YES" tag="8" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cpj-Jc-imm" userLabel="waitView">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="788"/>
+                            <rect key="frame" x="0.0" y="66" width="414" height="788"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <activityIndicatorView opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DjR-Dv-uoX" userLabel="activityIndicatorView">
@@ -227,13 +269,17 @@
         <image name="delete_default.png" width="34.400001525878906" height="44.799999237060547"/>
         <image name="delete_disabled.png" width="34.400001525878906" height="44.799999237060547"/>
         <image name="deselect_all.png" width="43.200000762939453" height="43.200000762939453"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="select_all_default.png" width="43.200000762939453" height="43.200000762939453"/>
         <image name="select_all_disabled.png" width="43.200000762939453" height="43.200000762939453"/>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

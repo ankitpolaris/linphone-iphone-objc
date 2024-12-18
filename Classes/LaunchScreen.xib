@@ -21,7 +21,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#mangophone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-mA-dsW" userLabel="descLabel">
-                            <rect key="frame" x="35" y="33" width="305" height="90"/>
+                            <rect key="frame" x="35" y="238.66666666666663" width="305" height="90"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="gXU-Gj-TjM"/>
                             </constraints>
@@ -29,19 +29,10 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="mango_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-nR-x0f" userLabel="logoImage">
-                            <rect key="frame" x="6" y="168" width="364" height="160"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="364" id="1dc-y6-x37"/>
-                                <constraint firstAttribute="height" constant="160" id="DGX-cg-Qgj"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="pz0-nR-x0f" firstAttribute="centerX" secondItem="RoT-mA-dsW" secondAttribute="centerX" id="Kyz-qS-AK9"/>
-                        <constraint firstItem="pz0-nR-x0f" firstAttribute="top" secondItem="RoT-mA-dsW" secondAttribute="bottom" constant="45" id="LYY-ew-eBv"/>
-                        <constraint firstItem="RoT-mA-dsW" firstAttribute="top" secondItem="26g-dN-4NP" secondAttribute="top" constant="33" id="Z6X-Dg-nel"/>
+                        <constraint firstItem="RoT-mA-dsW" firstAttribute="centerY" secondItem="26g-dN-4NP" secondAttribute="centerY" constant="-50" id="rWk-5T-c10"/>
                         <constraint firstItem="RoT-mA-dsW" firstAttribute="centerX" secondItem="26g-dN-4NP" secondAttribute="centerX" id="xT9-Gg-ZxX"/>
                     </constraints>
                 </view>
@@ -80,7 +71,6 @@
     </objects>
     <resources>
         <image name="color_C.png" width="2" height="2"/>
-        <image name="mango_logo.png" width="190.32000732421875" height="151.19999694824219"/>
         <image name="splash-substract.png" width="410" height="490"/>
     </resources>
 </document>

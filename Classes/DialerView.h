@@ -33,7 +33,7 @@
 @property(nonatomic, strong) IBOutlet UITextField *addressField;
 @property(nonatomic, strong) IBOutlet UIButton *addContactButton;
 @property(nonatomic, strong) IBOutlet UICallButton *callButton;
-@property(nonatomic, strong) IBOutlet UIButton *backButton;
+//@property(nonatomic, strong) IBOutlet UIButton *backButton;
 @property(weak, nonatomic) IBOutlet UIButton *backspaceButton;
 
 @property(nonatomic, strong) IBOutlet UIDigitButton *oneButton;
