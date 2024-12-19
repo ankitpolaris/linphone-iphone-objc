@@ -100,6 +100,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 										   selector: @selector(receivePresenceNotification:)
 											   name: @"LinphoneFriendPresenceUpdate"
 											 object: userInfo];
+  
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @YES}];
 }
 
 -(void) receivePresenceNotification:(NSNotification*)notification
@@ -114,6 +118,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[super viewWillDisappear:animated];
 	[NSNotificationCenter.defaultCenter removeObserver:self];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:@"LinphoneFriendPresenceUpdate" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @NO}];
     [AvatarBridge removeAllObserver];
 }
 

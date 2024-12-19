@@ -286,8 +286,11 @@ class ChatConversationViewSwift: BackActionsNavigationView, PHPickerViewControll
 		IQKeyboardManager.shared().isEnabled = true
 		IQKeyboardManager.shared().isEnableAutoToolbar = false
 		ChatConversationViewModel.sharedModel.createChatConversation()
-	
-		topBar.backgroundColor = VoipTheme.voipToolbarBackgroundColor.get()
+        
+        NotificationCenter.default.post(name: Notification.Name("UpdateCardViewColorNotification"), object: nil, userInfo: ["isGray": true])
+
+
+        topBar.backgroundColor = .secondarySystemBackground
 		self.contentMessageView.contentView.addSubview(tableControllerSwift.view)
 		
 		// Setup Autolayout constraints
@@ -331,6 +334,7 @@ class ChatConversationViewSwift: BackActionsNavigationView, PHPickerViewControll
 	}
     
     override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("UpdateCardViewColorNotification"), object: nil, userInfo: ["isGray": false])
         if friendDelegate != nil {
             friend?.removeDelegate(delegate: friendDelegate!)
         }

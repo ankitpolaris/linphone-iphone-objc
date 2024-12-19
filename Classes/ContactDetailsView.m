@@ -309,6 +309,9 @@
 										   selector: @selector(receivePresenceNotification:)
 											   name: @"LinphoneFriendPresenceUpdate"
 											 object: userInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @YES}];
 }
 
 -(void) receivePresenceNotification:(NSNotification*)notification
@@ -371,6 +374,9 @@
 	}
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:@"LinphoneFriendPresenceUpdate" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @NO}];
     [AvatarBridge removeAllObserver];
 }
 

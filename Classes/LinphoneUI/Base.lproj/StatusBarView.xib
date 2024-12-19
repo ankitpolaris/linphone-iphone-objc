@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="callQualityButton" destination="SKk-s0-5HE" id="22M-FN-kRs"/>
                 <outlet property="callSecurityButton" destination="27" id="29"/>
+                <outlet property="cardView" destination="EYy-oc-ltt" id="mPW-xr-wvM"/>
                 <outlet property="incallView" destination="0Vp-VF-wmX" id="mLI-RY-bfW"/>
                 <outlet property="outcallView" destination="lfO-I4-PXi" id="04e-SG-ViY"/>
                 <outlet property="registrationState" destination="Mhg-P6-RfU" id="xTR-Af-XBY"/>
@@ -124,7 +125,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" id="EYy-oc-ltt">
+                <view contentMode="scaleToFill" id="EYy-oc-ltt" userLabel="CardView">
                     <rect key="frame" x="0.0" y="48" width="360" height="20"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

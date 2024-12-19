@@ -70,6 +70,10 @@
 										   selector:@selector(onCallEncryptionChanged:)
 											   name:kLinphoneCallEncryptionChanged
 											 object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleUpdateCardViewColorNotification:)
+                                                 name:@"UpdateCardViewColorNotification"
+                                               object:nil];
 
 	// Update to default state
 	LinphoneAccount *account = linphone_core_get_default_account(LC);
@@ -105,7 +109,8 @@
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneNotifyReceived object:nil];
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneCallUpdate object:nil];
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kLinphoneMainViewChange object:nil];
-
+    [NSNotificationCenter.defaultCenter removeObserver:self name:@"UpdateCardViewColorNotification" object:nil];
+    
 	if (callQualityTimer != nil) {
 		[callQualityTimer invalidate];
 		callQualityTimer = nil;
@@ -119,6 +124,16 @@
 		[securityDialog dismiss];
 		securityDialog = nil;
 	}
+}
+
+-(void)updateCardViewColor:(BOOL)isGray {
+    if (isGray) {
+    
+//        self.cardView.backgroundColor = [UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:247.0/255.0 alpha:1.0];
+        self.cardView.backgroundColor = [[UIColor secondarySystemBackgroundColor] colorWithAlphaComponent:1.0];
+    } else {
+        self.cardView.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 + (UIColor *)colorWithHex:(NSString *)hexString {
@@ -161,6 +176,13 @@
 
 - (void)mainViewChanged:(NSNotification *)notif {
 	[self registrationUpdate:nil];
+}
+
+- (void)handleUpdateCardViewColorNotification:(NSNotification *)notif {
+    BOOL isGray = [notif.userInfo[@"isGray"] boolValue];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateCardViewColor:isGray];
+    });
 }
 
 - (void)onCallEncryptionChanged:(NSNotification *)notif {

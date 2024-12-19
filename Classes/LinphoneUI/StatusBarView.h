@@ -36,6 +36,7 @@
 @property(weak, nonatomic) IBOutlet UIView *outcallView;
 @property (weak, nonatomic) IBOutlet UIView *titleContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *titleImageView;
+@property (weak, nonatomic) IBOutlet UIView *cardView;
 
 
 - (IBAction)onSecurityClick:(id)sender;
@@ -43,5 +44,6 @@
 - (IBAction)onSideMenuClick:(id)sender;
 - (IBAction)onRegistrationStateClick:(id)sender;
 + (UIImage *)imageForState:(LinphoneRegistrationState)state;
+- (void)updateCardViewColor:(BOOL)isGray;
 + (UIColor *)colorWithHex:(NSString *)hexString;
 @end
