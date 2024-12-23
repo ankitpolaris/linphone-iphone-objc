@@ -91,9 +91,7 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
-	<true/>
-	<key>ITSEncryptionExportComplianceCode</key>
-	<string>b5cb085f-772a-4a4f-8c77-5d1332b1f93f</string>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
@@ -103,7 +101,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Share photos with your friends and customize avatars</string>
 	<key>NSContactsUsageDescription</key>
-	<string>To improve your experience, we’ll store your contacts' phone numbers to show you which friends are using the app. Your data will be securely stored and only used according to our Privacy Policy. 
+	<string>To improve your experience, we’ll store your contacts&apos; phone numbers to show you which friends are using the app. Your data will be securely stored and only used according to our Privacy Policy. 
 You can disable this at any time.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Stream audio and video through the local network</string>

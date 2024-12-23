@@ -251,19 +251,24 @@
 	LinphoneRegistrationState state = LinphoneRegistrationNone;
 	NSString *message = nil;
 	LinphoneGlobalState gstate = linphone_core_get_global_state(LC);
-	
+    int currentState = 0;
 	if ([PhoneMainView.instance.currentView equal:AssistantView.compositeViewDescription] || [PhoneMainView.instance.currentView equal:CountryListView.compositeViewDescription]) {
+        currentState = 2;
 		message = NSLocalizedString(@"Configuring account", nil);
 	} else if (gstate == LinphoneGlobalOn && !linphone_core_is_network_reachable(LC)) {
+        currentState = 1;
 		message = NSLocalizedString(@"Network down", nil);
 	} else if (gstate == LinphoneGlobalConfiguring) {
+        currentState = 2;
 		message = NSLocalizedString(@"Fetching remote configuration", nil);
 	} else if (account == NULL) {
 		state = LinphoneRegistrationNone;
 		MSList *accounts = [LinphoneManager.instance createAccountsNotHiddenList];
 		if (accounts != NULL) {
+            currentState = 1;
 			message = NSLocalizedString(@"No default account", nil);
 		} else {
+            currentState = 2;
 			message = NSLocalizedString(@"No account configured", nil);
 		}
 		bctbx_free(accounts);
@@ -273,16 +278,20 @@
 
 		switch (state) {
 			case LinphoneRegistrationOk:
+                currentState = 0;
 				message = NSLocalizedString(@"Connected", nil);
 				break;
 			case LinphoneRegistrationNone:
 			case LinphoneRegistrationCleared:
+                currentState = 1;
 				message = NSLocalizedString(@"Not connected", nil);
 				break;
 			case LinphoneRegistrationFailed:
+                currentState = 1;
 				message = NSLocalizedString(@"Connection failed", nil);
 				break;
 			case LinphoneRegistrationProgress:
+                currentState = 2;
 				message = NSLocalizedString(@"Connection in progress", nil);
 				break;
 			default:
@@ -294,6 +303,17 @@
 //	[_registrationState setImage:[self.class imageForState:state] forState:UIControlStateNormal];
     UIImage *statusImage = [self.class imageForState:state];
     _titleImageView.image = statusImage;
+    
+    if (currentState == 0) {
+        self.titleContainerView.layer.borderColor = [UIColor systemGreenColor].CGColor;
+    }
+    else if (currentState == 2) {
+        self.titleContainerView.layer.borderColor = [UIColor systemOrangeColor].CGColor;
+    }
+    else {
+        UIColor *myColor = [StatusBarView colorWithHex:@"#FF4444"];
+        self.titleContainerView.layer.borderColor = myColor.CGColor;
+    }
 }
 
 #pragma mark -

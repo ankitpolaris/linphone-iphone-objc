@@ -397,6 +397,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @NO}];
 	[_settingsController dismiss:self];
 	// Set observer
 	[NSNotificationCenter.defaultCenter removeObserver:self name:kIASKAppSettingChanged object:nil];
@@ -416,6 +419,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 										   selector:@selector(appSettingChanged:)
 											   name:kIASKAppSettingChanged
 											 object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @YES}];
 }
 
 #pragma mark - Account Creator callbacks

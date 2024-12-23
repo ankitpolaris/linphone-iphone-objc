@@ -78,7 +78,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	_tableController.controllerNextButton = _nextButton;
 	_isForEditing = FALSE;
 	_voipTitle.text = VoipTexts.call_action_participants_list;
-	_topBar.backgroundColor = [VoipTheme.voipToolbarBackgroundColor get];
+    _topBar.backgroundColor = [UIColor secondarySystemBackgroundColor];
 
 }
 

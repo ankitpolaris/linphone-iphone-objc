@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.msl.linphone.phone.linphoneExtension</string>
+		<string>group.regremipa.piov.linphoneExtension</string>
 	</array>
 </dict>
 </plist>

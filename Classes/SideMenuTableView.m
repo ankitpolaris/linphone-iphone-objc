@@ -127,6 +127,13 @@
 															}]];
 }
 
+- (void)navigateToLoginFlowViewController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+//    [self.navigationController pushViewController:loginViewController animated:YES];
+    [self presentViewController:loginViewController animated:YES completion:nil];
+}
+
 #pragma mark - Table View Controller
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 2;
@@ -142,7 +149,7 @@
 		bctbx_free(accounts);
 		return MAX(0, (int)count - (hasDefault ? 1 : 0));
 	} else {
-		return [_sideMenuEntries count];
+		return [_sideMenuEntries count] + 1;
 	}
 }
 
@@ -169,8 +176,14 @@
 		cell.transform = CGAffineTransformMakeScale(-1.0, 1.0);
 		cell.textLabel.transform = CGAffineTransformMakeScale(-1.0, 1.0);
 		cell.imageView.transform = CGAffineTransformMakeScale(-1.0, 1.0);
-	} else {
-		SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:indexPath.row];
+	}
+    else if (indexPath.section == 1 && indexPath.row == 0) {
+        SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:0];
+        cell.imageView.image = entry->img;
+        cell.textLabel.text = @"New Login Flow";
+    }
+    else {
+		SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:indexPath.row-1];
 		cell.imageView.image = entry->img;
 		cell.textLabel.text = entry->title;
 	}
@@ -182,8 +195,12 @@
 
 	if (indexPath.section == 0) {
 		[PhoneMainView.instance changeCurrentView:SettingsView.compositeViewDescription];
-	} else {
-		SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:indexPath.row];
+	}
+    else if (indexPath.section == 1 && indexPath.row == 0) {
+        [self navigateToLoginFlowViewController];
+    }
+    else {
+		SideMenuEntry *entry = [_sideMenuEntries objectAtIndex:indexPath.row-1];
 		LOGI(@"Entry %@ has been tapped", entry->title);
 		if (entry->onTapBlock == nil) {
 			LOGF(@"Entry %@ has no onTapBlock!", entry->title);

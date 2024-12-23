@@ -40,92 +40,154 @@
                         <constraint firstAttribute="height" constant="1" id="gTJ-Wx-yig"/>
                     </constraints>
                 </view>
-                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="historyButton" customClass="UIIconButton">
-                    <rect key="frame" x="0.0" y="0.0" width="90" height="60"/>
-                    <accessibility key="accessibilityConfiguration" label="History"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kw-mx-jmv" userLabel="HistoryView">
+                    <rect key="frame" x="0.0" y="1" width="90" height="74"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2M-vv-NUX">
+                            <rect key="frame" x="22.000000000000004" y="47" width="46.333333333333343" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="historyButton" customClass="UIIconButton">
+                            <rect key="frame" x="30" y="12" width="30" height="30"/>
+                            <accessibility key="accessibilityConfiguration" label="History"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="4DT-hN-aZ6"/>
+                                <constraint firstAttribute="width" constant="30" id="PZb-sh-xeI"/>
+                            </constraints>
+                            <state key="normal" image="clock-icon"/>
+                            <state key="disabled" image="footer_history_disabled.png"/>
+                            <state key="highlighted" backgroundImage="color_A.png"/>
+                            <connections>
+                                <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="22"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="tdy-Jo-saC"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="999" constant="90" id="uaO-TE-Td2"/>
+                        <constraint firstItem="6" firstAttribute="centerX" secondItem="9kw-mx-jmv" secondAttribute="centerX" id="eD9-TA-39Q"/>
+                        <constraint firstItem="Y2M-vv-NUX" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="5" id="h3J-LA-Nag"/>
+                        <constraint firstItem="Y2M-vv-NUX" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="oMQ-8e-4HJ"/>
+                        <constraint firstItem="6" firstAttribute="centerY" secondItem="9kw-mx-jmv" secondAttribute="centerY" constant="-10" id="rYt-Aj-hhg"/>
                     </constraints>
-                    <state key="normal" image="clock-icon.png"/>
-                    <state key="disabled" image="footer_history_disabled.png"/>
-                    <state key="highlighted" backgroundImage="color_A.png"/>
-                    <connections>
-                        <action selector="onHistoryClick:" destination="-1" eventType="touchUpInside" id="22"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2M-vv-NUX">
-                    <rect key="frame" x="22" y="45" width="46" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
-                    <rect key="frame" x="90" y="0.0" width="90" height="60"/>
-                    <accessibility key="accessibilityConfiguration" label="Contacts"/>
-                    <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="person-icon.png"/>
-                    <state key="disabled" image="footer_contacts_disabled.png"/>
-                    <state key="selected">
-                        <color key="titleColor" red="0.76000285148620605" green="0.21515019237995148" blue="0.12376989424228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <state key="highlighted" backgroundImage="color_A.png"/>
-                    <connections>
-                        <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="23"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZS-or-bw2">
-                    <rect key="frame" x="109" y="45" width="52" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keypad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtI-xJ-cgM">
-                    <rect key="frame" x="204" y="45" width="42.333333333333343" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
-                    <rect key="frame" x="180" y="0.0" width="90" height="60"/>
-                    <accessibility key="accessibilityConfiguration" label="Dialer"/>
-                    <state key="normal" image="keypad-icon.png"/>
-                    <state key="disabled" image="footer_dialer_disabled.png"/>
-                    <state key="highlighted" backgroundImage="color_A.png"/>
-                    <connections>
-                        <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="24"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
-                    <rect key="frame" x="270" y="0.0" width="90" height="60"/>
-                    <accessibility key="accessibilityConfiguration" label="Chat"/>
-                    <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                    <state key="normal" image="chat-icon.png"/>
-                    <state key="disabled" image="footer_chat_disabled.png"/>
-                    <state key="highlighted" backgroundImage="color_A.png"/>
-                    <connections>
-                        <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="26"/>
-                    </connections>
-                </button>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mI3-fH-KsT" userLabel="ContactBtnView">
+                    <rect key="frame" x="90" y="1" width="90" height="74"/>
+                    <subviews>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
+                            <rect key="frame" x="30" y="12" width="30" height="30"/>
+                            <accessibility key="accessibilityConfiguration" label="Contacts"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="1V2-zw-Aua"/>
+                                <constraint firstAttribute="width" constant="30" id="b1o-Ln-X1v"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="person-icon"/>
+                            <state key="disabled" image="footer_contacts_disabled.png"/>
+                            <state key="selected">
+                                <color key="titleColor" red="0.76000285148620605" green="0.21515019237995148" blue="0.12376989424228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted" backgroundImage="color_A.png"/>
+                            <connections>
+                                <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="23"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZS-or-bw2">
+                            <rect key="frame" x="19" y="47" width="52" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="GZS-or-bw2" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="D54-Et-0mu"/>
+                        <constraint firstItem="8" firstAttribute="centerY" secondItem="mI3-fH-KsT" secondAttribute="centerY" constant="-10" id="aHj-tS-gmi"/>
+                        <constraint firstItem="8" firstAttribute="centerX" secondItem="mI3-fH-KsT" secondAttribute="centerX" id="jFy-9v-10d"/>
+                        <constraint firstItem="GZS-or-bw2" firstAttribute="top" secondItem="8" secondAttribute="bottom" constant="5" id="tOh-ha-YwE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Wc-fT-UbK" userLabel="KeypadBtnView">
+                    <rect key="frame" x="180" y="1" width="90" height="74"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keypad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtI-xJ-cgM">
+                            <rect key="frame" x="24.000000000000004" y="47" width="42.333333333333343" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
+                            <rect key="frame" x="30" y="12" width="30" height="30"/>
+                            <accessibility key="accessibilityConfiguration" label="Dialer"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="8CP-8J-2W1"/>
+                                <constraint firstAttribute="width" constant="30" id="SgJ-rl-BHs"/>
+                            </constraints>
+                            <state key="normal" image="keypad-icon"/>
+                            <state key="disabled" image="footer_dialer_disabled.png"/>
+                            <state key="highlighted" backgroundImage="color_A.png"/>
+                            <connections>
+                                <action selector="onDialerClick:" destination="-1" eventType="touchUpInside" id="24"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="7" firstAttribute="centerY" secondItem="8Wc-fT-UbK" secondAttribute="centerY" constant="-10" id="B8N-5o-smL"/>
+                        <constraint firstItem="GtI-xJ-cgM" firstAttribute="centerX" secondItem="7" secondAttribute="centerX" id="d0G-HG-ApM"/>
+                        <constraint firstItem="7" firstAttribute="centerX" secondItem="8Wc-fT-UbK" secondAttribute="centerX" id="nYM-yb-NOp"/>
+                        <constraint firstItem="GtI-xJ-cgM" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="5" id="yzT-f5-gdX"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wb-j8-bWj" userLabel="ChatBtnView">
+                    <rect key="frame" x="270" y="1" width="90" height="74"/>
+                    <subviews>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
+                            <rect key="frame" x="30" y="12" width="30" height="30"/>
+                            <accessibility key="accessibilityConfiguration" label="Chat"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="RA2-IK-w6m"/>
+                                <constraint firstAttribute="width" constant="30" id="cB7-vb-aD2"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" image="chats-icon"/>
+                            <state key="disabled" image="footer_chat_disabled.png"/>
+                            <state key="highlighted" backgroundImage="color_A.png"/>
+                            <connections>
+                                <action selector="onChatClick:" destination="-1" eventType="touchUpInside" id="26"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-vI-Emg">
+                            <rect key="frame" x="28.666666666666686" y="47" width="33" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="iul-vI-Emg" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" id="RkW-jT-mjX"/>
+                        <constraint firstItem="5" firstAttribute="centerX" secondItem="7wb-j8-bWj" secondAttribute="centerX" id="aNv-xc-hjS"/>
+                        <constraint firstItem="5" firstAttribute="centerY" secondItem="7wb-j8-bWj" secondAttribute="centerY" constant="-10" id="cIZ-ZX-OKG"/>
+                        <constraint firstItem="iul-vI-Emg" firstAttribute="top" secondItem="5" secondAttribute="bottom" constant="5" id="mk7-U9-Nw2"/>
+                    </constraints>
+                </view>
                 <imageView hidden="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="color_A.png" translatesAutoresizingMaskIntoConstraints="NO" id="eC3-Hw-cqQ" userLabel="selectedButtonImage">
-                    <rect key="frame" x="180" y="72" width="90" height="3"/>
+                    <rect key="frame" x="180" y="75" width="90" height="2"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
                 <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37" userLabel="chatNotificationView" customClass="UIBouncingView">
                     <rect key="frame" x="317" y="0.0" width="22" height="22"/>
                     <subviews>
-                        <imageView hidden="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" ambiguous="YES" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="chatNotificationImage">
-                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                        <imageView hidden="YES" userInteractionEnabled="NO" tag="8" contentMode="scaleAspectFit" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="chatNotificationImage">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" ambiguous="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="chatNotificationLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="9" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="chatNotificationLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                             <accessibility key="accessibilityConfiguration" label="Missed message(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
                             </accessibility>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="iwF-q5-BVm"/>
-                                <constraint firstAttribute="width" constant="21" id="zqK-TI-Epg"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -133,12 +195,16 @@
                     </subviews>
                     <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="38" firstAttribute="trailing" secondItem="39" secondAttribute="trailing" id="1Wv-I9-U4P"/>
+                        <constraint firstItem="39" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="0IO-DF-t8r"/>
+                        <constraint firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="8VQ-Mz-bqu"/>
+                        <constraint firstAttribute="trailing" secondItem="39" secondAttribute="trailing" id="9au-sA-FE4"/>
                         <constraint firstAttribute="width" constant="22" id="C74-Lr-6bY"/>
-                        <constraint firstItem="38" firstAttribute="leading" secondItem="39" secondAttribute="leading" id="gwA-My-Kht"/>
-                        <constraint firstItem="38" firstAttribute="top" secondItem="39" secondAttribute="top" id="h42-T9-3pk"/>
+                        <constraint firstItem="38" firstAttribute="top" secondItem="37" secondAttribute="top" id="DQq-Lf-QTI"/>
+                        <constraint firstItem="39" firstAttribute="top" secondItem="37" secondAttribute="top" id="SWh-RZ-6Qh"/>
                         <constraint firstAttribute="height" constant="22" id="hgC-IS-wpG"/>
-                        <constraint firstItem="38" firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="zB4-xF-eFx"/>
+                        <constraint firstAttribute="bottom" secondItem="38" secondAttribute="bottom" id="qbO-Tr-G9d"/>
+                        <constraint firstItem="38" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="uxm-ft-pRR"/>
+                        <constraint firstAttribute="trailing" secondItem="38" secondAttribute="trailing" id="zMN-1d-3aw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -146,19 +212,18 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32" userLabel="historyNotificationView" customClass="UIBouncingView">
-                    <rect key="frame" x="48" y="0.0" width="22" height="25"/>
+                <view hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32" userLabel="historyNotificationView" customClass="UIBouncingView">
+                    <rect key="frame" x="48" y="1" width="21" height="21"/>
                     <subviews>
                         <imageView hidden="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="33" userLabel="historyNotificationImage">
-                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <rect key="frame" x="-3" y="0.0" width="22.333333333333332" height="21"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="historyNotificationLabel">
-                            <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                            <rect key="frame" x="1.6666666666666643" y="0.0" width="17.666666666666668" height="21"/>
                             <accessibility key="accessibilityConfiguration" label="Missed call(s)">
                                 <accessibilityTraits key="traits" none="YES"/>
                             </accessibility>
                             <constraints>
-                                <constraint firstAttribute="width" constant="21" id="DvR-ME-ArI"/>
                                 <constraint firstAttribute="height" constant="21" id="H1j-zr-Pcv"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -169,13 +234,12 @@
                     <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="34" firstAttribute="bottom" secondItem="33" secondAttribute="bottom" id="4qt-Vf-PiU"/>
+                        <constraint firstAttribute="height" constant="21" id="Abq-kz-djF"/>
                         <constraint firstItem="34" firstAttribute="trailing" secondItem="33" secondAttribute="trailing" id="JK1-mm-VOa"/>
                         <constraint firstItem="34" firstAttribute="top" secondItem="33" secondAttribute="top" id="aH4-QM-9Aw"/>
-                        <constraint firstItem="34" firstAttribute="leading" secondItem="33" secondAttribute="leading" id="b0x-iK-z1u"/>
                         <constraint firstItem="34" firstAttribute="centerY" secondItem="32" secondAttribute="centerY" id="f51-a2-Djx"/>
                         <constraint firstItem="34" firstAttribute="centerX" secondItem="32" secondAttribute="centerX" id="f5E-H4-wNl"/>
-                        <constraint firstItem="34" firstAttribute="leading" secondItem="32" secondAttribute="leading" id="mOP-Ur-BB0"/>
-                        <constraint firstItem="34" firstAttribute="top" secondItem="32" secondAttribute="top" id="uwb-Cd-RvI"/>
+                        <constraint firstAttribute="width" constant="21" id="rc6-nQ-sGx"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -183,45 +247,34 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iul-vI-Emg">
-                    <rect key="frame" x="298.66666666666669" y="45" width="33" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="8Wc-fT-UbK" secondAttribute="bottom" id="0yp-VR-53q"/>
                 <constraint firstAttribute="trailing" secondItem="qbO-g3-h89" secondAttribute="trailing" id="1SO-tF-NfI"/>
-                <constraint firstItem="7" firstAttribute="width" secondItem="8" secondAttribute="width" id="3wL-HU-zrH"/>
-                <constraint firstItem="5" firstAttribute="leading" secondItem="7" secondAttribute="trailing" id="AuF-12-FTc"/>
+                <constraint firstAttribute="bottom" secondItem="7wb-j8-bWj" secondAttribute="bottom" id="3r2-4e-Rov"/>
                 <constraint firstAttribute="bottom" secondItem="qbO-g3-h89" secondAttribute="bottom" id="Bwn-ZI-pFP"/>
-                <constraint firstItem="iul-vI-Emg" firstAttribute="centerX" secondItem="5" secondAttribute="centerX" id="Bzi-Jh-EnF"/>
-                <constraint firstItem="iul-vI-Emg" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" id="Hq6-q6-zDN"/>
-                <constraint firstItem="GZS-or-bw2" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="KGe-PR-xIW"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="8" secondAttribute="trailing" id="KxF-9O-BQ3"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="3" secondAttribute="top" id="LwI-Gd-Aw5"/>
-                <constraint firstItem="6" firstAttribute="height" secondItem="8" secondAttribute="height" id="NZy-BM-ZKD"/>
-                <constraint firstItem="8" firstAttribute="width" secondItem="6" secondAttribute="width" id="RLi-kO-hlr"/>
+                <constraint firstItem="8Wc-fT-UbK" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="H3x-Wf-2M0"/>
+                <constraint firstItem="7wb-j8-bWj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="H4w-4s-fd0"/>
+                <constraint firstItem="8Wc-fT-UbK" firstAttribute="width" secondItem="7wb-j8-bWj" secondAttribute="width" id="HSe-60-T0f"/>
+                <constraint firstItem="32" firstAttribute="leading" secondItem="9kw-mx-jmv" secondAttribute="trailing" constant="-42" id="Ky8-60-ZED"/>
+                <constraint firstItem="9kw-mx-jmv" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="N39-W5-pT5"/>
+                <constraint firstAttribute="trailing" secondItem="7wb-j8-bWj" secondAttribute="trailing" id="NHk-8x-IVC"/>
                 <constraint firstItem="qbO-g3-h89" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="RlI-G1-KoM"/>
-                <constraint firstItem="GtI-xJ-cgM" firstAttribute="centerX" secondItem="7" secondAttribute="centerX" id="TKq-5Y-1QW"/>
+                <constraint firstItem="mI3-fH-KsT" firstAttribute="leading" secondItem="9kw-mx-jmv" secondAttribute="trailing" id="SqP-WG-XKe"/>
+                <constraint firstItem="mI3-fH-KsT" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="U59-nS-vbG"/>
                 <constraint firstItem="cGC-bf-1l1" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="9" id="UBl-Wt-U5W"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="V2s-xw-WQy"/>
-                <constraint firstItem="Y2M-vv-NUX" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="V9T-s5-6sd"/>
-                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="trailing" id="YhB-rN-wub"/>
-                <constraint firstItem="GtI-xJ-cgM" firstAttribute="bottom" secondItem="7" secondAttribute="bottom" id="c6o-SP-WEE"/>
-                <constraint firstItem="5" firstAttribute="width" secondItem="7" secondAttribute="width" id="dMu-dW-buA"/>
+                <constraint firstItem="8Wc-fT-UbK" firstAttribute="leading" secondItem="mI3-fH-KsT" secondAttribute="trailing" id="VKk-X3-1mD"/>
+                <constraint firstAttribute="bottom" secondItem="9kw-mx-jmv" secondAttribute="bottom" id="WHh-DK-qXs"/>
+                <constraint firstItem="9kw-mx-jmv" firstAttribute="width" secondItem="7wb-j8-bWj" secondAttribute="width" id="WoL-gS-3tx"/>
+                <constraint firstItem="7wb-j8-bWj" firstAttribute="leading" secondItem="8Wc-fT-UbK" secondAttribute="trailing" id="bzN-ib-KbN"/>
+                <constraint firstItem="32" firstAttribute="top" secondItem="9kw-mx-jmv" secondAttribute="top" id="c7f-Bf-Agh"/>
+                <constraint firstItem="7wb-j8-bWj" firstAttribute="width" secondItem="mI3-fH-KsT" secondAttribute="width" id="fAX-ic-KM7"/>
                 <constraint firstItem="qbO-g3-h89" firstAttribute="top" secondItem="3" secondAttribute="top" id="gZO-zn-HjX"/>
-                <constraint firstItem="7" firstAttribute="height" secondItem="5" secondAttribute="height" id="gtl-Xa-zS4"/>
-                <constraint firstItem="8" firstAttribute="top" secondItem="3" secondAttribute="top" id="k0F-SX-xma"/>
-                <constraint firstItem="Y2M-vv-NUX" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="qHl-NJ-Vyg"/>
-                <constraint firstItem="8" firstAttribute="height" secondItem="7" secondAttribute="height" id="qhu-ST-Pfp"/>
-                <constraint firstItem="5" firstAttribute="top" secondItem="3" secondAttribute="top" id="qpN-sm-b2S"/>
+                <constraint firstItem="9kw-mx-jmv" firstAttribute="top" secondItem="3" secondAttribute="top" constant="1" id="j4e-dc-sSR"/>
+                <constraint firstAttribute="bottom" secondItem="mI3-fH-KsT" secondAttribute="bottom" id="laC-cQ-eJs"/>
                 <constraint firstAttribute="trailing" secondItem="cGC-bf-1l1" secondAttribute="trailing" constant="9" id="tSt-Z1-aBa"/>
-                <constraint firstItem="7" firstAttribute="top" secondItem="3" secondAttribute="top" id="thB-0j-MtI"/>
                 <constraint firstItem="cGC-bf-1l1" firstAttribute="top" secondItem="3" secondAttribute="top" id="uv3-BX-P1P"/>
                 <constraint firstAttribute="trailing" secondItem="37" secondAttribute="trailing" constant="21" id="vHn-32-4Wf"/>
-                <constraint firstItem="7" firstAttribute="leading" secondItem="8" secondAttribute="trailing" id="vox-1Z-oLn"/>
-                <constraint firstItem="GZS-or-bw2" firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="wsV-7d-dfy"/>
                 <constraint firstItem="37" firstAttribute="top" secondItem="3" secondAttribute="top" id="z2v-R2-C14"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -338,8 +391,8 @@
         </view>
     </objects>
     <resources>
-        <image name="chat-icon.png" width="32" height="32"/>
-        <image name="clock-icon.png" width="32" height="32"/>
+        <image name="chats-icon" width="50" height="50"/>
+        <image name="clock-icon" width="50" height="50"/>
         <image name="color_A.png" width="2" height="2"/>
         <image name="color_C.png" width="2" height="2"/>
         <image name="footer_chat_default.png" width="44" height="44"/>
@@ -351,8 +404,8 @@
         <image name="footer_history_default.png" width="47.200000762939453" height="47.200000762939453"/>
         <image name="footer_history_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
         <image name="history_chat_indicator.png" width="22.399999618530273" height="21.600000381469727"/>
-        <image name="keypad-icon.png" width="32" height="32"/>
-        <image name="person-icon.png" width="32" height="29"/>
+        <image name="keypad-icon" width="50" height="50"/>
+        <image name="person-icon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

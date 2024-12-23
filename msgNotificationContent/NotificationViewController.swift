@@ -28,7 +28,7 @@ import FirebaseAuth
 
 #endif
 
-var APP_GROUP_ID = "group.msl.linphone.phone.msgNotification"
+var APP_GROUP_ID = "group.regremipa.piov.msgNotifContent"
 var isReplySent: Bool = false
 var needToStop: Bool = false
 var coreStopped: Bool = false

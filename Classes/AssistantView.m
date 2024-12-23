@@ -128,6 +128,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 										   selector:@selector(onAccountAuthenticationTokenReceived:)
 											   name:kLinphoneAccountCreationAuthenticationTokenReceived
 											 object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @YES}];
 
 	if (!mustRestoreView) {
 		new_account = NULL;
@@ -163,6 +166,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[NSNotificationCenter.defaultCenter removeObserver:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @NO}];
 }
 
 - (void)fitContent {

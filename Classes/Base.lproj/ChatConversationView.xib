@@ -94,6 +94,7 @@
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="left" fixedFrame="YES" text="Contact1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="addressLabel">
                                     <rect key="frame" x="75" y="0.0" width="149" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                     <accessibility key="accessibilityConfiguration" label="Contact name">
                                         <accessibilityTraits key="traits" none="YES"/>
                                     </accessibility>

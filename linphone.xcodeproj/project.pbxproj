@@ -719,22 +719,6 @@
 		C5211CCD2D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
 		C5211CCE2D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
 		C5211CCF2D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
-		C5489B6A2D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
-		C5489B6B2D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
-		C5489B6C2D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
-		C5489B6D2D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
-		C5489B6E2D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
-		C5489B6F2D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
-		C5489B702D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
-		C5489B712D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
-		C5489B722D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
-		C5489B732D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
-		C5489B742D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
-		C5489B752D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
-		C5489B762D0C719100343167 /* clock-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B672D0C719100343167 /* clock-icon.png */; };
-		C5489B772D0C719100343167 /* keypad-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B682D0C719100343167 /* keypad-icon.png */; };
-		C5489B782D0C719100343167 /* person-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B692D0C719100343167 /* person-icon.png */; };
-		C5489B792D0C719100343167 /* chat-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C5489B662D0C719100343167 /* chat-icon.png */; };
 		C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
@@ -743,6 +727,8 @@
 		C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
 		C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
 		C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */; };
+		C57C498E2D1450D800330515 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57C498D2D1450D800330515 /* LoginStoryboard.storyboard */; };
+		C57C49912D14512800330515 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57C49902D14512800330515 /* LoginViewController.swift */; };
 		C5E14F6F2D0C3CAE008C76F1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F6E2D0C3CAE008C76F1 /* FirebaseAuth */; };
 		C5E14F712D0C3CAE008C76F1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F702D0C3CAE008C76F1 /* FirebaseCore */; };
 		C5E14F732D0C3CAE008C76F1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C5E14F722D0C3CAE008C76F1 /* FirebaseCrashlytics */; };
@@ -2008,12 +1994,10 @@
 		C5211CA12D0FF3590063E223 /* dialpad-hash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-hash.png"; sourceTree = "<group>"; };
 		C5211CA22D0FF3590063E223 /* dialpad-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-star.png"; sourceTree = "<group>"; };
 		C5211CA32D0FF3590063E223 /* dialpad-zero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-zero.png"; sourceTree = "<group>"; };
-		C5489B662D0C719100343167 /* chat-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chat-icon.png"; sourceTree = "<group>"; };
-		C5489B672D0C719100343167 /* clock-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-icon.png"; sourceTree = "<group>"; };
-		C5489B682D0C719100343167 /* keypad-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keypad-icon.png"; sourceTree = "<group>"; };
-		C5489B692D0C719100343167 /* person-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person-icon.png"; sourceTree = "<group>"; };
 		C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mango_logo.png; sourceTree = "<group>"; };
 		C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-substract.png"; sourceTree = "<group>"; };
+		C57C498D2D1450D800330515 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		C57C49902D14512800330515 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5ECF1332D11409B00F158D5 /* sidebar-union.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidebar-union.png"; sourceTree = "<group>"; };
 		C61B1BF12667D075001A4E4A /* menu_security_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_security_default.png; sourceTree = "<group>"; };
 		C61B1BF32667D202001A4E4A /* more_menu_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_menu_default.png; sourceTree = "<group>"; };
@@ -2911,10 +2895,6 @@
 				C5211CA12D0FF3590063E223 /* dialpad-hash.png */,
 				C5211CA22D0FF3590063E223 /* dialpad-star.png */,
 				C5211CA32D0FF3590063E223 /* dialpad-zero.png */,
-				C5489B662D0C719100343167 /* chat-icon.png */,
-				C5489B672D0C719100343167 /* clock-icon.png */,
-				C5489B682D0C719100343167 /* keypad-icon.png */,
-				C5489B692D0C719100343167 /* person-icon.png */,
 				D7A4C0052A3B135800EFBD1B /* new_chat_attachment_default.png */,
 				D7A4C0072A3B135800EFBD1B /* new_chat_send_default.png */,
 				D7A4C0062A3B135800EFBD1B /* new_vr_off.png */,
@@ -3654,6 +3634,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C57C498F2D1450F100330515 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				C57C498D2D1450D800330515 /* LoginStoryboard.storyboard */,
+				C57C49902D14512800330515 /* LoginViewController.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
 		C63F7196285A24B10066163B /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -3664,6 +3653,7 @@
 				C63F720B285A24B10066163B /* ProviderDelegate.swift */,
 				C63F720C285A24B10066163B /* VFSUtil.swift */,
 				C63F71B1285A24B10066163B /* AppManager.swift */,
+				C57C498F2D1450F100330515 /* LoginFlow */,
 				D7421D99292283AE00290CAB /* Chat */,
 				C63F7199285A24B10066163B /* Conference */,
 				C63F71AA285A24B10066163B /* Util */,
@@ -4297,7 +4287,6 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = KP83RY2D26;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -4320,7 +4309,6 @@
 					};
 					61AE364A20C00B370089D9D3 = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = KP83RY2D26;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -4330,13 +4318,11 @@
 					};
 					6637AF8C288593AF00965733 = {
 						CreatedOnToolsVersion = 13.4.1;
-						DevelopmentTeam = KP83RY2D26;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 					EA5F25D8232BD3E200475F2E = {
 						CreatedOnToolsVersion = 11.0;
-						DevelopmentTeam = KP83RY2D26;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -4346,7 +4332,6 @@
 					};
 					EA8CB826239F96CA00C330CC = {
 						CreatedOnToolsVersion = 10.3;
-						DevelopmentTeam = KP83RY2D26;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -4509,6 +4494,7 @@
 				633FEF001D3CD55A0014B822 /* options_default.png in Resources */,
 				CF15F21F20E4F9A3008B1DE6 /* UIImageViewDeletable.xib in Resources */,
 				633FEE951D3CD55A0014B822 /* micro_default@2x.png in Resources */,
+				C57C498E2D1450D800330515 /* LoginStoryboard.storyboard in Resources */,
 				633FEE6A1D3CD5590014B822 /* footer_dialer_default.png in Resources */,
 				633FEEC91D3CD55A0014B822 /* numpad_5~ipad.png in Resources */,
 				633FEDFA1D3CD5590014B822 /* camera_selected.png in Resources */,
@@ -4847,10 +4833,6 @@
 				633FEE191D3CD5590014B822 /* chat_send_over@2x.png in Resources */,
 				633FEF181D3CD55A0014B822 /* pause_small_over_selected.png in Resources */,
 				633FEE001D3CD5590014B822 /* camera_switch_over.png in Resources */,
-				C5489B762D0C719100343167 /* clock-icon.png in Resources */,
-				C5489B772D0C719100343167 /* keypad-icon.png in Resources */,
-				C5489B782D0C719100343167 /* person-icon.png in Resources */,
-				C5489B792D0C719100343167 /* chat-icon.png in Resources */,
 				C622E3F126A81290004F5434 /* vr_on.png in Resources */,
 				633FEF401D3CD55A0014B822 /* select_all_default.png in Resources */,
 				C6B4444426AAD0980076C517 /* file_picture_default.png in Resources */,
@@ -5132,12 +5114,8 @@
 				C5211CAE2D0FF3590063E223 /* dialpad-star.png in Resources */,
 				C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				61AE365220C00B370089D9D3 /* MainInterface.storyboard in Resources */,
-				C5489B6A2D0C719100343167 /* clock-icon.png in Resources */,
 				C5211C932D0FEEB20063E223 /* dialpad-2.png in Resources */,
 				C5211C942D0FEEB20063E223 /* dialpad-1.png in Resources */,
-				C5489B6B2D0C719100343167 /* keypad-icon.png in Resources */,
-				C5489B6C2D0C719100343167 /* person-icon.png in Resources */,
-				C5489B6D2D0C719100343167 /* chat-icon.png in Resources */,
 				C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5169,12 +5147,8 @@
 				C5211CC22D0FF3590063E223 /* dialpad-9.png in Resources */,
 				C5211CC32D0FF3590063E223 /* dialpad-hash.png in Resources */,
 				C5211CC42D0FF3590063E223 /* dialpad-star.png in Resources */,
-				C5489B722D0C719100343167 /* clock-icon.png in Resources */,
 				C5211C952D0FEEB20063E223 /* dialpad-2.png in Resources */,
 				C5211C962D0FEEB20063E223 /* dialpad-1.png in Resources */,
-				C5489B732D0C719100343167 /* keypad-icon.png in Resources */,
-				C5489B742D0C719100343167 /* person-icon.png in Resources */,
-				C5489B752D0C719100343167 /* chat-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5200,10 +5174,6 @@
 				EA88F3AF241BD1F700E66528 /* MainInterface.storyboard in Resources */,
 				EA88A405242A6216007FEC61 /* Localizable.strings in Resources */,
 				6112A01C243B31A700DBD5F5 /* GoogleService-Info.plist in Resources */,
-				C5489B6E2D0C719100343167 /* clock-icon.png in Resources */,
-				C5489B6F2D0C719100343167 /* keypad-icon.png in Resources */,
-				C5489B702D0C719100343167 /* person-icon.png in Resources */,
-				C5489B712D0C719100343167 /* chat-icon.png in Resources */,
 				C55FDD732D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5578,6 +5548,7 @@
 				D3549816158761D0000081D8 /* ContactsListTableView.m in Sources */,
 				D77057F1292E4A340031A970 /* ChatConversationViewModel.swift in Sources */,
 				633888461BFB2C49001D5E7B /* HPTextViewInternal.m in Sources */,
+				C57C49912D14512800330515 /* LoginViewController.swift in Sources */,
 				C63F7242285A24B10066163B /* VoipParticipantCell.swift in Sources */,
 				D35498211587716B000081D8 /* StatusBarView.m in Sources */,
 				D3A55FBC15877E5E003FD403 /* UIContactCell.m in Sources */,
@@ -6300,7 +6271,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6333,7 +6304,7 @@
 					"$(inherited)",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 5.2.3;
+				MARKETING_VERSION = 5.2.5;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -6343,7 +6314,7 @@
 					"-DLINPHONE_SDK_VERSION=\\\"5.3.96\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
@@ -6432,7 +6403,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6462,7 +6433,7 @@
 					"$(inherited)",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 5.2.3;
+				MARKETING_VERSION = 5.2.5;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -6472,7 +6443,7 @@
 					"-DLINPHONE_SDK_VERSION=\\\"5.3.96\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
@@ -6560,7 +6531,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6590,7 +6561,7 @@
 					"$(inherited)",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 5.2.3;
+				MARKETING_VERSION = 5.2.5;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -6600,7 +6571,7 @@
 					"-DLINPHONE_SDK_VERSION=\\\"5.3.96\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
@@ -6687,7 +6658,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6717,7 +6688,7 @@
 					"$(inherited)",
 				);
 				LINK_WITH_STANDARD_LIBRARIES = YES;
-				MARKETING_VERSION = 5.2.3;
+				MARKETING_VERSION = 5.2.5;
 				OTHER_CFLAGS = (
 					"-DBCTBX_LOG_DOMAIN=\\\"ios\\\"",
 					"-DCHECK_VERSION_UPDATE=FALSE",
@@ -6727,7 +6698,7 @@
 					"-DLINPHONE_SDK_VERSION=\\\"5.3.96\\\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)app";
 				PRODUCT_NAME = linphone;
 				PROVISIONING_PROFILE = "";
@@ -6767,7 +6738,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6779,7 +6750,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -6810,7 +6781,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -6821,7 +6792,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRIP_SWIFT_SYMBOLS = NO;
@@ -6851,7 +6822,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -6862,7 +6833,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6895,7 +6866,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -6906,7 +6877,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 5.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.linphoneExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.linphoneExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -6936,7 +6907,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/linphone-sdk\"",
@@ -6965,7 +6936,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.IncommingCallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.IncommingCallUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REEXPORTED_FRAMEWORK_NAMES = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -6998,7 +6969,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
@@ -7014,7 +6985,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.IncommingCallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.IncommingCallUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -7046,7 +7017,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
@@ -7062,7 +7033,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.IncommingCallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.IncommingCallUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -7094,7 +7065,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
@@ -7110,7 +7081,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.IncommingCallUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.IncommingCallUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -7195,7 +7166,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7218,7 +7189,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7255,7 +7226,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7274,7 +7245,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7311,7 +7282,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7330,7 +7301,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7368,7 +7339,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7387,7 +7358,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7425,7 +7396,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -7448,7 +7419,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7485,7 +7456,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7504,7 +7475,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7541,7 +7512,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7560,7 +7531,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -7598,7 +7569,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = KP83RY2D26;
+				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -7617,7 +7588,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = in.msl.linphone.phone.msgNotificationContent;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regremipa.piov.msgNotificationContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

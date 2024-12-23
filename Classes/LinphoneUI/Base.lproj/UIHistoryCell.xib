@@ -39,9 +39,9 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfl-dI-bSt" userLabel="detailsButton" customClass="UIIconButton">
                     <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.035294117649999998" green="0.054901960780000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" image="info.circle.fill" catalog="system">
-                        <color key="titleShadowColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" red="0.035294117647058823" green="0.054901960784313725" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <state key="highlighted" image="list_details_over.png"/>
                     <connections>
