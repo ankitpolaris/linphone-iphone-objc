@@ -119,7 +119,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[_starButton setDigit:'*'];
 	[_hashButton setDigit:'#'];
 
-	[_addressField setAdjustsFontSizeToFitWidth:TRUE]; // Not put it in IB: issue with placeholder size
+//	[_addressField setAdjustsFontSizeToFitWidth:TRUE]; // Not put it in IB: issue with placeholder size
 
 	UILongPressGestureRecognizer *backspaceLongGesture =
 		[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onBackspaceLongClick:)];

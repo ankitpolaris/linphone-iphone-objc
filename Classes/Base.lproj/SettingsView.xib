@@ -31,20 +31,22 @@
                             <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqM-h2-idp" userLabel="titleLabel">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqM-h2-idp" userLabel="titleLabel">
                                     <rect key="frame" x="87" y="0.0" width="219" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                    <color key="textColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTj-vM-UtG" userLabel="backButton" customClass="UIInterfaceStyleButton">
-                                    <rect key="frame" x="0.0" y="0.0" width="86" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                     <accessibility key="accessibilityConfiguration" identifier="settings_view_back" label="Back"/>
+                                    <color key="tintColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="back_default.png">
+                                    <state key="normal" image="chevron.backward" catalog="system">
                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                     </state>
                                     <state key="disabled" image="back_disabled.png"/>
                                     <state key="highlighted" backgroundImage="color_E.png"/>
@@ -66,7 +68,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="-61.594202898550726" y="175.11160714285714"/>
+            <point key="canvasLocation" x="-61.832061068702288" y="174.64788732394368"/>
         </view>
         <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="10" userLabel="navigationController" customClass="UINavigationControllerEx">
             <extendedEdge key="edgesForExtendedLayout"/>
@@ -83,8 +85,8 @@
         </viewController>
     </objects>
     <resources>
-        <image name="back_default.png" width="38.400001525878906" height="35.200000762939453"/>
         <image name="back_disabled.png" width="38.400001525878906" height="35.200000762939453"/>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="color_E.png" width="2" height="2"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

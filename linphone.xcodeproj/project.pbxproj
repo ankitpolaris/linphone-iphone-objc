@@ -667,58 +667,10 @@
 		8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D941F9F336100BEA0C1 /* check_unselected.png */; };
 		8CF25D9D1F9F76BD00BEA0C1 /* chat_group_informations.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9B1F9F76BC00BEA0C1 /* chat_group_informations.png */; };
 		8CF25D9E1F9F76BD00BEA0C1 /* chat_group_informations@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9C1F9F76BD00BEA0C1 /* chat_group_informations@2x.png */; };
-		C5211C912D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
-		C5211C922D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
-		C5211C932D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
-		C5211C942D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
-		C5211C952D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
-		C5211C962D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
-		C5211C972D0FEEB20063E223 /* dialpad-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C902D0FEEB20063E223 /* dialpad-2.png */; };
-		C5211C982D0FEEB20063E223 /* dialpad-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C8F2D0FEEB20063E223 /* dialpad-1.png */; };
-		C5211CA42D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
-		C5211CA52D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
-		C5211CA62D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
 		C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CA82D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
-		C5211CA92D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
-		C5211CAA2D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
-		C5211CAB2D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
-		C5211CAC2D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
-		C5211CAD2D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
-		C5211CAE2D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
-		C5211CAF2D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
-		C5211CB02D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
-		C5211CB12D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
 		C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CB32D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
-		C5211CB42D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
-		C5211CB52D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
-		C5211CB62D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
-		C5211CB72D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
-		C5211CB82D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
-		C5211CB92D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
-		C5211CBA2D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
-		C5211CBB2D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
-		C5211CBC2D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
 		C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CBE2D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
-		C5211CBF2D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
-		C5211CC02D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
-		C5211CC12D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
-		C5211CC22D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
-		C5211CC32D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
-		C5211CC42D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
-		C5211CC52D0FF3590063E223 /* dialpad-6.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9C2D0FF3590063E223 /* dialpad-6.png */; };
-		C5211CC62D0FF3590063E223 /* dialpad-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9D2D0FF3590063E223 /* dialpad-7.png */; };
-		C5211CC72D0FF3590063E223 /* dialpad-8.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9E2D0FF3590063E223 /* dialpad-8.png */; };
 		C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CC92D0FF3590063E223 /* dialpad-3.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C992D0FF3590063E223 /* dialpad-3.png */; };
-		C5211CCA2D0FF3590063E223 /* dialpad-5.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9B2D0FF3590063E223 /* dialpad-5.png */; };
-		C5211CCB2D0FF3590063E223 /* dialpad-zero.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA32D0FF3590063E223 /* dialpad-zero.png */; };
-		C5211CCC2D0FF3590063E223 /* dialpad-4.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9A2D0FF3590063E223 /* dialpad-4.png */; };
-		C5211CCD2D0FF3590063E223 /* dialpad-9.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211C9F2D0FF3590063E223 /* dialpad-9.png */; };
-		C5211CCE2D0FF3590063E223 /* dialpad-hash.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA12D0FF3590063E223 /* dialpad-hash.png */; };
-		C5211CCF2D0FF3590063E223 /* dialpad-star.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA22D0FF3590063E223 /* dialpad-star.png */; };
 		C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
@@ -1981,19 +1933,7 @@
 		A53B959BF2158A56EC9BAE72 /* Pods_CallUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A843B29FA3A92B57B1A56CD7 /* Pods-CallUITests.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.distribution.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.distribution.xcconfig"; sourceTree = "<group>"; };
 		C2C514E23CC99DF19C6FB68D /* Pods-CallUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.release.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C5211C8F2D0FEEB20063E223 /* dialpad-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-1.png"; sourceTree = "<group>"; };
-		C5211C902D0FEEB20063E223 /* dialpad-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-2.png"; sourceTree = "<group>"; };
-		C5211C992D0FF3590063E223 /* dialpad-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-3.png"; sourceTree = "<group>"; };
-		C5211C9A2D0FF3590063E223 /* dialpad-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-4.png"; sourceTree = "<group>"; };
-		C5211C9B2D0FF3590063E223 /* dialpad-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-5.png"; sourceTree = "<group>"; };
-		C5211C9C2D0FF3590063E223 /* dialpad-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-6.png"; sourceTree = "<group>"; };
-		C5211C9D2D0FF3590063E223 /* dialpad-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-7.png"; sourceTree = "<group>"; };
-		C5211C9E2D0FF3590063E223 /* dialpad-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-8.png"; sourceTree = "<group>"; };
-		C5211C9F2D0FF3590063E223 /* dialpad-9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-9.png"; sourceTree = "<group>"; };
 		C5211CA02D0FF3590063E223 /* dialpad-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-call.png"; sourceTree = "<group>"; };
-		C5211CA12D0FF3590063E223 /* dialpad-hash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-hash.png"; sourceTree = "<group>"; };
-		C5211CA22D0FF3590063E223 /* dialpad-star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-star.png"; sourceTree = "<group>"; };
-		C5211CA32D0FF3590063E223 /* dialpad-zero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-zero.png"; sourceTree = "<group>"; };
 		C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mango_logo.png; sourceTree = "<group>"; };
 		C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-substract.png"; sourceTree = "<group>"; };
 		C57C498D2D1450D800330515 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
@@ -2882,19 +2822,7 @@
 			isa = PBXGroup;
 			children = (
 				C5ECF1332D11409B00F158D5 /* sidebar-union.png */,
-				C5211C8F2D0FEEB20063E223 /* dialpad-1.png */,
-				C5211C902D0FEEB20063E223 /* dialpad-2.png */,
-				C5211C992D0FF3590063E223 /* dialpad-3.png */,
-				C5211C9A2D0FF3590063E223 /* dialpad-4.png */,
-				C5211C9B2D0FF3590063E223 /* dialpad-5.png */,
-				C5211C9C2D0FF3590063E223 /* dialpad-6.png */,
-				C5211C9D2D0FF3590063E223 /* dialpad-7.png */,
-				C5211C9E2D0FF3590063E223 /* dialpad-8.png */,
-				C5211C9F2D0FF3590063E223 /* dialpad-9.png */,
 				C5211CA02D0FF3590063E223 /* dialpad-call.png */,
-				C5211CA12D0FF3590063E223 /* dialpad-hash.png */,
-				C5211CA22D0FF3590063E223 /* dialpad-star.png */,
-				C5211CA32D0FF3590063E223 /* dialpad-zero.png */,
 				D7A4C0052A3B135800EFBD1B /* new_chat_attachment_default.png */,
 				D7A4C0072A3B135800EFBD1B /* new_chat_send_default.png */,
 				D7A4C0062A3B135800EFBD1B /* new_vr_off.png */,
@@ -4538,17 +4466,7 @@
 				639E9C931C0DB7BE00019A75 /* FirstLoginView.xib in Resources */,
 				633FEEF61D3CD55A0014B822 /* numpad_star_over.png in Resources */,
 				633FEEE81D3CD55A0014B822 /* numpad_9_over~ipad@2x.png in Resources */,
-				C5211CC52D0FF3590063E223 /* dialpad-6.png in Resources */,
-				C5211CC62D0FF3590063E223 /* dialpad-7.png in Resources */,
-				C5211CC72D0FF3590063E223 /* dialpad-8.png in Resources */,
 				C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */,
-				C5211CC92D0FF3590063E223 /* dialpad-3.png in Resources */,
-				C5211CCA2D0FF3590063E223 /* dialpad-5.png in Resources */,
-				C5211CCB2D0FF3590063E223 /* dialpad-zero.png in Resources */,
-				C5211CCC2D0FF3590063E223 /* dialpad-4.png in Resources */,
-				C5211CCD2D0FF3590063E223 /* dialpad-9.png in Resources */,
-				C5211CCE2D0FF3590063E223 /* dialpad-hash.png in Resources */,
-				C5211CCF2D0FF3590063E223 /* dialpad-star.png in Resources */,
 				633FEEDE1D3CD55A0014B822 /* numpad_8_over@2x.png in Resources */,
 				633FEEB11D3CD55A0014B822 /* numpad_2~ipad.png in Resources */,
 				633FEE521D3CD5590014B822 /* dialer_alt_back.png in Resources */,
@@ -4566,8 +4484,6 @@
 				633FEEED1D3CD55A0014B822 /* numpad_hash_over.png in Resources */,
 				D7CF13732A2E225200D92165 /* emoji.png in Resources */,
 				633FEE1F1D3CD5590014B822 /* chat_start_body_disabled@2x.png in Resources */,
-				C5211C912D0FEEB20063E223 /* dialpad-2.png in Resources */,
-				C5211C922D0FEEB20063E223 /* dialpad-1.png in Resources */,
 				633FEEF81D3CD55A0014B822 /* numpad_star_over~ipad.png in Resources */,
 				C6A1BB3826E8815400540D50 /* menu_reply_default.png in Resources */,
 				633FEF301D3CD55A0014B822 /* route_speaker_disabled.png in Resources */,
@@ -5100,22 +5016,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5211CA42D0FF3590063E223 /* dialpad-6.png in Resources */,
-				C5211CA52D0FF3590063E223 /* dialpad-7.png in Resources */,
-				C5211CA62D0FF3590063E223 /* dialpad-8.png in Resources */,
 				C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */,
-				C5211CA82D0FF3590063E223 /* dialpad-3.png in Resources */,
-				C5211CA92D0FF3590063E223 /* dialpad-5.png in Resources */,
 				C5ECF1362D11409B00F158D5 /* sidebar-union.png in Resources */,
-				C5211CAA2D0FF3590063E223 /* dialpad-zero.png in Resources */,
-				C5211CAB2D0FF3590063E223 /* dialpad-4.png in Resources */,
-				C5211CAC2D0FF3590063E223 /* dialpad-9.png in Resources */,
-				C5211CAD2D0FF3590063E223 /* dialpad-hash.png in Resources */,
-				C5211CAE2D0FF3590063E223 /* dialpad-star.png in Resources */,
 				C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				61AE365220C00B370089D9D3 /* MainInterface.storyboard in Resources */,
-				C5211C932D0FEEB20063E223 /* dialpad-2.png in Resources */,
-				C5211C942D0FEEB20063E223 /* dialpad-1.png in Resources */,
 				C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5135,20 +5039,8 @@
 				C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 				C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */,
-				C5211CBA2D0FF3590063E223 /* dialpad-6.png in Resources */,
-				C5211CBB2D0FF3590063E223 /* dialpad-7.png in Resources */,
-				C5211CBC2D0FF3590063E223 /* dialpad-8.png in Resources */,
 				C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */,
-				C5211CBE2D0FF3590063E223 /* dialpad-3.png in Resources */,
-				C5211CBF2D0FF3590063E223 /* dialpad-5.png in Resources */,
 				C5ECF1352D11409B00F158D5 /* sidebar-union.png in Resources */,
-				C5211CC02D0FF3590063E223 /* dialpad-zero.png in Resources */,
-				C5211CC12D0FF3590063E223 /* dialpad-4.png in Resources */,
-				C5211CC22D0FF3590063E223 /* dialpad-9.png in Resources */,
-				C5211CC32D0FF3590063E223 /* dialpad-hash.png in Resources */,
-				C5211CC42D0FF3590063E223 /* dialpad-star.png in Resources */,
-				C5211C952D0FEEB20063E223 /* dialpad-2.png in Resources */,
-				C5211C962D0FEEB20063E223 /* dialpad-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5156,21 +5048,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5211CAF2D0FF3590063E223 /* dialpad-6.png in Resources */,
-				C5211CB02D0FF3590063E223 /* dialpad-7.png in Resources */,
-				C5211CB12D0FF3590063E223 /* dialpad-8.png in Resources */,
 				C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */,
 				C5ECF1372D11409B00F158D5 /* sidebar-union.png in Resources */,
-				C5211CB32D0FF3590063E223 /* dialpad-3.png in Resources */,
-				C5211CB42D0FF3590063E223 /* dialpad-5.png in Resources */,
-				C5211CB52D0FF3590063E223 /* dialpad-zero.png in Resources */,
-				C5211CB62D0FF3590063E223 /* dialpad-4.png in Resources */,
-				C5211CB72D0FF3590063E223 /* dialpad-9.png in Resources */,
-				C5211CB82D0FF3590063E223 /* dialpad-hash.png in Resources */,
-				C5211CB92D0FF3590063E223 /* dialpad-star.png in Resources */,
 				C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
-				C5211C972D0FEEB20063E223 /* dialpad-2.png in Resources */,
-				C5211C982D0FEEB20063E223 /* dialpad-1.png in Resources */,
 				EA88F3AF241BD1F700E66528 /* MainInterface.storyboard in Resources */,
 				EA88A405242A6216007FEC61 /* Localizable.strings in Resources */,
 				6112A01C243B31A700DBD5F5 /* GoogleService-Info.plist in Resources */,

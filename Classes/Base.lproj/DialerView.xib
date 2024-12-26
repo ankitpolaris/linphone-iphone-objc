@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -39,11 +39,254 @@
             <subviews>
                 <view contentMode="scaleToFill" id="171">
                     <rect key="frame" x="0.0" y="42" width="540" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" id="178" userLabel="dialer">
+                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialer_background.png" id="AH0-S5-0Ku" userLabel="logoImage">
+                            <rect key="frame" x="99" y="279" width="340" height="294"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="222" userLabel="addContactButton">
+                            <rect key="frame" x="200" y="500" width="180" height="90"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <accessibility key="accessibilityConfiguration" identifier="dialer_view_group_call" label="Add to contact"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="contact_add_default.png" backgroundImage="color_F.png">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="disabled" image="contact_add_disabled.png"/>
+                            <state key="highlighted" backgroundImage="color_E.png"/>
+                            <connections>
+                                <action selector="onAddContactClick:" destination="-1" eventType="touchUpInside" id="230"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="180" userLabel="pad">
+                            <rect key="frame" x="0.0" y="242" width="540" height="480"/>
+                            <subviews>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="1" customClass="UIDigitButton">
+                                    <rect key="frame" x="128" y="83" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="1"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="9cl-E4-PNM"/>
+                                        <constraint firstAttribute="width" constant="80" id="JAA-6e-NrZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="dialpad-1">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_1_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="240"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37" userLabel="2" customClass="UIDigitButton">
+                                    <rect key="frame" x="230" y="83" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="JLK-YA-aRM"/>
+                                        <constraint firstAttribute="height" constant="80" id="ucN-eK-sqv"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-2">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_2_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="241"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29" userLabel="3" customClass="UIDigitButton">
+                                    <rect key="frame" x="332" y="83" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="eRB-yF-jgX"/>
+                                        <constraint firstAttribute="height" constant="80" id="pm8-Kd-sI3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-3">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_3_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="242"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="4" customClass="UIDigitButton">
+                                    <rect key="frame" x="128" y="185" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="4"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-4">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_4_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="243"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31" userLabel="5" customClass="UIDigitButton">
+                                    <rect key="frame" x="230" y="185" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="nLX-VE-hxz"/>
+                                        <constraint firstAttribute="width" constant="80" id="pZ7-OA-PTg"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-5">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_5_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="244"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33" userLabel="6" customClass="UIDigitButton">
+                                    <rect key="frame" x="332" y="185" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="6"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="VGq-4y-h0d"/>
+                                        <constraint firstAttribute="width" constant="80" id="x9j-5v-Xuh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-6">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_6_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="245"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="7" customClass="UIDigitButton">
+                                    <rect key="frame" x="128" y="287" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="7"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="UPx-t3-RED"/>
+                                        <constraint firstAttribute="height" constant="80" id="gZs-Or-7U9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-7">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_7_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="246"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35" userLabel="8" customClass="UIDigitButton">
+                                    <rect key="frame" x="230" y="287" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="8"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="lfX-FV-pT9"/>
+                                        <constraint firstAttribute="width" constant="80" id="zP2-SN-xmN"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-8">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_8_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="247"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="9" customClass="UIDigitButton">
+                                    <rect key="frame" x="332" y="287" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="9"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="TxO-qI-PrL"/>
+                                        <constraint firstAttribute="width" constant="80" id="xHz-xj-dcm"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-9">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_9_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="248"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="*" customClass="UIDigitButton">
+                                    <rect key="frame" x="128" y="389" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="Star"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="N65-1c-4Mg"/>
+                                        <constraint firstAttribute="height" constant="80" id="cea-On-lhE"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-star">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_star_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="249"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="0" customClass="UIDigitButton">
+                                    <rect key="frame" x="230" y="389" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="0"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="b2p-Vv-rcq"/>
+                                        <constraint firstAttribute="width" constant="80" id="cqQ-Fd-ZUs"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-0">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_0_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="250"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41" userLabel="#" customClass="UIDigitButton">
+                                    <rect key="frame" x="332" y="389" width="80" height="80"/>
+                                    <accessibility key="accessibilityConfiguration" label="Hash"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="U2D-8Q-g1r"/>
+                                        <constraint firstAttribute="width" constant="80" id="xIO-wW-J7i"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" image="dialpad-hash">
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="numpad_hash_over.png" backgroundImage="numpad_over_background.png"/>
+                                    <connections>
+                                        <outlet property="addressField" destination="4" id="251"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="41" firstAttribute="leading" secondItem="40" secondAttribute="trailing" constant="22" id="3Dk-cN-cle"/>
+                                <constraint firstItem="35" firstAttribute="top" secondItem="31" secondAttribute="bottom" constant="22" id="3g9-eB-D38"/>
+                                <constraint firstItem="31" firstAttribute="leading" secondItem="30" secondAttribute="trailing" constant="22" id="4QY-Q7-tZj"/>
+                                <constraint firstItem="33" firstAttribute="width" secondItem="38" secondAttribute="width" id="4pc-eu-kiy"/>
+                                <constraint firstItem="33" firstAttribute="top" secondItem="29" secondAttribute="bottom" constant="22" id="Ppb-6I-evJ"/>
+                                <constraint firstItem="31" firstAttribute="top" secondItem="37" secondAttribute="bottom" constant="22" id="QRp-BS-rVX"/>
+                                <constraint firstItem="30" firstAttribute="height" secondItem="38" secondAttribute="height" id="RyN-bw-zy5"/>
+                                <constraint firstItem="31" firstAttribute="centerX" secondItem="37" secondAttribute="centerX" id="SMr-bR-YmO"/>
+                                <constraint firstItem="39" firstAttribute="top" secondItem="34" secondAttribute="bottom" constant="22" id="TPl-Wu-KaK"/>
+                                <constraint firstItem="35" firstAttribute="centerX" secondItem="31" secondAttribute="centerX" id="ZLn-X2-9LZ"/>
+                                <constraint firstItem="37" firstAttribute="leading" secondItem="38" secondAttribute="trailing" constant="22" id="bKV-bK-Qtp"/>
+                                <constraint firstItem="30" firstAttribute="width" secondItem="38" secondAttribute="width" id="cKB-6A-XhK"/>
+                                <constraint firstItem="40" firstAttribute="top" secondItem="35" secondAttribute="bottom" constant="22" id="chW-9Z-pav"/>
+                                <constraint firstItem="30" firstAttribute="top" secondItem="38" secondAttribute="bottom" constant="22" id="dEr-NK-gJB"/>
+                                <constraint firstItem="41" firstAttribute="top" secondItem="36" secondAttribute="bottom" constant="22" id="eYs-aa-Hbv"/>
+                                <constraint firstItem="37" firstAttribute="centerX" secondItem="180" secondAttribute="centerX" id="epv-de-4Zn"/>
+                                <constraint firstAttribute="height" constant="480" id="ex7-he-577"/>
+                                <constraint firstAttribute="bottom" secondItem="40" secondAttribute="bottom" constant="11" id="gAx-xi-iiu"/>
+                                <constraint firstAttribute="bottom" secondItem="41" secondAttribute="bottom" constant="11" id="kU8-7b-15J"/>
+                                <constraint firstAttribute="bottom" secondItem="39" secondAttribute="bottom" constant="11" id="obm-KX-hBM"/>
+                                <constraint firstItem="33" firstAttribute="height" secondItem="38" secondAttribute="height" id="ozO-6J-vcV"/>
+                                <constraint firstItem="36" firstAttribute="leading" secondItem="35" secondAttribute="trailing" constant="22" id="q6i-y7-9Sm"/>
+                                <constraint firstItem="34" firstAttribute="top" secondItem="30" secondAttribute="bottom" constant="22" id="qyL-lf-39K"/>
+                                <constraint firstItem="29" firstAttribute="leading" secondItem="37" secondAttribute="trailing" constant="22" id="r6i-DR-77y"/>
+                                <constraint firstItem="33" firstAttribute="leading" secondItem="31" secondAttribute="trailing" constant="22" id="shV-Ad-OcI"/>
+                                <constraint firstItem="40" firstAttribute="leading" secondItem="39" secondAttribute="trailing" constant="22" id="tjo-uR-PzJ"/>
+                                <constraint firstItem="36" firstAttribute="top" secondItem="33" secondAttribute="bottom" constant="22" id="vcX-PH-4fN"/>
+                                <constraint firstItem="40" firstAttribute="centerX" secondItem="35" secondAttribute="centerX" id="wPd-QL-GhJ"/>
+                                <constraint firstItem="35" firstAttribute="leading" secondItem="34" secondAttribute="trailing" constant="22" id="ykb-hj-cLJ"/>
+                            </constraints>
+                        </view>
+                        <view clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="178" userLabel="dialer">
                             <rect key="frame" x="11" y="0.0" width="518" height="66"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a number or an address" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" minimumFontSize="15" id="4" userLabel="addressField" customClass="UIAddressTextField">
                                     <rect key="frame" x="22" y="0.0" width="330" height="66"/>
@@ -53,7 +296,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="330" id="5hM-ax-PIV"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                     <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="join"/>
                                     <connections>
                                         <action selector="onAddressChange:" destination="-1" eventType="editingChanged" id="FdS-Kl-3dS"/>
@@ -85,196 +328,12 @@
                                 <constraint firstAttribute="height" constant="66" id="s6z-ya-7hb"/>
                             </constraints>
                         </view>
-                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dialer_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="AH0-S5-0Ku" userLabel="logoImage">
-                            <rect key="frame" x="99" y="279" width="340" height="294"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="222" userLabel="addContactButton">
-                            <rect key="frame" x="180" y="381" width="180" height="90"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            <accessibility key="accessibilityConfiguration" identifier="dialer_view_group_call" label="Add to contact"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                            <state key="normal" image="contact_add_default.png" backgroundImage="color_F.png">
-                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <state key="disabled" image="contact_add_disabled.png"/>
-                            <state key="highlighted" backgroundImage="color_E.png"/>
-                            <connections>
-                                <action selector="onAddContactClick:" destination="-1" eventType="touchUpInside" id="230"/>
-                            </connections>
-                        </button>
-                        <view contentMode="scaleToFill" id="180" userLabel="pad">
-                            <rect key="frame" x="0.0" y="100" width="540" height="650"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="1" customClass="UIDigitButton">
-                                    <rect key="frame" x="0.0" y="0.0" width="173" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.40000001000000002" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <accessibility key="accessibilityConfiguration" label="1"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <inset key="imageEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" image="dialpad-1.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_1_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="240"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37" userLabel="2" customClass="UIDigitButton">
-                                    <rect key="frame" x="183" y="0.0" width="174" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="2"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-2.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_2_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="241"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29" userLabel="3" customClass="UIDigitButton">
-                                    <rect key="frame" x="366" y="0.0" width="174" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="3"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-3.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_3_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="242"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30" userLabel="4" customClass="UIDigitButton">
-                                    <rect key="frame" x="0.0" y="163" width="173" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="4"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-4.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_4_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="243"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31" userLabel="5" customClass="UIDigitButton">
-                                    <rect key="frame" x="183" y="163" width="174" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-5.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_5_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="244"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33" userLabel="6" customClass="UIDigitButton">
-                                    <rect key="frame" x="366" y="163" width="174" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="6"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-6.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_6_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="245"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="7" customClass="UIDigitButton">
-                                    <rect key="frame" x="0.0" y="326" width="173" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="7"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-7.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_7_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="246"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35" userLabel="8" customClass="UIDigitButton">
-                                    <rect key="frame" x="183" y="326" width="174" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="8"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-8.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_8_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="247"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="9" customClass="UIDigitButton">
-                                    <rect key="frame" x="366" y="326" width="174" height="153"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="9"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-9.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_9_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="248"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39" userLabel="*" customClass="UIDigitButton">
-                                    <rect key="frame" x="0.0" y="490" width="173" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="Star"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-star.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_star_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="249"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40" userLabel="0" customClass="UIDigitButton">
-                                    <rect key="frame" x="183" y="490" width="174" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="0"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-zero.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_0_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="250"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41" userLabel="#" customClass="UIDigitButton">
-                                    <rect key="frame" x="366" y="490" width="174" height="154"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <accessibility key="accessibilityConfiguration" label="Hash"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <state key="normal" image="dialpad-hash.png">
-                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <state key="highlighted" image="numpad_hash_over.png" backgroundImage="numpad_over_background.png"/>
-                                    <connections>
-                                        <outlet property="addressField" destination="4" id="251"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="224" userLabel="callButton" customClass="UICallButton">
-                            <rect key="frame" x="225" y="737" width="90" height="90"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <rect key="frame" x="225" y="740" width="90" height="90"/>
                             <accessibility key="accessibilityConfiguration" label="Call"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="90" id="6zn-te-Og4"/>
-                                <constraint firstAttribute="height" constant="90" id="Bsz-g7-jtQ"/>
+                                <constraint firstAttribute="width" constant="90" id="56S-jU-d7F"/>
+                                <constraint firstAttribute="height" constant="90" id="Lbo-Bt-Cym"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" image="dialpad-call.png">
@@ -290,17 +349,27 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <accessibility key="accessibilityConfiguration" identifier="dialer_view"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="224" secondAttribute="bottom" constant="25" id="DhL-xa-TzM"/>
-                        <constraint firstItem="224" firstAttribute="centerX" secondItem="171" secondAttribute="centerX" id="Kel-9A-BpO"/>
-                        <constraint firstItem="178" firstAttribute="leading" secondItem="171" secondAttribute="leading" constant="11" id="Z3p-k6-j4t"/>
+                        <constraint firstAttribute="bottom" secondItem="224" secondAttribute="bottom" constant="22" id="9c6-8O-wIO"/>
+                        <constraint firstAttribute="bottom" secondItem="180" secondAttribute="bottom" constant="130" id="Cyb-y5-paX"/>
+                        <constraint firstItem="180" firstAttribute="leading" secondItem="171" secondAttribute="leading" id="Du6-8b-787"/>
+                        <constraint firstItem="224" firstAttribute="centerX" secondItem="171" secondAttribute="centerX" id="Hyy-l7-qYv"/>
+                        <constraint firstItem="178" firstAttribute="top" secondItem="171" secondAttribute="top" id="N8g-6H-cSc"/>
+                        <constraint firstAttribute="trailing" secondItem="180" secondAttribute="trailing" id="baN-Ts-gED"/>
+                        <constraint firstItem="178" firstAttribute="leading" secondItem="171" secondAttribute="leading" constant="11" id="bkd-8b-CNU"/>
                         <constraint firstItem="178" firstAttribute="top" secondItem="171" secondAttribute="top" id="igU-En-GS3"/>
-                        <constraint firstAttribute="trailing" secondItem="178" secondAttribute="trailing" constant="11" id="mpD-A9-dYn"/>
+                        <constraint firstAttribute="trailing" secondItem="178" secondAttribute="trailing" constant="11" id="sHU-1f-9ll"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="171" secondAttribute="trailing" id="LhS-tF-6nx"/>
+                <constraint firstItem="171" firstAttribute="top" secondItem="qaB-qV-B0p" secondAttribute="top" constant="42" id="PSP-3m-iqg"/>
+                <constraint firstAttribute="bottom" secondItem="171" secondAttribute="bottom" constant="66" id="kPi-Dh-W0E"/>
+                <constraint firstItem="171" firstAttribute="leading" secondItem="qaB-qV-B0p" secondAttribute="leading" id="r4A-hn-UaZ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-98.550724637681171" y="149.33035714285714"/>
+            <point key="canvasLocation" x="-99.236641221374043" y="149.29577464788733"/>
         </view>
     </objects>
     <resources>
@@ -314,19 +383,19 @@
         <image name="contact_add_default.png" width="55.200000762939453" height="47.200000762939453"/>
         <image name="contact_add_disabled.png" width="55.200000762939453" height="47.200000762939453"/>
         <image name="dialer_background.png" width="1200" height="1030"/>
-        <image name="dialpad-1.png" width="110" height="109"/>
-        <image name="dialpad-2.png" width="110" height="109"/>
-        <image name="dialpad-3.png" width="110" height="110"/>
-        <image name="dialpad-4.png" width="110" height="110"/>
-        <image name="dialpad-5.png" width="110" height="110"/>
-        <image name="dialpad-6.png" width="110" height="110"/>
-        <image name="dialpad-7.png" width="110" height="110"/>
-        <image name="dialpad-8.png" width="110" height="110"/>
-        <image name="dialpad-9.png" width="110" height="110"/>
+        <image name="dialpad-0" width="90" height="90"/>
+        <image name="dialpad-1" width="90" height="90"/>
+        <image name="dialpad-2" width="90" height="90"/>
+        <image name="dialpad-3" width="90" height="90"/>
+        <image name="dialpad-4" width="90" height="90"/>
+        <image name="dialpad-5" width="90" height="90"/>
+        <image name="dialpad-6" width="90" height="90"/>
+        <image name="dialpad-7" width="90" height="90"/>
+        <image name="dialpad-8" width="90" height="90"/>
+        <image name="dialpad-9" width="90" height="90"/>
         <image name="dialpad-call.png" width="110" height="110"/>
-        <image name="dialpad-hash.png" width="110" height="110"/>
-        <image name="dialpad-star.png" width="110" height="110"/>
-        <image name="dialpad-zero.png" width="110" height="110"/>
+        <image name="dialpad-hash" width="90" height="90"/>
+        <image name="dialpad-star" width="90" height="90"/>
         <image name="numpad_0_over.png" width="84.800003051757812" height="79.199996948242188"/>
         <image name="numpad_1_over.png" width="84.800003051757812" height="77.599998474121094"/>
         <image name="numpad_2_over.png" width="84.800003051757812" height="79.199996948242188"/>

@@ -193,7 +193,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstItem="39" firstAttribute="leading" secondItem="37" secondAttribute="leading" id="0IO-DF-t8r"/>
                         <constraint firstAttribute="bottom" secondItem="39" secondAttribute="bottom" id="8VQ-Mz-bqu"/>
@@ -231,7 +231,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.56862745100000001" green="0.4549019608" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
                     <constraints>
                         <constraint firstItem="34" firstAttribute="bottom" secondItem="33" secondAttribute="bottom" id="4qt-Vf-PiU"/>
                         <constraint firstAttribute="height" constant="21" id="Abq-kz-djF"/>
@@ -408,6 +408,9 @@
         <image name="person-icon" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
