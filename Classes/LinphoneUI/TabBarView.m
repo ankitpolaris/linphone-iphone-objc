@@ -27,7 +27,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-
+    [_dialerButton setAdjustsImageWhenHighlighted:NO];
+    [_contactsButton setAdjustsImageWhenHighlighted:NO];
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector:@selector(changeViewEvent:)
 											   name:kLinphoneMainViewChange
@@ -40,6 +41,7 @@
 										   selector:@selector(messageReceived:)
 											   name:kLinphoneMessageReceived
 											 object:nil];
+    [self updateTabColorsForIndex:2];
 	[self update:FALSE];
 }
 
@@ -102,12 +104,66 @@
 	}
 }
 
+- (void)updateTabColorsForIndex:(NSInteger)selectedIndex {
+    NSArray<UIButton *> *buttons = @[self.historyButton, self.contactsButton, self.dialerButton, self.chatButton];
+    NSArray<UILabel *> *labels = @[self.historyBtnLabel, self.contactBtnLabel, self.dialerBtnLabel, self.chatBtnLabel];
+    
+    UIColor *selectedColor = [UIColor systemBlueColor]; // Highlighted color
+    UIColor *defaultColor = [UIColor colorWithRed:162/255.0 green:162/255.0 blue:162/255.0 alpha:1.0];
+
+    
+    for (NSInteger i = 0; i < buttons.count; i++) {
+        UIButton *button = buttons[i];
+        UILabel *label = labels[i];
+        
+        if (i == selectedIndex) {
+            // Highlight the selected button and label
+            [button setTitleColor:selectedColor forState:UIControlStateNormal];
+            
+            // If the button has an image, update its rendering mode and tint
+            UIImage *buttonImage = [button imageForState:UIControlStateNormal];
+            if (buttonImage) {
+                UIImage *coloredImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                [button setImage:coloredImage forState:UIControlStateNormal];
+                button.tintColor = selectedColor;
+            }
+            
+            label.textColor = selectedColor;
+        }
+        else {
+            // Set others to default gray
+            [button setTitleColor:defaultColor forState:UIControlStateNormal];
+            
+            // Reset image rendering mode and tint
+            UIImage *buttonImage = [button imageForState:UIControlStateNormal];
+            if (buttonImage) {
+                UIImage *coloredImage = [buttonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                [button setImage:coloredImage forState:UIControlStateNormal];
+                button.tintColor = defaultColor;
+            }
+            
+            label.textColor = defaultColor;
+        }
+        
+        
+//        if (i == selectedIndex) {
+//            // Highlight the selected button and label
+//            button.tintColor = selectedColor;
+//            label.textColor = selectedColor;
+//        } else {
+//            // Set others to default gray
+//            button.tintColor = defaultColor;
+//            label.textColor = defaultColor;
+//        }
+    }
+}
+
 - (void)updateSelectedButton:(UICompositeViewDescription *)view {
 	_historyButton.selected = [view equal:HistoryListView.compositeViewDescription] ||
 							  [view equal:HistoryDetailsView.compositeViewDescription] ||
 							  [view equal:ConferenceHistoryDetailsView.compositeViewDescription];
-	_contactsButton.selected = [view equal:ContactsListView.compositeViewDescription] ||
-							   [view equal:ContactDetailsView.compositeViewDescription];
+//	_contactsButton.selected = [view equal:ContactsListView.compositeViewDescription] ||
+//							   [view equal:ContactDetailsView.compositeViewDescription];
 	_dialerButton.selected = [view equal:DialerView.compositeViewDescription];
 	_chatButton.selected = [view equal:ChatsListView.compositeViewDescription] ||
 						   [view equal:ChatConversationCreateView.compositeViewDescription] ||
@@ -170,16 +226,19 @@
 - (IBAction)onHistoryClick:(id)event {
 	linphone_core_reset_missed_calls_count(LC);
 	[self update:FALSE];
+    [self updateTabColorsForIndex:0];
 	[PhoneMainView.instance updateApplicationBadgeNumber];
 	[PhoneMainView.instance changeCurrentView:HistoryListView.compositeViewDescription];
 }
 
 - (IBAction)onContactsClick:(id)event {
 	[ContactSelection setAddAddress:nil];
+    [self updateTabColorsForIndex:1];
 	[PhoneMainView.instance changeCurrentView:ContactsListView.compositeViewDescription];
 }
 
 - (IBAction)onDialerClick:(id)event {
+    [self updateTabColorsForIndex:2];
 	[PhoneMainView.instance changeCurrentView:DialerView.compositeViewDescription];
 }
 
@@ -188,6 +247,7 @@
 }
 
 - (IBAction)onChatClick:(id)event {
+    [self updateTabColorsForIndex:3];
 	[PhoneMainView.instance changeCurrentView:ChatsListView.compositeViewDescription];
 }
 

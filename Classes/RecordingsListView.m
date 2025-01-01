@@ -78,6 +78,9 @@ static UICompositeViewDescription *compositeDescription = nil;
         tableController.editing = NO;
     }
 	[_toggleSelectionButton setImage:[UIImage imageNamed:@"select_all_default.png"] forState:UIControlStateSelected];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @YES}];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -86,6 +89,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 - (void) viewWillDisappear:(BOOL)animated {
     self.view = NULL;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateCardViewColorNotification"
+                                                        object:nil
+                                                      userInfo:@{@"isGray": @NO}];
     [self.tableController removeAllRecordings];
 }
 

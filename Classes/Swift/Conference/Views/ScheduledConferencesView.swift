@@ -164,7 +164,12 @@ import linphonesw
 		noConference.isHidden = !ScheduledConferencesViewModel.shared.daySplitted.isEmpty
 		super.nextButton.isEnabled = Core.get().defaultAccount != nil
 		ScheduledConferencesViewModel.shared.editionEnabled.value = false
+        NotificationCenter.default.post(name: Notification.Name("UpdateCardViewHideNotification"), object: nil, userInfo: ["isHidden": true])
 	}
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.post(name: Notification.Name("UpdateCardViewHideNotification"), object: nil, userInfo: ["isHidden": false])
+    }
 		
 	// TableView datasource delegate
 		

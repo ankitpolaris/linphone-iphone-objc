@@ -82,6 +82,7 @@
         <viewController autoresizesArchivedViewToFullSize="NO" id="6" userLabel="settingsController" customClass="IASKAppSettingsViewControllerEx">
             <extendedEdge key="edgesForExtendedLayout"/>
             <navigationItem key="navigationItem" id="14" userLabel="settingsItem"/>
+            <point key="canvasLocation" x="-537" y="824"/>
         </viewController>
     </objects>
     <resources>

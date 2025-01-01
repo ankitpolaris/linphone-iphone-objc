@@ -4,17 +4,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarView">
             <connections>
+                <outlet property="chatBtnLabel" destination="iul-vI-Emg" id="EF7-66-iOg"/>
                 <outlet property="chatButton" destination="5" id="28"/>
                 <outlet property="chatNotificationLabel" destination="38" id="40"/>
                 <outlet property="chatNotificationView" destination="37" id="41"/>
+                <outlet property="contactBtnLabel" destination="GZS-or-bw2" id="tQt-VK-Y2D"/>
                 <outlet property="contactsButton" destination="8" id="27"/>
+                <outlet property="dialerBtnLabel" destination="GtI-xJ-cgM" id="Bfb-Jy-eBF"/>
                 <outlet property="dialerButton" destination="7" id="12"/>
+                <outlet property="historyBtnLabel" destination="Y2M-vv-NUX" id="Yhb-gA-g9m"/>
                 <outlet property="historyButton" destination="6" id="13"/>
                 <outlet property="historyNotificationLabel" destination="34" id="35"/>
                 <outlet property="historyNotificationView" destination="32" id="36"/>
@@ -49,14 +54,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="historyButton" customClass="UIIconButton">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6" userLabel="historyButton" customClass="UIIconButton">
                             <rect key="frame" x="30" y="12" width="30" height="30"/>
                             <accessibility key="accessibilityConfiguration" label="History"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="4DT-hN-aZ6"/>
                                 <constraint firstAttribute="width" constant="30" id="PZb-sh-xeI"/>
                             </constraints>
-                            <state key="normal" image="clock-icon"/>
+                            <color key="tintColor" red="0.63529413940000001" green="0.63529413940000001" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal">
+                                <imageReference key="image" image="clock.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                            </state>
                             <state key="disabled" image="footer_history_disabled.png"/>
                             <state key="highlighted" backgroundImage="color_A.png"/>
                             <connections>
@@ -75,19 +84,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mI3-fH-KsT" userLabel="ContactBtnView">
                     <rect key="frame" x="90" y="1" width="90" height="74"/>
                     <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="contactsButton" customClass="UIIconButton">
                             <rect key="frame" x="30" y="12" width="30" height="30"/>
                             <accessibility key="accessibilityConfiguration" label="Contacts"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="1V2-zw-Aua"/>
                                 <constraint firstAttribute="width" constant="30" id="b1o-Ln-X1v"/>
                             </constraints>
+                            <color key="tintColor" red="0.63529413940000001" green="0.63529413940000001" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" image="person-icon"/>
-                            <state key="disabled" image="footer_contacts_disabled.png"/>
-                            <state key="selected">
-                                <color key="titleColor" red="0.76000285148620605" green="0.21515019237995148" blue="0.12376989424228668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal">
+                                <imageReference key="image" image="person.crop.circle.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                             </state>
+                            <state key="disabled" image="footer_contacts_disabled.png"/>
                             <state key="highlighted" backgroundImage="color_A.png"/>
                             <connections>
                                 <action selector="onContactsClick:" destination="-1" eventType="touchUpInside" id="23"/>
@@ -117,7 +127,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7" userLabel="dialerButton" customClass="UIIconButton">
                             <rect key="frame" x="30" y="12" width="30" height="30"/>
                             <accessibility key="accessibilityConfiguration" label="Dialer"/>
                             <constraints>
@@ -143,15 +153,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wb-j8-bWj" userLabel="ChatBtnView">
                     <rect key="frame" x="270" y="1" width="90" height="74"/>
                     <subviews>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5" userLabel="chatButton" customClass="UIIconButton">
                             <rect key="frame" x="30" y="12" width="30" height="30"/>
                             <accessibility key="accessibilityConfiguration" label="Chat"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="RA2-IK-w6m"/>
                                 <constraint firstAttribute="width" constant="30" id="cB7-vb-aD2"/>
                             </constraints>
+                            <color key="tintColor" red="0.63529413940000001" green="0.63529413940000001" blue="0.63529413940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <inset key="titleEdgeInsets" minX="0.0" minY="40" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" image="chats-icon"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <imageReference key="image" image="message.badge.filled.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                            </state>
                             <state key="disabled" image="footer_chat_disabled.png"/>
                             <state key="highlighted" backgroundImage="color_A.png"/>
                             <connections>
@@ -216,7 +231,7 @@
                     <rect key="frame" x="48" y="1" width="21" height="21"/>
                     <subviews>
                         <imageView hidden="YES" userInteractionEnabled="NO" tag="11" contentMode="scaleAspectFit" image="history_chat_indicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="33" userLabel="historyNotificationImage">
-                            <rect key="frame" x="-3" y="0.0" width="22.333333333333332" height="21"/>
+                            <rect key="frame" x="-8.6666666666666643" y="0.0" width="28" height="21"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="12" contentMode="left" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="34" userLabel="historyNotificationLabel">
                             <rect key="frame" x="1.6666666666666643" y="0.0" width="17.666666666666668" height="21"/>
@@ -391,8 +406,7 @@
         </view>
     </objects>
     <resources>
-        <image name="chats-icon" width="50" height="50"/>
-        <image name="clock-icon" width="50" height="50"/>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
         <image name="color_A.png" width="2" height="2"/>
         <image name="color_C.png" width="2" height="2"/>
         <image name="footer_chat_default.png" width="44" height="44"/>
@@ -404,8 +418,9 @@
         <image name="footer_history_default.png" width="47.200000762939453" height="47.200000762939453"/>
         <image name="footer_history_disabled.png" width="47.200000762939453" height="47.200000762939453"/>
         <image name="history_chat_indicator.png" width="22.399999618530273" height="21.600000381469727"/>
-        <image name="keypad-icon" width="50" height="50"/>
-        <image name="person-icon" width="50" height="50"/>
+        <image name="keypad-icon" width="30" height="30"/>
+        <image name="message.badge.filled.fill" catalog="system" width="128" height="122"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

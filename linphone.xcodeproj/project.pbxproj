@@ -667,10 +667,6 @@
 		8CF25D961F9F336100BEA0C1 /* check_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D941F9F336100BEA0C1 /* check_unselected.png */; };
 		8CF25D9D1F9F76BD00BEA0C1 /* chat_group_informations.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9B1F9F76BC00BEA0C1 /* chat_group_informations.png */; };
 		8CF25D9E1F9F76BD00BEA0C1 /* chat_group_informations@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CF25D9C1F9F76BD00BEA0C1 /* chat_group_informations@2x.png */; };
-		C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
-		C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */ = {isa = PBXBuildFile; fileRef = C5211CA02D0FF3590063E223 /* dialpad-call.png */; };
 		C55FDD702D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD712D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
 		C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */; };
@@ -1933,7 +1929,6 @@
 		A53B959BF2158A56EC9BAE72 /* Pods_CallUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CallUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A843B29FA3A92B57B1A56CD7 /* Pods-CallUITests.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.distribution.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.distribution.xcconfig"; sourceTree = "<group>"; };
 		C2C514E23CC99DF19C6FB68D /* Pods-CallUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CallUITests.release.xcconfig"; path = "Target Support Files/Pods-CallUITests/Pods-CallUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C5211CA02D0FF3590063E223 /* dialpad-call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialpad-call.png"; sourceTree = "<group>"; };
 		C55FDD6F2D0B3D3D00DADDA6 /* mango_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mango_logo.png; sourceTree = "<group>"; };
 		C55FDD742D0B3E8C00DADDA6 /* splash-substract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-substract.png"; sourceTree = "<group>"; };
 		C57C498D2D1450D800330515 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
@@ -2822,7 +2817,6 @@
 			isa = PBXGroup;
 			children = (
 				C5ECF1332D11409B00F158D5 /* sidebar-union.png */,
-				C5211CA02D0FF3590063E223 /* dialpad-call.png */,
 				D7A4C0052A3B135800EFBD1B /* new_chat_attachment_default.png */,
 				D7A4C0072A3B135800EFBD1B /* new_chat_send_default.png */,
 				D7A4C0062A3B135800EFBD1B /* new_vr_off.png */,
@@ -4466,7 +4460,6 @@
 				639E9C931C0DB7BE00019A75 /* FirstLoginView.xib in Resources */,
 				633FEEF61D3CD55A0014B822 /* numpad_star_over.png in Resources */,
 				633FEEE81D3CD55A0014B822 /* numpad_9_over~ipad@2x.png in Resources */,
-				C5211CC82D0FF3590063E223 /* dialpad-call.png in Resources */,
 				633FEEDE1D3CD55A0014B822 /* numpad_8_over@2x.png in Resources */,
 				633FEEB11D3CD55A0014B822 /* numpad_2~ipad.png in Resources */,
 				633FEE521D3CD5590014B822 /* dialer_alt_back.png in Resources */,
@@ -5016,7 +5009,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5211CA72D0FF3590063E223 /* dialpad-call.png in Resources */,
 				C5ECF1362D11409B00F158D5 /* sidebar-union.png in Resources */,
 				C55FDD762D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				61AE365220C00B370089D9D3 /* MainInterface.storyboard in Resources */,
@@ -5039,7 +5031,6 @@
 				C55FDD722D0B3D3D00DADDA6 /* mango_logo.png in Resources */,
 				C55FDD772D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */,
-				C5211CBD2D0FF3590063E223 /* dialpad-call.png in Resources */,
 				C5ECF1352D11409B00F158D5 /* sidebar-union.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5048,7 +5039,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5211CB22D0FF3590063E223 /* dialpad-call.png in Resources */,
 				C5ECF1372D11409B00F158D5 /* sidebar-union.png in Resources */,
 				C55FDD782D0B3E8C00DADDA6 /* splash-substract.png in Resources */,
 				EA88F3AF241BD1F700E66528 /* MainInterface.storyboard in Resources */,
@@ -6149,7 +6139,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
@@ -6281,7 +6271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
@@ -6409,7 +6399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;
@@ -6536,7 +6526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = X9NQ6V288C;
 				ENABLE_BITCODE = NO;

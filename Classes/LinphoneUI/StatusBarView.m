@@ -74,6 +74,11 @@
                                              selector:@selector(handleUpdateCardViewColorNotification:)
                                                  name:@"UpdateCardViewColorNotification"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleUpdateCardViewHideNotification:)
+                                                 name:@"UpdateCardViewHideNotification"
+                                               object:nil];
+    
 
 	// Update to default state
 	LinphoneAccount *account = linphone_core_get_default_account(LC);
@@ -182,6 +187,17 @@
     BOOL isGray = [notif.userInfo[@"isGray"] boolValue];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self updateCardViewColor:isGray];
+    });
+}
+
+- (void)handleUpdateCardViewHideNotification:(NSNotification *)notif {
+    BOOL isHidden = [notif.userInfo[@"isHidden"] boolValue];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (isHidden) {
+            [self.cardView setHidden:YES];
+        } else {
+            [self.cardView setHidden:NO];
+        }
     });
 }
 

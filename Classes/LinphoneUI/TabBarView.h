@@ -28,6 +28,11 @@
 @property(nonatomic, strong) IBOutlet UIButton *contactsButton;
 @property(nonatomic, strong) IBOutlet UIButton *dialerButton;
 @property(nonatomic, strong) IBOutlet UIButton *chatButton;
+@property (weak, nonatomic) IBOutlet UILabel *historyBtnLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contactBtnLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dialerBtnLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chatBtnLabel;
+
 @property(nonatomic, strong) IBOutlet UIBouncingView *historyNotificationView;
 @property(nonatomic, strong) IBOutlet UIBouncingView *chatNotificationView;
 @property(nonatomic, strong) IBOutlet UILabel *chatNotificationLabel;

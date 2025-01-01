@@ -1,16 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-keypad-50.png",
+      "filename" : "icons8-dialpad-30.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-keypad-100.png",
+      "filename" : "icons8-dialpad-60.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-dialpad-90.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
