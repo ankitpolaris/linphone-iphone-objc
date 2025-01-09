@@ -12,9 +12,9 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.regremipa.piov</string>
-		<string>group.regremipa.piov.linphoneExtension</string>
-		<string>group.regremipa.piov.msgNotifContent</string>
+		<string>group.voxtrio.linphoneExtension</string>
+		<string>group.voxtrio.msgNotifContent</string>
+		<string>group.voxtrio.msgNotifService</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>

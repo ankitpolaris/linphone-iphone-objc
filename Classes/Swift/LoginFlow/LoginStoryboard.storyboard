@@ -98,18 +98,19 @@
                                             <constraint firstAttribute="height" constant="22" id="T81-ag-XnK"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#logoComingSoon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsy-HH-ORM">
-                                        <rect key="frame" x="44" y="217" width="305" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                        <color key="textColor" systemColor="systemBlueColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trio" translatesAutoresizingMaskIntoConstraints="NO" id="rpf-W5-2Te">
+                                        <rect key="frame" x="50" y="150" width="293" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="qwc-Sg-cap"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rpf-W5-2Te" secondAttribute="trailing" constant="50" id="1Cu-vb-VlL"/>
                                     <constraint firstAttribute="trailing" secondItem="MbF-y8-cZf" secondAttribute="trailing" constant="-5" id="26e-Hr-7kQ"/>
                                     <constraint firstItem="MbF-y8-cZf" firstAttribute="leading" secondItem="1m3-n9-gg0" secondAttribute="leading" constant="-5" id="6wo-Em-Sdw"/>
+                                    <constraint firstItem="rpf-W5-2Te" firstAttribute="leading" secondItem="1m3-n9-gg0" secondAttribute="leading" constant="50" id="CgO-9W-fpj"/>
                                     <constraint firstItem="Wj7-7J-ilY" firstAttribute="centerY" secondItem="zbi-ex-uvB" secondAttribute="centerY" id="CzH-5V-Fme"/>
                                     <constraint firstAttribute="bottom" secondItem="MbF-y8-cZf" secondAttribute="bottom" constant="-18" id="GKU-29-beA"/>
                                     <constraint firstItem="zbi-ex-uvB" firstAttribute="leading" secondItem="Wj7-7J-ilY" secondAttribute="trailing" constant="-44" id="KDg-TK-QGR"/>
@@ -117,6 +118,7 @@
                                     <constraint firstItem="zbi-ex-uvB" firstAttribute="centerX" secondItem="xEb-YL-8Lm" secondAttribute="centerX" id="QcW-SK-e1m"/>
                                     <constraint firstItem="xEb-YL-8Lm" firstAttribute="leading" secondItem="1m3-n9-gg0" secondAttribute="leading" constant="33" id="RlH-K9-dgP"/>
                                     <constraint firstAttribute="trailing" secondItem="xEb-YL-8Lm" secondAttribute="trailing" constant="33" id="S1C-lp-diR"/>
+                                    <constraint firstItem="rpf-W5-2Te" firstAttribute="top" secondItem="1m3-n9-gg0" secondAttribute="top" constant="150" id="aM3-9e-TVY"/>
                                     <constraint firstItem="zbi-ex-uvB" firstAttribute="top" secondItem="xEb-YL-8Lm" secondAttribute="bottom" constant="33" id="k3s-r9-DJI"/>
                                     <constraint firstItem="MbF-y8-cZf" firstAttribute="top" secondItem="xEb-YL-8Lm" secondAttribute="bottom" constant="-160" id="nwC-XX-Aod"/>
                                     <constraint firstAttribute="bottom" secondItem="9ZV-ud-8pM" secondAttribute="bottom" constant="25" id="sLM-9Z-vwM"/>
@@ -147,13 +149,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Trio" width="1024" height="1024"/>
         <image name="qr-code" width="30" height="30"/>
         <image name="splash-substract.png" width="410" height="490"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

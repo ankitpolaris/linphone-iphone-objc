@@ -28,7 +28,7 @@ import FirebaseAuth
 
 #endif
 
-var APP_GROUP_ID = "group.regremipa.piov.msgNotifContent"
+var APP_GROUP_ID = "group.voxtrio.msgNotifContent"
 var isReplySent: Bool = false
 var needToStop: Bool = false
 var coreStopped: Bool = false

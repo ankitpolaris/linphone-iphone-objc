@@ -23,7 +23,7 @@ import linphonesw
 import FirebaseAuth
 #endif
 
-var APP_GROUP_ID = "group.regremipa.piov.msgNotifContent"
+var APP_GROUP_ID = "group.voxtrio.msgNotifContent"
 var LINPHONE_DUMMY_SUBJECT = "dummy subject"
 
 struct MsgData: Codable {

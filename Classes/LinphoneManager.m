@@ -85,7 +85,7 @@ NSString *const kLinphoneMagicSearchMoreAvailable = @"LinphoneMagicSearchMoreAva
 NSString *const kDisplayModeChanged = @"DisplayModeChanged";
 NSString *const kLinphoneAccountCreationAuthenticationTokenReceived = @"LinphoneAccountCreationAuthenticationTokenReceived";
 
-NSString *const kLinphoneMsgNotificationAppGroupId = @"group.regremipa.piov.msgNotifContent";
+NSString *const kLinphoneMsgNotificationAppGroupId = @"group.voxtrio.msgNotifContent";
 
 const int kLinphoneAudioVbrCodecDefaultBitrate = 36; /*you can override this from linphonerc or linphonerc-factory*/
 
