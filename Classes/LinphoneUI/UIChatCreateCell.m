@@ -36,6 +36,7 @@
 	}
 	_selectedImage.hidden = TRUE;
 	_linphoneImage.hidden = TRUE;
+    _memberView.hidden = TRUE;
 	return self;
 }
 

@@ -534,6 +534,8 @@
 - (void)application:(UIApplication *)application
 	didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 	LOGI(@"[APNs] %@ : %@", NSStringFromSelector(_cmd), deviceToken);
+    NSString *tokenString = [self hexStringFromDeviceToken:deviceToken];
+       NSLog(@"[APNs] Device Token: %@", tokenString);
 	dispatch_async(dispatch_get_main_queue(), ^{
 		linphone_core_did_register_for_remote_push(LC, (__bridge void*)deviceToken);
 	});
@@ -542,6 +544,20 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
 	LOGI(@"[APNs] %@ : %@", NSStringFromSelector(_cmd), [error localizedDescription]);
 	linphone_core_did_register_for_remote_push(LC, nil);
+}
+
+- (NSString *)hexStringFromDeviceToken:(NSData *)deviceToken {
+    const unsigned char *dataBuffer = (const unsigned char *)[deviceToken bytes];
+    if (!dataBuffer) return nil;
+    
+    NSUInteger dataLength = [deviceToken length];
+    NSMutableString *hexString = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    
+    for (NSUInteger i = 0; i < dataLength; ++i) {
+        [hexString appendFormat:@"%02x", dataBuffer[i]];
+    }
+    
+    return [hexString copy];
 }
 
 #pragma mark - UNUserNotifications Framework

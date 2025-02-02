@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +15,7 @@
                 <outlet property="displayNameLabel" destination="Hrt-Iz-T2j" id="0tY-FY-dFe"/>
                 <outlet property="greyView" destination="THU-mJ-O0r" id="2Gs-TQ-tNh"/>
                 <outlet property="linphoneImage" destination="vhd-fK-M2m" id="hO8-lY-0Hh"/>
+                <outlet property="memberView" destination="L7o-Ao-0Pl" id="p4L-rs-j4w"/>
                 <outlet property="securityImage" destination="ioo-eB-vvQ" id="WXu-ej-Nfi"/>
                 <outlet property="selectedImage" destination="qMd-eD-DOW" id="m79-nU-deW"/>
             </connections>
@@ -28,7 +29,7 @@
                     <rect key="frame" x="65" y="30" width="238" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.98766469955444336" green="0.27512490749359131" blue="0.029739789664745331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" systemColor="systemBlueColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrt-Iz-T2j" userLabel="displayNameLabel">
@@ -38,14 +39,34 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7o-Ao-0Pl" userLabel="MemberView">
+                    <rect key="frame" x="300" y="17" width="64" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Member" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCj-gw-Wta">
+                            <rect key="frame" x="9" y="6" width="47" height="17"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="check_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="qMd-eD-DOW" userLabel="selectedImage">
                     <rect key="frame" x="347" y="21" width="21" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="linphone_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-fK-M2m" userLabel="linphoneImage">
-                    <rect key="frame" x="314" y="21" width="21" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="firebaseIcon" translatesAutoresizingMaskIntoConstraints="NO" id="vhd-fK-M2m" userLabel="linphoneImage">
+                    <rect key="frame" x="309" y="21" width="23" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <accessibility key="accessibilityConfiguration" label="Linphone"/>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="25"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ktO-jm-Ra6" userLabel="avatarImage">
                     <rect key="frame" x="10" y="10" width="40" height="40"/>
@@ -70,10 +91,13 @@
     <resources>
         <image name="avatar.png" width="414.39999389648438" height="414.39999389648438"/>
         <image name="check_selected.png" width="75.199996948242188" height="51.200000762939453"/>
-        <image name="linphone_user.png" width="41.599998474121094" height="42.400001525878906"/>
+        <image name="firebaseIcon" width="24" height="24"/>
         <image name="security_toogle_icon_green.png" width="33.599998474121094" height="38.400001525878906"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

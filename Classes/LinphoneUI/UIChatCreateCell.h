@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
 @property (weak, nonatomic) IBOutlet UIImageView *securityImage;
 @property (weak, nonatomic) IBOutlet UIView *greyView;
+@property (weak, nonatomic) IBOutlet UIView *memberView;
 
 - (id)initWithIdentifier:(NSString *)identifier;
 

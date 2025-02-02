@@ -145,7 +145,7 @@ static UICompositeViewDescription *compositeDescription = nil;
     _qrCodeButton.hidden = !ENABLE_QRCODE;
 	[self resetLiblinphone:FALSE];
 	[self enableWelcomeViewButtons];
-	NSString *message = NSLocalizedString(@"I accept Belledonne Communications’ terms of use and privacy policy", nil);
+	NSString *message = NSLocalizedString(@"I accept VoxTrio terms of use and privacy policy", nil);
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:message attributes:@{NSForegroundColorAttributeName : [UIColor systemGrayColor]}];
 	[attributedString addAttribute:NSLinkAttributeName
 						 value:@"https://www.linphone.org/general-terms"
@@ -1686,6 +1686,7 @@ UIColor *previousColor = (UIColor*)[sender backgroundColor]; \
 		UISegmentedControl *transports = (UISegmentedControl *)[self findView:ViewElement_Transport
 																	   inView:self.contentView
 																	   ofType:UISegmentedControl.class];
+        NSLog(@"transports:%@",transports);
 		if (transports) {
 			NSString *type = [transports titleForSegmentAtIndex:[transports selectedSegmentIndex]];
 			LinphoneAddress *transportAddr = linphone_address_new([NSString stringWithFormat:@"sip:%s;transport=%s", domain.UTF8String, type.lowercaseString.UTF8String].UTF8String);

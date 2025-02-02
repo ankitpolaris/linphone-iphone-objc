@@ -20,24 +20,29 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26g-dN-4NP" userLabel="BackgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trio" translatesAutoresizingMaskIntoConstraints="NO" id="vrd-ua-hZh">
-                            <rect key="frame" x="67.666666666666686" y="169.66666666666666" width="240" height="127.99999999999997"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="128" id="bCb-yh-2VX"/>
-                                <constraint firstAttribute="width" constant="240" id="zjQ-AR-Efy"/>
-                            </constraints>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-bg" translatesAutoresizingMaskIntoConstraints="NO" id="WXy-N1-O2m">
+                            <rect key="frame" x="0.0" y="1" width="379" height="667"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
-                        <constraint firstItem="vrd-ua-hZh" firstAttribute="centerX" secondItem="26g-dN-4NP" secondAttribute="centerX" id="Mcd-js-2Z7"/>
-                        <constraint firstItem="vrd-ua-hZh" firstAttribute="centerY" secondItem="26g-dN-4NP" secondAttribute="centerY" constant="-100" id="i34-bn-GeB"/>
+                        <constraint firstItem="WXy-N1-O2m" firstAttribute="leading" secondItem="26g-dN-4NP" secondAttribute="leading" id="Pfs-Ia-mdk"/>
+                        <constraint firstItem="WXy-N1-O2m" firstAttribute="top" secondItem="26g-dN-4NP" secondAttribute="top" constant="1" id="vHc-6k-jtL"/>
+                        <constraint firstAttribute="bottom" secondItem="WXy-N1-O2m" secondAttribute="bottom" constant="-1" id="w4q-2D-a8p"/>
+                        <constraint firstAttribute="trailing" secondItem="WXy-N1-O2m" secondAttribute="trailing" constant="-4" id="ytn-1c-mNf"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash-substract.png" translatesAutoresizingMaskIntoConstraints="NO" id="m1K-rh-c3S">
-                    <rect key="frame" x="-7" y="368" width="388" height="398"/>
+                    <rect key="frame" x="-7" y="247" width="388" height="420"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="398" id="pMc-gm-1gz"/>
+                        <constraint firstAttribute="height" constant="420" id="pMc-gm-1gz"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trio" translatesAutoresizingMaskIntoConstraints="NO" id="vrd-ua-hZh">
+                    <rect key="frame" x="67.666666666666686" y="389" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="Ybp-I4-QmV"/>
+                        <constraint firstAttribute="width" constant="240" id="wWc-Dw-rna"/>
                     </constraints>
                 </imageView>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#codewithankit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000149011612" translatesAutoresizingMaskIntoConstraints="NO" id="eCY-vL-IBs" userLabel="descLabel">
@@ -51,7 +56,9 @@
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="26g-dN-4NP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1an-VH-Sfi"/>
+                <constraint firstItem="vrd-ua-hZh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1q7-5D-q1p"/>
                 <constraint firstAttribute="trailing" secondItem="26g-dN-4NP" secondAttribute="trailing" id="2uJ-a3-PJd"/>
+                <constraint firstAttribute="bottom" secondItem="vrd-ua-hZh" secondAttribute="bottom" constant="150" id="7MU-GY-mnc"/>
                 <constraint firstItem="xtr-QP-6We" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9dp-ap-2rq"/>
                 <constraint firstAttribute="bottom" secondItem="xtr-QP-6We" secondAttribute="bottom" id="NdZ-sX-oB1"/>
                 <constraint firstAttribute="bottom" secondItem="26g-dN-4NP" secondAttribute="bottom" id="Tkj-41-d7V"/>
@@ -60,7 +67,7 @@
                 <constraint firstAttribute="trailing" secondItem="xtr-QP-6We" secondAttribute="trailing" id="fcf-l4-YVg"/>
                 <constraint firstItem="m1K-rh-c3S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-7" id="ham-Js-qm6"/>
                 <constraint firstItem="xtr-QP-6We" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pDZ-ny-VXS"/>
-                <constraint firstAttribute="bottom" secondItem="m1K-rh-c3S" secondAttribute="bottom" constant="-99" id="pQX-ps-thS"/>
+                <constraint firstAttribute="bottom" secondItem="m1K-rh-c3S" secondAttribute="bottom" id="pQX-ps-thS"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -70,6 +77,7 @@
     <resources>
         <image name="Trio" width="1024" height="1024"/>
         <image name="color_C.png" width="2" height="2"/>
+        <image name="splash-bg" width="410" height="880"/>
         <image name="splash-substract.png" width="410" height="490"/>
     </resources>
 </document>
