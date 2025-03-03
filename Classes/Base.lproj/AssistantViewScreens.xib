@@ -49,7 +49,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="126" userLabel="titleLabel">
-                    <rect key="frame" x="36" y="0.0" width="303" height="100"/>
+                    <rect key="frame" x="36" y="0.0" width="303" height="36"/>
                     <accessibility key="accessibilityConfiguration" label="Account setup assistant"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <nil key="textColor"/>
@@ -57,7 +57,7 @@
                     <size key="shadowOffset" width="-1" height="-1"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This assistant will help you configure and use your SIP account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yci-5h-O4o" userLabel="subtitleLabel">
-                    <rect key="frame" x="36" y="100" width="303" height="58"/>
+                    <rect key="frame" x="36" y="36" width="303" height="58"/>
                     <accessibility key="accessibilityConfiguration" label="Account setup assistant"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="58" id="5LG-5A-dY3"/>
@@ -68,7 +68,7 @@
                     <size key="shadowOffset" width="-1" height="-1"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plw-Mp-teD" userLabel="acceptView">
-                    <rect key="frame" x="36" y="158" width="303" height="58"/>
+                    <rect key="frame" x="36" y="94" width="303" height="58"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZu-nz-jXM" userLabel="acceptButton">
                             <rect key="frame" x="20" y="2" width="54" height="54"/>
@@ -102,7 +102,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="36" userLabel="createAccountButton" customClass="UIRoundBorderedButton">
-                    <rect key="frame" x="40" y="217" width="299" height="40"/>
+                    <rect key="frame" x="40" y="153" width="299" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <accessibility key="accessibilityConfiguration" label="Create account">
                         <bool key="isElement" value="YES"/>
@@ -122,7 +122,7 @@
                         <action selector="onGotoCreateAccountClick:" destination="-1" eventType="touchUpInside" id="Meo-Hq-8td"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="linphoneLoginButton" customClass="UIRoundBorderedButton">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="38" userLabel="linphoneLoginButton" customClass="UIRoundBorderedButton">
                     <rect key="frame" x="40" y="227" width="299" height="40"/>
                     <accessibility key="accessibilityConfiguration" identifier="assistant_view_linphone_login" label="Use Linphone account">
                         <bool key="isElement" value="NO"/>
@@ -201,7 +201,7 @@
                 <constraint firstAttribute="bottom" secondItem="Kbn-dL-C5h" secondAttribute="bottom" constant="10" id="PWn-9N-k5j"/>
                 <constraint firstItem="39" firstAttribute="trailing" secondItem="36" secondAttribute="trailing" id="QzS-V8-lIj"/>
                 <constraint firstItem="plw-Mp-teD" firstAttribute="top" secondItem="Yci-5h-O4o" secondAttribute="bottom" id="RUw-sM-ywE"/>
-                <constraint firstItem="39" firstAttribute="top" secondItem="36" secondAttribute="bottom" constant="44" id="Wk3-Yh-TaR"/>
+                <constraint firstItem="39" firstAttribute="top" relation="greaterThanOrEqual" secondItem="36" secondAttribute="bottom" constant="44" id="Wk3-Yh-TaR"/>
                 <constraint firstItem="36" firstAttribute="leading" secondItem="38" secondAttribute="leading" id="Yd2-4o-VP3"/>
                 <constraint firstItem="36" firstAttribute="top" secondItem="plw-Mp-teD" secondAttribute="bottom" constant="1" id="b8b-dc-3cx"/>
                 <constraint firstItem="plw-Mp-teD" firstAttribute="leading" secondItem="33" secondAttribute="leading" constant="36" id="caQ-q5-EyX"/>
@@ -221,11 +221,6 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="38"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="202.40000000000001" y="188.90554722638683"/>
         </view>
         <view contentMode="scaleToFill" id="44" userLabel="createAccountView">

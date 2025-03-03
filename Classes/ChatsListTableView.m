@@ -53,7 +53,65 @@
 	self.tableView.accessibilityIdentifier = @"Chat list";
 	[self loadData];
 	_chatRooms = NULL;
+    
+    
+    LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
+    if (room) {
+        const MSList *messages = linphone_chat_room_get_history(room, 0);
+        NSLog(@"📜 Found %zu messages in chat room.", bctbx_list_size(messages));
 
+        if (messages) {
+            for (const MSList *iter = messages; iter; iter = iter->next) {
+                LinphoneChatMessage *msg = (LinphoneChatMessage *)iter->data;
+                const char *text = linphone_chat_message_get_text(msg);
+                NSLog(@"💬 Message: %s", text ? text : "No Text");
+            }
+        } else {
+            NSLog(@"⚠️ No messages found in history.");
+        }
+    } else {
+        NSLog(@"⚠️ Chat room not found.");
+    }
+
+    
+//    const MSList *unsorted = linphone_core_get_chat_rooms(LC);
+//    NSLog(@"📌 Found %zu chat rooms on startup.", bctbx_list_size(unsorted));
+//
+//    if (bctbx_list_size(unsorted) == 0) {
+//        NSLog(@"⚠️ No chat rooms found. Checking message history...");
+//        
+//        LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
+//        if (room) {
+//            NSLog(@"✅ Found chat room manually.");
+//        } else {
+//            NSLog(@"🚨 Chat room does not exist in Linphone.");
+//        }
+//    }
+    
+    
+    const LinphoneAddress *addr = linphone_core_interpret_url(LC, "sip:+919977802087@pbx01");
+    if (addr) {
+        LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
+
+        if (room) {
+            
+            NSLog(@"✅ Found existing chat room.");
+          
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSLog(@"🔄 Refreshing chat list after delay...");
+//                _data = [self sortChatRooms];
+//                NSLog(@"Data after sorting: %@", _data);
+//                [self.tableView reloadData];
+            });
+
+        } else {
+            NSLog(@"⚠️ Chat room not found.");
+        }
+//        linphone_address_unref(addr);
+    } else {
+        NSLog(@"❌ Invalid SIP address.");
+    }
+//    [self printBctbxListData:_data];
 	NSDictionary* userInfo;
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector: @selector(receivePresenceNotification:)
@@ -146,6 +204,12 @@ static int sorted_history_comparison(LinphoneChatRoom *to_insert, LinphoneChatRo
 	const MSList *unsorted = linphone_core_get_chat_rooms(LC);
 	const MSList *iter = unsorted;
 
+    NSLog(@"📋 Chat Room List Size: %zu", bctbx_list_size(unsorted));
+    NSLog(@"📋 Found %zu chat rooms.", bctbx_list_size(unsorted));
+    if (!unsorted) {
+           NSLog(@"⚠️ No chat rooms found in linphone_core_get_chat_rooms.");
+       }
+    
 	while (iter) {
 		// store last message in user data
 		LinphoneChatRoom *chat_room = iter->data;
@@ -206,6 +270,33 @@ static int sorted_history_comparison(LinphoneChatRoom *to_insert, LinphoneChatRo
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
+}
+
+- (void)printBctbxListData:(const bctbx_list_t *)dataList {
+    int size = bctbx_list_size(dataList);
+    NSLog(@"🔍 Total Elements in List: %d", size);
+    
+    const bctbx_list_t *iterator = dataList;
+    int index = 0;
+
+    while (iterator) {
+        void *item = iterator->data; // Get the current item (could be a message, address, etc.)
+
+        if (item) {
+            NSLog(@"📌 Item %d: %p", index, item);
+
+            // If the item is a LinphoneChatMessage, print its details
+            if (linphone_chat_message_get_text) {
+                const char *messageText = linphone_chat_message_get_text((LinphoneChatMessage *)item);
+                NSLog(@"📝 Message: %s", messageText ? messageText : "NULL");
+            }
+        } else {
+            NSLog(@"⚠️ Item %d is NULL", index);
+        }
+
+        iterator = iterator->next; // Move to next item
+        index++;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

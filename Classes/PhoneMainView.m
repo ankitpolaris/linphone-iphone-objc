@@ -303,7 +303,27 @@ static RootViewManager *rootViewManagerInstance = nil;
 
 	if (!msg)
 		return;
-
+    NSString *text = [NSString stringWithUTF8String:linphone_chat_message_get_text(msg)];
+     NSLog(@"Message Content1: %@", text);
+    // Get Sender Information
+     const LinphoneAddress *fromAddress = linphone_chat_message_get_from_address(msg);
+     char *sender = linphone_address_as_string(fromAddress);
+     NSLog(@"Sender: %s", sender);
+     
+    
+    // Get the Chat Room from the message
+    LinphoneChatRoom *chatRoom = linphone_chat_message_get_chat_room(msg);
+    if (chatRoom) {
+        const LinphoneAddress *peerAddress = linphone_chat_room_get_peer_address(chatRoom);
+        char *peer = linphone_address_as_string(peerAddress);
+        NSLog(@"Chat Room Peer Address: %s", peer);
+        
+        // Free allocated memory
+        ms_free(peer);
+    } else {
+        NSLog(@"⚠️ Chat Room is NULL");
+    }
+   
 	if (linphone_chat_message_is_outgoing(msg))
 		return;
 

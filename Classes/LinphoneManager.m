@@ -892,12 +892,89 @@ static void linphone_iphone_popup_password_request(LinphoneCore *lc, LinphoneAut
 
 #pragma mark - Text Received Functions
 
+- (void)debugLinphoneChatMessage:(LinphoneChatMessage *)message {
+    if (!message) {
+        NSLog(@"⚠️ LinphoneChatMessage is NULL");
+        return;
+    }
+    
+    // Get the message text
+    const char *msgText = linphone_chat_message_get_text(message);
+    if (msgText) {
+        NSLog(@"📝 Message Text: %s", msgText);
+    } else {
+        NSLog(@"⚠️ Message Text is NULL");
+    }
+
+    // Get sender address
+    const LinphoneAddress *fromAddr = linphone_chat_message_get_from_address(message);
+    char *fromString = linphone_address_as_string(fromAddr);
+    NSLog(@"📩 From: %s", fromString ? fromString : "NULL");
+    ms_free(fromString);
+
+    // Get call ID
+    const char *callID = linphone_chat_message_get_custom_header(message, "call-id");
+    NSLog(@"📞 Call-ID: %s", callID ? callID : "NULL");
+
+    // Check if message is incoming or outgoing
+    bool isOutgoing = linphone_chat_message_is_outgoing(message);
+    NSLog(@"🔄 Message Direction: %@", isOutgoing ? @"Outgoing" : @"Incoming");
+
+    // Check if message has been stored in history
+    const char *msgIDString = linphone_chat_message_get_message_id(message);
+    if (msgIDString) {
+        int msgID = atoi(msgIDString);  // Convert string to int
+        NSLog(@"📌 Message ID: %d", msgID);
+//        NSLog(@"📌 Message ID String: %@", msgIDString);
+    } else {
+        NSLog(@"⚠️ Message ID is NULL");
+    }
+    
+    LinphoneChatRoom *chatRoom1 = linphone_chat_message_get_chat_room(message);
+    if (!chatRoom1) {
+        NSLog(@"❌ Chat room is NULL. The message may not be linked to a valid conversation.");
+    } else {
+        NSLog(@"✅ Message is linked to a chat room.");
+    }
+    
+    LinphoneChatRoom *chatRoom = linphone_chat_message_get_chat_room(message);
+    if (!chatRoom) {
+        NSLog(@"❌ Chat room is NULL. Message might not be linked to a conversation.");
+    } else {
+        const bctbx_list_t *messagesList = linphone_chat_room_get_history(chatRoom, 0);
+        if (!messagesList) {
+            NSLog(@"⚠️ No messages found in the chat room history.");
+        } else {
+            int count = bctbx_list_size(messagesList);
+            NSLog(@"📜 Total messages in history: %d", count);
+            
+            BOOL found = NO;
+            for (const bctbx_list_t *item = messagesList; item; item = item->next) {
+                LinphoneChatMessage *msg = (LinphoneChatMessage *)item->data;
+                const char *msgText = linphone_chat_message_get_text(msg);
+                
+                if (msgText && message == msg) {
+                    found = YES;
+                    NSLog(@"✅ Message exists in history: %s", msgText);
+                    break;
+                }
+            }
+
+            if (!found) {
+                NSLog(@"⚠️ Message is NOT stored in history.");
+            }
+        }
+    }
+
+}
+
 - (void)onMessageReceived:(LinphoneCore *)lc room:(LinphoneChatRoom *)room message:(LinphoneChatMessage *)msg {
+    [self debugLinphoneChatMessage:msg];
 #pragma deploymate push "ignored-api-availability"
 	if (_silentPushCompletion) {
 		// we were woken up by a silent push. Call the completion handler with NEWDATA
 		// so that the push is notified to the user
-		LOGI(@"onMessageReceived - handler %p", _silentPushCompletion);
+		LOGI(@"onMessageReceivedonMessageReceived - handler %p", _silentPushCompletion);
 		_silentPushCompletion(UIBackgroundFetchResultNewData);
 		_silentPushCompletion = nil;
 	}

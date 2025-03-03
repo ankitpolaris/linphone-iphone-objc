@@ -36,6 +36,9 @@
 #import "linphoneapp-Swift.h"
 
 #import "SVProgressHUD.h"
+#import <PushKit/PushKit.h>
+#import <CallKit/CallKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 
 #ifdef USE_CRASHLYTICS
@@ -93,9 +96,28 @@
     if([LinphoneManager.instance lpConfigBoolForKey:@"account_push_presence_preference"]){
         linphone_core_set_consolidated_presence(LC, LinphoneConsolidatedPresenceOnline);
     }
-	
+    LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
+
+    if (room) {
+        NSLog(@"✅ Found chat room, sending test message...");
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            linphone_chat_room_send_message(room, "Hello World !!");
+            NSLog(@"📩 Test message sent!");
+        });
+    }
+    
+//    linphone_core_enable_logs_with_cb(log_handler);
+    linphone_core_set_log_level(ORTP_MESSAGE);
+
+
+    
     [NSNotificationCenter.defaultCenter postNotificationName:kLinphoneMessageReceived object:nil];
 	
+}
+
+static void log_handler(OrtpLogLevel lev, const char *fmt, va_list args) {
+    vprintf(fmt, args);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -144,16 +166,19 @@
 	}
 	
 	LinphoneCall *call = linphone_core_get_current_call(LC);
-
+    NSLog(@"📩 Inside Call 0!");
 	if (call) {
+        NSLog(@"📩 Inside Call 1!");
 		if (call == [CallManager.instance getBackgroundContextCall]) {
 			const LinphoneCallParams *params =
 			linphone_call_get_current_params(call);
+            NSLog(@"📩 Inside Call 3!");
 			if (linphone_call_params_video_enabled(params)) {
 				linphone_call_enable_camera(call, [CallManager.instance backgroundContextCameraIsEnabled]);
 			}
 			[CallManager.instance setBackgroundContextCallWithCall:nil];
 		} else if (linphone_call_get_state(call) == LinphoneCallIncomingReceived) {
+            NSLog(@"📩 Inside Call 4!");
 			if ((floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max)) {
 				if ([LinphoneManager.instance lpConfigBoolForKey:@"autoanswer_notif_preference"]) {
 					linphone_call_accept(call);
@@ -164,7 +189,7 @@
 				// Click the call notification when callkit is disabled, show app view.
 				[PhoneMainView.instance displayIncomingCall:call];
             }
-
+            NSLog(@"📩 Inside Call 5!");
 			// in this case, the ringing sound comes from the notification.
             // To stop it we have to do the iOS7 ring fix...
             [self fixRing];
@@ -369,6 +394,12 @@
 	[PhoneMainView.instance.mainViewController getCachedController:SingleCallView.compositeViewDescription.name]; // This will create the single instance of the SingleCallView including listeneres
 	[PhoneMainView.instance.mainViewController getCachedController:ConferenceCallView.compositeViewDescription.name]; // This will create the single instance of the ConferenceCallView including listeneres
 	[CallsViewModelBridge setupCallsViewNavigation];
+    
+    
+    PKPushRegistry *pushRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];
+    pushRegistry.delegate = self;
+    pushRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];
+
 	return YES;
 }
 
@@ -529,6 +560,174 @@
 	return NULL;
 }
 
+#pragma mark - VOIP notifications
+
+- (void)pushRegistry:(PKPushRegistry *)registry didUpdatePushCredentials:(PKPushCredentials *)credentials forType:(PKPushType)type {
+    if (type == PKPushTypeVoIP) {
+        // Convert token to string
+        const unsigned char *dataBuffer = (const unsigned char *)[credentials.token bytes];
+        NSMutableString *tokenString = [NSMutableString stringWithCapacity:(credentials.token.length * 2)];
+        for (int i = 0; i < credentials.token.length; ++i) {
+            [tokenString appendFormat:@"%02x", dataBuffer[i]];
+        }
+        [self saveVoIPDeviceTokenToUserDefaults:credentials.token];
+        NSLog(@"✅ VoIP Device Token: %@", tokenString);
+
+        // You can send this token to your server to send VoIP notifications
+        // Send token to Linphone Core
+        LinphoneCore *lc = [LinphoneManager getLc];
+        linphone_core_set_push_notification_enabled(lc, YES);
+//        linphone_core_set_push_notification_token(lc, [token UTF8String]);
+    }
+}
+
+// Save VoIP device token to UserDefaults
+static NSString *const kVoIPDeviceTokenKey = @"VoIPDeviceToken";
+
+- (void)saveVoIPDeviceTokenToUserDefaults:(NSData *)deviceToken {
+    if (!deviceToken) {
+        NSLog(@"Device token is nil. Cannot save to UserDefaults.");
+        return;
+    }
+
+    // Convert the device token to a string
+    const unsigned char *tokenBytes = (const unsigned char *)[deviceToken bytes];
+    NSMutableString *tokenString = [NSMutableString stringWithCapacity:deviceToken.length * 2];
+    for (NSUInteger i = 0; i < deviceToken.length; i++) {
+        [tokenString appendFormat:@"%02x", tokenBytes[i]];
+    }
+
+    // Save the token string to UserDefaults
+    [[NSUserDefaults standardUserDefaults] setObject:tokenString forKey:kVoIPDeviceTokenKey];
+    [[NSUserDefaults standardUserDefaults] synchronize]; // Ensure it's saved immediately
+
+    NSLog(@"VoIP device token saved to UserDefaults: %@", tokenString);
+}
+
+- (void)pushRegistry:(PKPushRegistry *)registry didReceiveIncomingPushWithPayload:(PKPushPayload *)payload forType:(PKPushType)type {
+    if ([type isEqualToString:PKPushTypeVoIP]) {
+        NSDictionary *payloadDict = payload.dictionaryPayload;
+        
+        // Extract call information from the payload
+        NSString *callerId = payloadDict[@"caller_id"];
+        NSString *callId = payloadDict[@"call_id"];
+        if (!callerId) {
+            NSLog(@"Caller ID is nil. Using default value.");
+            callerId = @"Unknown Caller"; // Provide a default value
+        }
+        // Initialize Linphone Core if needed
+        LinphoneCore *lc = [LinphoneManager getLc];
+        if (!lc) {
+            [[LinphoneManager instance] startLinphoneCore];
+            lc = [LinphoneManager getLc];
+        }
+        
+        // Report the incoming call to CallKit
+        if (callId == nil) {
+            NSLog(@"No call ID found in push payload.");
+            return;
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            LinphoneCall *call = linphone_core_get_call_by_callid(LC, [callId UTF8String]);
+            if (call != NULL) {
+                [PhoneMainView.instance displayIncomingCall:call];
+            } else {
+                NSLog(@"Call still not found after delay.");
+            }
+        });
+        
+//        [self reportIncomingCallWithCallerId:callerId callId:callId];
+        _isCallAlreadyReported = TRUE;
+        // Use Linphone SDK to handle the incoming call
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self handleIncomingCallWithCallerId:callerId callId:callId];
+//        });
+    }
+}
+
+- (void)handleIncomingCallWithCallerId:(NSString *)callerId callId:(NSString *)callId {
+    // 1️⃣ Get Linphone Core instance
+    LinphoneCore *lc = [LinphoneManager getLc];
+    if (!lc) {
+        NSLog(@"❌ Linphone Core is NULL. Cannot initiate call.");
+        return;
+    }
+
+    // 2️⃣ Validate callerId
+    if (!callerId || [callerId length] == 0) {
+        NSLog(@"❌ callerId is NULL or empty.");
+        return;
+    }
+
+    // 3️⃣ Create call parameters
+    LinphoneCallParams *params = linphone_core_create_call_params(lc, NULL);
+    if (!params) {
+        NSLog(@"❌ Failed to create LinphoneCallParams.");
+        return;
+    }
+
+    // 4️⃣ Configure call parameters
+    linphone_call_params_enable_video(params, FALSE);
+
+    // 5️⃣ Initiate the call
+//    LinphoneCall *call = linphone_core_invite_with_params(lc, callerId.UTF8String, params);
+//    if (call) {
+//        NSLog(@"✅ Incoming call initiated successfully.");
+//    } else {
+//        NSLog(@"⚠️ Failed to initiate incoming call.");
+//    }
+//
+//    // 6️⃣ Free call parameters to prevent memory leaks
+//    linphone_call_params_unref(params);
+}
+
+
+- (void)reportIncomingCallWithCallerId:(NSString *)callerId callId:(NSString *)callId {
+    CXProviderConfiguration *providerConfiguration = [[CXProviderConfiguration alloc] initWithLocalizedName:@"Voxtrio"];
+    providerConfiguration.supportsVideo = YES;
+    providerConfiguration.maximumCallGroups = 1;
+    providerConfiguration.maximumCallsPerCallGroup = 1;
+    providerConfiguration.supportedHandleTypes = [NSSet setWithObject:@(CXHandleTypeGeneric)];
+
+    CXProvider *provider = [[CXProvider alloc] initWithConfiguration:providerConfiguration];
+    CXCallController *callController = [[CXCallController alloc] initWithQueue:dispatch_get_main_queue()];
+
+    // Create a call update
+    CXCallUpdate *callUpdate = [[CXCallUpdate alloc] init];
+    callUpdate.remoteHandle = [[CXHandle alloc] initWithType:CXHandleTypeGeneric value:callerId];
+    callUpdate.hasVideo = NO; // Set to YES if it's a video call
+    callUpdate.localizedCallerName = callerId;
+
+    // Report the incoming call to CallKit
+    [provider reportNewIncomingCallWithUUID:[NSUUID UUID] update:callUpdate completion:^(NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Failed to report incoming call: %@", error.localizedDescription);
+            _isCallAlreadyReported = FALSE;
+        } else {
+            NSLog(@"Incoming call reported successfully");
+            _isCallAlreadyReported = TRUE;
+        }
+    }];
+}
+
+- (void)provider:(CXProvider *)provider performAnswerCallAction:(CXAnswerCallAction *)action {
+    NSLog(@"📞 Answering call...");
+    
+    LinphoneCore *lc = [LinphoneManager getLc];
+    LinphoneCall *call = linphone_core_get_current_call(lc);
+    
+    if (call) {
+        linphone_call_accept(call);
+        NSLog(@"✅ Call accepted.");
+    } else {
+        NSLog(@"❌ No active call found.");
+    }
+
+    [action fulfill];
+}
+
+
 #pragma mark - PushNotification Functions
 
 - (void)application:(UIApplication *)application
@@ -536,6 +735,15 @@
 	LOGI(@"[APNs] %@ : %@", NSStringFromSelector(_cmd), deviceToken);
     NSString *tokenString = [self hexStringFromDeviceToken:deviceToken];
        NSLog(@"[APNs] Device Token: %@", tokenString);
+        LinphoneAccount *default_account = linphone_core_get_default_account(LC);
+        if (default_account != NULL) {
+            const LinphoneAddress *addr = linphone_account_params_get_identity_address(linphone_account_get_params(default_account));
+            char *str = addr ? linphone_address_as_string(addr) : nil;
+            NSString *userSipId = [NSString stringWithUTF8String:str];  // ✅ Convert to NSString
+            [AppManager updateAPNsRecordsWithToken:tokenString userSipId:userSipId];
+            if (str) ms_free(str);
+        }
+        
 	dispatch_async(dispatch_get_main_queue(), ^{
 		linphone_core_did_register_for_remote_push(LC, (__bridge void*)deviceToken);
 	});
@@ -591,7 +799,7 @@
 
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
 	LOGD(@"didReceiveRemoteNotification -- backgroundPush");
-	
+    AudioServicesPlaySystemSound(1007); // Use system sound ID
 	NSDictionary *customPayload = [userInfo objectForKey:@"customPayload"];
 	if (customPayload && [customPayload objectForKey:@"token"]) {
 		[LinphoneManager.instance lpConfigSetString:[customPayload objectForKey:@"token"] forKey:@"account_creation_token" inSection:@"app"];

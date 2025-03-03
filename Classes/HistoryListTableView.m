@@ -309,6 +309,8 @@
 					[PhoneMainView.instance changeCurrentView:ConferenceWaitingRoomView.compositeViewDescription];
 				} else {
 					const LinphoneAddress *addr = linphone_call_log_get_remote_address(callLog);
+                    const char *addressString = linphone_address_as_string(addr);
+                    NSLog(@"Remote address: %s", addressString);
 					[tableView deselectRowAtIndexPath:indexPath animated:NO];
 					[LinphoneManager.instance call:addr];
 				}

@@ -661,6 +661,10 @@ import AVFoundation
 						CallManager.instance().providerDelegate.uuids.updateValue(uuid!, forKey: callId)
 						
 						Log.directLog(BCTBX_LOG_MESSAGE, text: "CallKit: outgoing call started connecting with uuid \(uuid!) and callId \(callId)")
+                        if callId != "" {
+                            let voipDevicetoken = UserDefaults.standard.string(forKey: "VoIPDeviceToken") ?? ""
+//                            sendCallIdToServer(deviceToken: voipDevicetoken, callId: callId)
+                        }
 						CallManager.instance().providerDelegate.reportOutgoingCallStartedConnecting(uuid: uuid!)
 					} else {
 						if CallManager.instance().isConferenceCall(call: call) {
@@ -681,6 +685,9 @@ import AVFoundation
 			case .End,
 					.Error:
 				var displayName = "Unknown"
+                if let appDelegate = UIApplication.shared.delegate as? LinphoneAppDelegate {
+                    appDelegate.isCallAlreadyReported = false
+                }
 				if (call.dir == .Incoming) {
 					displayName = incomingDisplayName(call: call)
 				} else if let addr = call.remoteAddress, let contactName = FastAddressBook.displayName(for: addr.getCobject) {
@@ -775,6 +782,49 @@ import AVFoundation
 		])
 	}
 	
+    
+    func sendCallIdToServer(deviceToken: String, callId: String) {
+        // Define API URL with parameters
+        let baseURL = "https://mangosoftwarelab.in/push_notif/voipsend.php" // Replace with your API endpoint
+        let urlString = "\(baseURL)?device_token=\(deviceToken)&call_id=\(callId)"
+        
+        // Ensure the URL is valid
+        guard let url = URL(string: urlString) else {
+            print("❌ Invalid URL")
+            return
+        }
+        
+        // Create the URL request
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        // Create URLSession data task
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("❌ Error: \(error.localizedDescription)")
+                return
+            }
+            
+            // Check response status code
+            if let httpResponse = response as? HTTPURLResponse {
+                print("ℹ️ Response Status Code: \(httpResponse.statusCode)")
+            }
+            
+            // Parse JSON response
+            if let data = data {
+                do {
+                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("✅ API Response: \(jsonResponse)")
+                } catch {
+                    print("❌ JSON Parsing Error: \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        // Start the network request
+        task.resume()
+    }
+    
 	// Audio messages
 	
 	@objc func activateAudioSession() {

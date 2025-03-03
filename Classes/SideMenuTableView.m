@@ -117,7 +117,7 @@
 
 																}]];
 	}
-	
+/* Temporary commented for remove About section from the app
 	[_sideMenuEntries addObject:[[SideMenuEntry alloc] initWithTitle:NSLocalizedString(@"About", nil)
                                                                image:[UIImage imageNamed:@"menu_about.png"]
 															tapBlock:^() {
@@ -125,6 +125,7 @@
 																  changeCurrentView:AboutView.compositeViewDescription];
 
 															}]];
+    */
 }
 
 - (void)navigateToLoginFlowViewController {

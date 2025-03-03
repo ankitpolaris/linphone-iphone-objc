@@ -11,7 +11,9 @@ import linphone
 
 struct Configs {
     
-    static var domainUrl = "194.163.170.113:5080"
+//    static var domainUrl = "194.163.170.113:5080"
+    static var domainUrl = "68.168.31.204:5080"
+    static var baseURL = "http://68.168.31.204/"
     
 }
 
@@ -42,6 +44,11 @@ class LoginFormViewController: UIViewController {
         }
         self.domainTextField.text = Configs.domainUrl
     }
+    
+    @IBAction func loginBtnTapped(_ sender: UIButton) {
+        login()
+    }
+    
     
     @IBAction func skipBtnTapped(_ sender: UIButton) {
         self.dismiss(animated: true)
