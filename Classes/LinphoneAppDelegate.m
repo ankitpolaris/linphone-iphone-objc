@@ -45,6 +45,8 @@
 #include "FIRApp.h"
 #endif
 
+@import Firebase;
+
 @implementation LinphoneAppDelegate
 
 @synthesize configURL;
@@ -102,7 +104,7 @@
         NSLog(@"✅ Found chat room, sending test message...");
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            linphone_chat_room_send_message(room, "Hello World !!");
+//            linphone_chat_room_send_message(room, "Hello World !!");
             NSLog(@"📩 Test message sent!");
         });
     }
@@ -321,6 +323,7 @@ static void log_handler(OrtpLogLevel lev, const char *fmt, va_list args) {
 #ifdef USE_CRASHLYTICS
 	[FIRApp configure];
 #endif
+    [FIRApp configure]; // For Firebase Cloud messaging
 	[UNUserNotificationCenter currentNotificationCenter].delegate = self;
 	if ([VFSUtil vfsEnabledWithGroupName:kLinphoneMsgNotificationAppGroupId]) {
 		if (TARGET_IPHONE_SIMULATOR) {

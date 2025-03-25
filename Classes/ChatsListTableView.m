@@ -19,6 +19,7 @@
 
 #import "ChatsListTableView.h"
 #import "UIChatCell.h"
+#import "ConversationsTableViewCell.h"
 #import "FileTransferDelegate.h"
 #import "linphoneapp-Swift.h"
 #import "linphone/linphonecore.h"
@@ -26,6 +27,10 @@
 #import "Utils.h"
 #import "SVProgressHUD.h"
 
+@interface ChatsListTableView ()
+@property (nonatomic, strong) ChatViewModel *chatViewModel;
+@property (nonatomic, strong) NSArray<NSDictionary *> *conversations;
+@end
 
 @implementation ChatsListTableView
 
@@ -51,11 +56,23 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	self.tableView.accessibilityIdentifier = @"Chat list";
+    
+    // Initialize ChatViewModel
+    self.chatViewModel = [[ChatViewModel alloc] init];
+    self.viewModelWrapper = [[ChatViewModelWrapper alloc] init];
+    
+    UINib *cellNib = [UINib nibWithNibName:@"ConversationsTableViewCell" bundle:nil];
+     [self.tableView registerNib:cellNib forCellReuseIdentifier:@"ConversationsTableViewCell"];
+
+    // Fetch conversations
+    [self fetchConversations];
+    
+    
 	[self loadData];
 	_chatRooms = NULL;
     
     
-    LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
+/*    LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
     if (room) {
         const MSList *messages = linphone_chat_room_get_history(room, 0);
         NSLog(@"📜 Found %zu messages in chat room.", bctbx_list_size(messages));
@@ -72,24 +89,11 @@
     } else {
         NSLog(@"⚠️ Chat room not found.");
     }
-
-    
-//    const MSList *unsorted = linphone_core_get_chat_rooms(LC);
-//    NSLog(@"📌 Found %zu chat rooms on startup.", bctbx_list_size(unsorted));
-//
-//    if (bctbx_list_size(unsorted) == 0) {
-//        NSLog(@"⚠️ No chat rooms found. Checking message history...");
-//        
-//        LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
-//        if (room) {
-//            NSLog(@"✅ Found chat room manually.");
-//        } else {
-//            NSLog(@"🚨 Chat room does not exist in Linphone.");
-//        }
-//    }
+*/
     
     
-    const LinphoneAddress *addr = linphone_core_interpret_url(LC, "sip:+919977802087@pbx01");
+    
+ /*   const LinphoneAddress *addr = linphone_core_interpret_url(LC, "sip:+919977802087@pbx01");
     if (addr) {
         LinphoneChatRoom *room = linphone_core_get_chat_room_from_uri(LC, "sip:+919977802087@pbx01");
 
@@ -111,12 +115,23 @@
     } else {
         NSLog(@"❌ Invalid SIP address.");
     }
-//    [self printBctbxListData:_data];
-	NSDictionary* userInfo;
+    */
+
+    NSDictionary* userInfo;
 	[NSNotificationCenter.defaultCenter addObserver:self
 										   selector: @selector(receivePresenceNotification:)
 											   name: @"LinphoneFriendPresenceUpdate"
 											 object: userInfo];
+}
+
+- (void)fetchConversations {
+    [self.chatViewModel fetchConversationsWithCompletion:^(NSArray<NSDictionary *> *conversations) {
+        self.conversations = conversations;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.emptyView setHidden:TRUE];
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 -(void) receivePresenceNotification:(NSNotification*)notification
@@ -272,56 +287,122 @@ static int sorted_history_comparison(LinphoneChatRoom *to_insert, LinphoneChatRo
 	return 1;
 }
 
-- (void)printBctbxListData:(const bctbx_list_t *)dataList {
-    int size = bctbx_list_size(dataList);
-    NSLog(@"🔍 Total Elements in List: %d", size);
-    
-    const bctbx_list_t *iterator = dataList;
-    int index = 0;
-
-    while (iterator) {
-        void *item = iterator->data; // Get the current item (could be a message, address, etc.)
-
-        if (item) {
-            NSLog(@"📌 Item %d: %p", index, item);
-
-            // If the item is a LinphoneChatMessage, print its details
-            if (linphone_chat_message_get_text) {
-                const char *messageText = linphone_chat_message_get_text((LinphoneChatMessage *)item);
-                NSLog(@"📝 Message: %s", messageText ? messageText : "NULL");
-            }
-        } else {
-            NSLog(@"⚠️ Item %d is NULL", index);
-        }
-
-        iterator = iterator->next; // Move to next item
-        index++;
-    }
-}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//	return bctbx_list_size(_data);
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return bctbx_list_size(_data);
+    return self.conversations.count;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *kCellId = @"UIChatCell";
-	UIChatCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellId];
-	if (cell == nil)
-		cell = [[UIChatCell alloc] initWithIdentifier:kCellId];
+    static NSString *kCellId = @"UIChatCell";
+    UIChatCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellId];
+    if (cell == nil)
+        cell = [[UIChatCell alloc] initWithIdentifier:kCellId];
 
-	if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
-		return cell;
-	}
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+        return cell;
+    }
 
-	[cell setChatRoom:(LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row])];
-	[super accessoryForCell:cell atPath:indexPath];
-	BOOL forwardMode = VIEW(ChatConversationViewSwift).pendingForwardMessage != nil;
-	cell.forwardIcon.hidden = !forwardMode;
-	if (forwardMode) {
-		cell.ephemeral.hidden = true;
-		cell.imdmIcon.hidden = true;
-	}
+    [cell setChatRoom:(LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row])];
+    [super accessoryForCell:cell atPath:indexPath];
+    BOOL forwardMode = VIEW(ChatConversationViewSwift).pendingForwardMessage != nil;
+    cell.forwardIcon.hidden = !forwardMode;
+    if (forwardMode) {
+        cell.ephemeral.hidden = true;
+        cell.imdmIcon.hidden = true;
+    }
+    
+    return cell;
+} */
+
+- (NSString *)extractUserIdFromSipAddress2:(NSString *)sipAddress {
+    NSArray *components = [sipAddress componentsSeparatedByString:@"@"];
+    if (components.count > 0) {
+        NSString *userPart = components[0]; // Extract "sip:202-1234"
+        
+        // Remove "sip:" prefix if present
+        if ([userPart containsString:@"sip:"]) {
+            userPart = [userPart stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
+        }
+        
+        // Extract first part before "-"
+        NSArray *userParts = [userPart componentsSeparatedByString:@"-"];
+        if (userParts.count > 0) {
+            NSString *userId = userParts[0]; // Get "202"
+            return userId.length >= 3 ? [userId substringToIndex:3] : userId; // First 3 characters
+        }
+    }
+    return nil; // Return nil if extraction fails
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+    static NSString *kCellId = @"ConversationsTableViewCell";
+    ConversationsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellId];
+
+    if (!cell) {
+        cell = [[ConversationsTableViewCell alloc] initWithIdentifier:kCellId];
+    }
+
+    // ✅ Get Current User ID
+     LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+     NSString *currentUserId = nil;
+     NSString *currentSenderName = @"John Cena"; // Default fallback value
+
+     if (defaultAccount != NULL) {
+         const LinphoneAddress *currentAddr = linphone_account_params_get_identity_address(linphone_account_get_params(defaultAccount));
+         if (currentAddr) {
+             char *currentStr = linphone_address_as_string(currentAddr);
+             if (currentStr) {
+                 NSString *currentSipId = [NSString stringWithUTF8String:currentStr];
+                 currentUserId = [self extractUserIdFromSipAddress2:currentSipId]; // ✅ Extract user ID
+             }
+
+             const char *displayName = linphone_address_get_display_name(currentAddr);
+             if (displayName) {
+                 currentSenderName = [NSString stringWithUTF8String:displayName];
+             }
+         }
+     }
+    
+    NSDictionary *conversation = self.conversations[indexPath.row];
+    NSString *chatId = conversation[@"chatMetadata"][@"chatId"];
+    NSString *user1 = conversation[@"chatMetadata"][@"user1"];
+    NSString *user2 = conversation[@"chatMetadata"][@"user2"];
+
+    // ✅ Ensure receiverId is always the other participant
+    NSString *receiverId = [user1 isEqualToString:currentUserId] ? user2 : user1;
+    cell.nameLabel.text = receiverId;
+//    cell.nameLabel.text = [NSString stringWithFormat:@"%@ and %@", user1, user2];
+
+    [self.viewModelWrapper fetchLastMessageForChatId:chatId completion:^(NSDictionary * _Nullable lastMessage) {
+        
+        [cell.mainView setHidden:FALSE];
+         if (lastMessage) {
+             // Set the last message text
+             cell.chatContentLabel.text = lastMessage[@"text"];
+//             cell.nameLabel.text = lastMessage[@"senderName"];
+             cell.nameLabel.text = receiverId;
+             
+             NSNumber *timestamp = lastMessage[@"timestamp"];
+             if (timestamp != nil) {
+                 NSString *timeString = [self.chatViewModel formatTimestamp:timestamp.doubleValue];
+                 cell.chatLatestTimeLabel.text = timeString;
+             }
+         } else {
+             // No messages yet
+             cell.chatContentLabel.text = @"No messages";
+             cell.chatLatestTimeLabel.text = @"";
+         }
+     }];
+    
+//    cell.avatarImageView.image = [UIImage imageNamed:@"default_avatar"];
+//    cell.chatTickIcon.image = [UIImage imageNamed:@"chat_tick"];
+    
 	return cell;
 }
 
@@ -335,9 +416,43 @@ static int sorted_history_comparison(LinphoneChatRoom *to_insert, LinphoneChatRo
 	[super tableView:tableView didSelectRowAtIndexPath:indexPath];
 	if ([self isEditing])
 		return;
-
-	LinphoneChatRoom *chatRoom = (LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row]);
-	[PhoneMainView.instance goToChatRoomSwift:chatRoom];
+    
+    LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+    NSString *currentUserId = nil;
+    NSString *currentSenderName = @"John Cena"; // Default value
+    if (defaultAccount != NULL) {
+        const LinphoneAddress *currentAddr = linphone_account_params_get_identity_address(linphone_account_get_params(defaultAccount));
+        if (currentAddr) {
+            char *currentStr = linphone_address_as_string(currentAddr);
+            if (currentStr) {
+                NSString *currentSipId = [NSString stringWithUTF8String:currentStr];
+//                            ms_free(currentStr);
+                currentUserId = [self extractUserIdFromSipAddress2:currentSipId]; // Extract current user ID
+            }
+            
+            const char *displayName = linphone_address_get_display_name(currentAddr);
+            if (displayName) {
+                currentSenderName = [NSString stringWithUTF8String:displayName];
+            }
+        }
+    }
+    ConversationsTableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary *conversation = self.conversations[indexPath.row];
+    NSString *chatId = conversation[@"chatMetadata"][@"chatId"];
+//    NSString *senderId = conversation[@"chatMetadata"][@"user1"];
+    NSString *senderId = currentUserId;
+//    NSString *receiverId = conversation[@"chatMetadata"][@"user2"];
+    NSString *receiverId = selectedCell.nameLabel.text;
+    NSDictionary *userDict = @{
+        @"senderId": senderId,
+        @"receiverId": receiverId,
+        @"senderName": senderId,
+        @"receiverName": receiverId,
+        @"chatId": chatId
+    };
+    [PhoneMainView.instance goToExistingChatRoomSwiftFirebase:userDict];
+//	LinphoneChatRoom *chatRoom = (LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row]);
+//	[PhoneMainView.instance goToChatRoomSwift:chatRoom];
 }
 
 void deletion_chat_room_state_changed(LinphoneChatRoom *cr, LinphoneChatRoomState newState) {

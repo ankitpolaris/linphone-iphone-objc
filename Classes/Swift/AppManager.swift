@@ -132,12 +132,24 @@ struct APIService {
     @objc static func updateAPNsRecords(token: String, userSipId: String) {
         // Usage Example
         let apiService = APIService()
-        let url = Configs.baseURL + "pbx/userAPNs.php"
+        let url = Configs.baseURL + "pbx/updatetoken.php"
+      
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Customize format as needed
+        let timeOfAddingToken = formatter.string(from: now)
+              
+        let userExtension = userSipId.components(separatedBy: "@").first
+        print("UserExtension:\(userExtension ?? "")") // Output: 201-1234
+        
+
         let parameters: [String: Any] = [
             "token": token,
             "platform": "ios",
             "userId": userSipId,
             "userSipId": userSipId,
+            "userExtension": userExtension ?? "",
+            "timeOfAddingToken": timeOfAddingToken,
             "userPhoneNumber": ""
         ]
         let userDefaults = UserDefaults.standard

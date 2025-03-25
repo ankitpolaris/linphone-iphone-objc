@@ -311,9 +311,9 @@ class ChatConversationViewSwift: BackActionsNavigationView, PHPickerViewControll
 		contentMessageView.recordingPlayButton.onClickAction = onvrPlayPauseStop
 		contentMessageView.recordingStopButton.onClickAction = onvrPlayPauseStop
 		
-		if !ChatConversationViewModel.sharedModel.chatRoom!.isReadOnly {
-			contentMessageView.messageView.ephemeralIndicator.isHidden = !ChatConversationViewModel.sharedModel.chatRoom!.ephemeralEnabled
-		}
+//		if !ChatConversationViewModel.sharedModel.chatRoom!.isReadOnly {
+//			contentMessageView.messageView.ephemeralIndicator.isHidden = !ChatConversationViewModel.sharedModel.chatRoom!.ephemeralEnabled
+//		}
 	
 		handlePendingTransferIfAny()
 		configureMessageField()
@@ -612,6 +612,94 @@ class ChatConversationViewSwift: BackActionsNavigationView, PHPickerViewControll
 		contentMessageView.changeSecureLevel(secureLevel: secureLevel != nil, imageBadge: secureLevel)
 		initDataSource(groupeChat: !isOneToOneChat, secureLevel: secureLevel != nil, cChatRoom: cChatRoom)
 	}
+    
+    @objc func initChatRoomFirebase(chatModel: NSDictionary) {
+//        ChatConversationViewModel.sharedModel.chatRoom = ChatRoom.getSwiftObject(cObject: cChatRoom)
+//        linphoneChatRoom = cChatRoom
+//        PhoneMainView.instance().currentRoom = cChatRoom
+        ChatConversationViewModel.sharedModel.address = ChatConversationViewModel.sharedModel.chatRoom?.peerAddress?.asString()
+        
+        var changeIcon = false
+        
+        guard let chatDict = chatModel as? [String: Any] else { return }
+        let senderId = chatDict["senderId"] as? String ?? "Unknown"
+        let receiverId = chatDict["receiverId"] as? String ?? "Unknown"
+        let senderName = chatDict["senderName"] as? String ?? "Unknown"
+        let receiverName = chatDict["receiverName"] as? String ?? "Unknown"
+        let chatId = chatDict["chatId"] as? String ?? "Unknown"
+        
+        print("✅ Chat Details:")
+        print("Sender: \(senderName) (\(senderId))")
+        print("Receiver: \(receiverName) (\(receiverId))")
+        print("Chat ID: \(chatId)")
+        
+        
+            
+            let firstParticipant = ChatConversationViewModel.sharedModel.chatRoom?.participants.first
+//            let addr = (firstParticipant != nil) ? linphone_participant_get_address(firstParticipant?.getCobject) : linphone_chat_room_get_peer_address(cChatRoom);
+//            ChatConversationViewModel.sharedModel.address = FastAddressBook.displayName(for: addr) ?? "unknow"
+//            changeIcon = false
+        
+        
+//            updateParticipantLabel()
+            
+        
+        
+        changeTitle(titleString: ChatConversationViewModel.sharedModel.address ?? "Error")
+        
+//        if !ChatConversationViewModel.sharedModel.chatRoom!.isReadOnly{
+//            changeCallIcon(groupChat: changeIcon)
+//            action1BisButton.isEnabled = true
+//        }else{
+            action1Button.isHidden = true
+            action1BisButton.isHidden = false
+            action1BisButton.isEnabled = false
+//        }
+
+    }
+    
+    @objc func initExistingChatRoomFirebase(chatModel: NSDictionary) {
+//        ChatConversationViewModel.sharedModel.chatRoom = ChatRoom.getSwiftObject(cObject: cChatRoom)
+//        linphoneChatRoom = cChatRoom
+//        PhoneMainView.instance().currentRoom = cChatRoom
+        ChatConversationViewModel.sharedModel.address = ChatConversationViewModel.sharedModel.chatRoom?.peerAddress?.asString()
+        
+        var changeIcon = false
+        
+        guard let chatDict = chatModel as? [String: Any] else { return }
+        let senderId = chatDict["senderId"] as? String ?? "Unknown"
+        let receiverId = chatDict["receiverId"] as? String ?? "Unknown"
+        let senderName = chatDict["senderName"] as? String ?? "Unknown"
+        let receiverName = chatDict["receiverName"] as? String ?? "Unknown"
+        let chatId = chatDict["chatId"] as? String ?? "Unknown"
+        
+        print("✅ Chat Details:")
+        print("Sender: \(senderName) (\(senderId))")
+        print("Receiver: \(receiverName) (\(receiverId))")
+        print("Chat ID: \(chatId)")
+        
+        
+            
+            let firstParticipant = ChatConversationViewModel.sharedModel.chatRoom?.participants.first
+//            let addr = (firstParticipant != nil) ? linphone_participant_get_address(firstParticipant?.getCobject) : linphone_chat_room_get_peer_address(cChatRoom);
+//            ChatConversationViewModel.sharedModel.address = FastAddressBook.displayName(for: addr) ?? "unknow"
+//            changeIcon = false
+            updateParticipantLabel()
+            
+        
+        
+        changeTitle(titleString: ChatConversationViewModel.sharedModel.address ?? "Error")
+        
+        if !ChatConversationViewModel.sharedModel.chatRoom!.isReadOnly{
+            changeCallIcon(groupChat: changeIcon)
+            action1BisButton.isEnabled = true
+        }else{
+            action1Button.isHidden = true
+            action1BisButton.isHidden = false
+            action1BisButton.isEnabled = false
+        }
+
+    }
 	
 	func updateParticipantLabel(){
 		let participants = ChatConversationViewModel.sharedModel.chatRoom?.participants

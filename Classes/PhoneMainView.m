@@ -878,6 +878,43 @@ static RootViewManager *rootViewManagerInstance = nil;
 	[self goToChatRoomSwift:room];
 }
 
+- (void)getOrCreateOneToOneChatRoomFirebase:(NSDictionary *)chatDetails
+                                  waitView:(UIView *)waitView
+                               isEncrypted:(BOOL)isEncrypted {
+    
+    if (!linphone_core_is_network_reachable(LC)) {
+        [PhoneMainView.instance presentViewController:[LinphoneUtils networkErrorView:@"send a message"]
+                                            animated:YES
+                                          completion:nil];
+        return;
+    }
+
+    // ✅ Extract user details from dictionary
+    NSString *currentUserId = chatDetails[@"senderId"];
+    NSString *receiverId = chatDetails[@"receiverId"];
+    NSString *chatId = chatDetails[@"chatId"];
+
+    if (!currentUserId || !receiverId) {
+        NSLog(@"❌ Error: Missing user IDs. Cannot create chat room.");
+        return;
+    }
+
+    NSLog(@"✅ Current User ID: %@", currentUserId);
+    NSLog(@"✅ Receiver User ID: %@", receiverId);
+    NSLog(@"✅ Chat ID: %@", chatId);
+
+    // ✅ Open Chat Room using Firebase integration
+    [self goToExistingChatRoomSwiftFirebase:chatDetails];
+}
+
+
+// ✅ Helper Method to Extract User ID Before '@'
+- (NSString *)extractUserIdFromSipAddress:(NSString *)sipAddress {
+    NSArray *components = [sipAddress componentsSeparatedByString:@"@"];
+    return components.count > 0 ? components[0] : nil;
+}
+
+
 - (LinphoneChatRoom *)createChatRoom:(const char *)subject addresses:(bctbx_list_t *)addresses andWaitView:(UIView *)waitView isEncrypted:(BOOL)isEncrypted isGroup:(BOOL)isGroup{
 	LinphoneAccount *account = linphone_core_get_default_account(LC);
     if (!(account && linphone_account_params_get_conference_factory_uri(linphone_account_get_params(account)))
@@ -957,6 +994,34 @@ static RootViewManager *rootViewManagerInstance = nil;
 	[view initChatRoomWithCChatRoom:cr];
 	
 	[PhoneMainView.instance changeCurrentView:view.compositeViewDescription];
+}
+
+
+- (void)goToExistingChatRoomSwiftFirebase:(NSDictionary *)chatDetails {
+    _waitView.hidden = YES;
+    _waitView = NULL;
+
+//    FirebaseChatConversationViewController *chatVC = [[FirebaseChatConversationViewController alloc] init];
+//    chatVC.chatDetails = chatDetails; // Pass the data
+//
+//    CGFloat topBarHeight = 90; // Adjust this based on your actual top bar height
+//    chatVC.view.frame = CGRectMake(0, topBarHeight, self.view.frame.size.width, self.view.frame.size.height - topBarHeight);
+//
+//    // ✅ Add the child view controller
+//    [self addChildViewController:chatVC];
+//    [self.view addSubview:chatVC.view];
+//    [chatVC didMoveToParentViewController:self];
+
+    
+
+    FirebaseChatConversationViewController *chatVC = [[FirebaseChatConversationViewController alloc] init];
+    chatVC.chatDetails = chatDetails; // Pass the data
+
+    chatVC.modalPresentationStyle = UIModalPresentationAutomatic;
+    [self presentViewController:chatVC animated:YES completion:nil];
+    
+    
+    
 }
 
 - (void)resetBeforeGoToChatRoomSwift{

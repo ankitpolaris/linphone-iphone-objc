@@ -289,88 +289,301 @@
 	return cell;
 }
 
+- (NSString *)extractUserIdFromSipAddress:(NSString *)sipAddress {
+    NSArray *components = [sipAddress componentsSeparatedByString:@"@"];
+    return components.count > 0 ? components[0] : nil;
+}
+
+- (NSString *)extractUserIdFromSipAddress2:(NSString *)sipAddress {
+    NSArray *components = [sipAddress componentsSeparatedByString:@"@"];
+    if (components.count > 0) {
+        NSString *userPart = components[0]; // Extract "sip:202-1234"
+        
+        // Remove "sip:" prefix if present
+        if ([userPart containsString:@"sip:"]) {
+            userPart = [userPart stringByReplacingOccurrencesOfString:@"sip:" withString:@""];
+        }
+        
+        // Extract first part before "-"
+        NSArray *userParts = [userPart componentsSeparatedByString:@"-"];
+        if (userParts.count > 0) {
+            NSString *userId = userParts[0]; // Get "202"
+            return userId.length >= 3 ? [userId substringToIndex:3] : userId; // First 3 characters
+        }
+    }
+    return nil; // Return nil if extraction fails
+}
+
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//	UIChatCreateCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//	if (!cell.userInteractionEnabled)
+//		return;
+//	
+//	LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+//	if (!(defaultAccount && linphone_account_params_get_conference_factory_uri(linphone_account_get_params(defaultAccount))) || !_isGroupChat) {
+//		LinphoneAddress *addr = linphone_address_new(cell.addressLabel.text.UTF8String);
+//        
+//        // Create new chat room here
+//        NSDictionary *userDict;
+//        
+//        if (addr) {
+//            char *receiverStr = linphone_address_as_string(addr);
+//            if (receiverStr) {
+//                NSString *receiverSipId = [NSString stringWithUTF8String:receiverStr];
+//                ms_free(receiverStr); // Free memory
+//
+//                NSString *receiverId = [self extractUserIdFromSipAddress:receiverSipId]; // Get receiver user ID
+//                NSString *receiverName = cell.displayNameLabel.text;
+//                
+//                // Get current user SIP
+//                LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+//                NSString *currentUserId = nil;
+//                NSString *currentSenderName = @"John Cena"; // Default value
+//                if (defaultAccount != NULL) {
+//                    const LinphoneAddress *currentAddr = linphone_account_params_get_identity_address(linphone_account_get_params(defaultAccount));
+//                    if (currentAddr) {
+//                        char *currentStr = linphone_address_as_string(currentAddr);
+//                        if (currentStr) {
+//                            NSString *currentSipId = [NSString stringWithUTF8String:currentStr];
+//                            ms_free(currentStr);
+//                            currentUserId = [self extractUserIdFromSipAddress:currentSipId]; // Extract current user ID
+//                        }
+//                        
+//                        const char *displayName = linphone_address_get_display_name(currentAddr);
+//                        if (displayName) {
+//                            currentSenderName = [NSString stringWithUTF8String:displayName];
+//                        }
+//                    }
+//                }
+//                
+//                // Create new chat room
+//                ChatViewModelWrapper *viewModelWrapper = [[ChatViewModelWrapper alloc] init];
+//                NSString *chatId = [viewModelWrapper generateChatIdForUser1:currentUserId user2:receiverId];
+//                
+////                [viewModelWrapper sendMessageWithTextt:@"Hello!" senderId:currentUserId senderName:@"John Doe" chatId:chatId user1:currentUserId user2:receiverId];
+//                userDict = @{
+//                    @"senderId": currentUserId,
+//                    @"receiverId": receiverId,
+//                    @"senderName": currentSenderName,
+//                    @"receiverName": receiverName,
+//                    @"chatId": chatId
+//                };
+//                linphone_address_destroy(addr); // Clean up
+//            }
+//        }
+//
+//               
+//        [PhoneMainView.instance getOrCreateOneToOneChatRoomFirebase:userDict waitView:_waitView isEncrypted:_isEncrypted];
+//		if (!addr) {
+//			LOGE(@"Chat room could not be created on server, because null address.");
+//			[ChatConversationInfoView displayCreationError];
+//		} else {
+//			linphone_address_unref(addr);
+//		}
+//		return;
+//	}
+//
+//	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+//	NSInteger index = 0;
+//	if(cell.selectedImage.hidden) {
+//		if(![_contactsGroup containsObject:cell.addressLabel.text]) {
+//			[_contactsGroup addObject:cell.addressLabel.text];
+//			[_collectionView registerClass:UIChatCreateCollectionViewCell.class forCellWithReuseIdentifier:cell.addressLabel.text];
+//		}
+//	} else if([_contactsGroup containsObject:cell.addressLabel.text]) {
+//		index = (NSInteger)[_contactsGroup indexOfObject:cell.addressLabel.text];
+//		[_contactsGroup removeObject:cell.addressLabel.text];
+//		if(index == _contactsGroup.count)
+//			index = index-1;
+//	}
+//	cell.selectedImage.hidden = !cell.selectedImage.hidden;
+//	_controllerNextButton.enabled = (_contactsGroup.count > 0) || _isForEditing;
+//	if (_contactsGroup.count > 1 || (_contactsGroup.count == 1 && cell.selectedImage.hidden)) {
+//		[UIView animateWithDuration:0.2
+//							  delay:0
+//							options:UIViewAnimationOptionCurveEaseOut
+//						 animations:^{
+//							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+//															_collectionView.frame.origin.y + _collectionView.frame.size.height,
+//															tableView.frame.size.width,
+//															tableView.frame.size.height)];
+//
+//						 }
+//						 completion:nil];
+//	} else if (_contactsGroup.count == 1 && !cell.selectedImage.hidden) {
+//		[UIView animateWithDuration:0.2
+//							  delay:0
+//							options:UIViewAnimationOptionCurveEaseOut
+//						 animations:^{
+//							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+//															_collectionView.frame.origin.y + _collectionView.frame.size.height,
+//															tableView.frame.size.width,
+//															tableView.frame.size.height - _collectionView.frame.size.height)];
+//
+//						 }
+//						 completion:nil];
+//	} else {
+//		[UIView animateWithDuration:0.2
+//							  delay:0
+//							options:UIViewAnimationOptionCurveEaseOut
+//						 animations:^{
+//							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+//															_searchBar.frame.origin.y + _searchBar.frame.size.height,
+//															tableView.frame.size.width,
+//															tableView.frame.size.height + _collectionView.frame.size.height)];
+//						 }
+//						 completion:nil];
+//	}
+//	[_collectionView reloadData];
+//	if (!cell.selectedImage.hidden) {
+//		index = _contactsGroup.count - 1;
+//	}
+//
+//	dispatch_async(dispatch_get_main_queue(), ^{
+//		if(index > 0) {
+//			NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
+//			[_collectionView scrollToItemAtIndexPath:path
+//									atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically)
+//											animated:YES];
+//		}
+//	});
+//}
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	UIChatCreateCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-	if (!cell.userInteractionEnabled)
-		return;
-	
-	LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
-	if (!(defaultAccount && linphone_account_params_get_conference_factory_uri(linphone_account_get_params(defaultAccount))) || !_isGroupChat) {
-		LinphoneAddress *addr = linphone_address_new(cell.addressLabel.text.UTF8String);
-		[PhoneMainView.instance getOrCreateOneToOneChatRoom:addr waitView:_waitView isEncrypted:_isEncrypted];
-		if (!addr) {
-			LOGE(@"Chat room could not be created on server, because null address.");
-			[ChatConversationInfoView displayCreationError];
-		} else {
-			linphone_address_unref(addr);
-		}
-		return;
-	}
+    UIChatCreateCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (!cell.userInteractionEnabled)
+        return;
+    
+    LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+    if (!(defaultAccount && linphone_account_params_get_conference_factory_uri(linphone_account_get_params(defaultAccount))) || !_isGroupChat) {
+        LinphoneAddress *addr = linphone_address_new(cell.addressLabel.text.UTF8String);
+        
+        // Create new chat room here
+        NSDictionary *userDict;
+        
+        if (addr) {
+            char *receiverStr = linphone_address_as_string(addr);
+            if (receiverStr) {
+                NSString *receiverSipId = [NSString stringWithUTF8String:receiverStr];
+//                ms_free(receiverStr); // Free memory
 
-	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	NSInteger index = 0;
-	if(cell.selectedImage.hidden) {
-		if(![_contactsGroup containsObject:cell.addressLabel.text]) {
-			[_contactsGroup addObject:cell.addressLabel.text];
-			[_collectionView registerClass:UIChatCreateCollectionViewCell.class forCellWithReuseIdentifier:cell.addressLabel.text];
-		}
-	} else if([_contactsGroup containsObject:cell.addressLabel.text]) {
-		index = (NSInteger)[_contactsGroup indexOfObject:cell.addressLabel.text];
-		[_contactsGroup removeObject:cell.addressLabel.text];
-		if(index == _contactsGroup.count)
-			index = index-1;
-	}
-	cell.selectedImage.hidden = !cell.selectedImage.hidden;
-	_controllerNextButton.enabled = (_contactsGroup.count > 0) || _isForEditing;
-	if (_contactsGroup.count > 1 || (_contactsGroup.count == 1 && cell.selectedImage.hidden)) {
-		[UIView animateWithDuration:0.2
-							  delay:0
-							options:UIViewAnimationOptionCurveEaseOut
-						 animations:^{
-							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
-															_collectionView.frame.origin.y + _collectionView.frame.size.height,
-															tableView.frame.size.width,
-															tableView.frame.size.height)];
+                NSString *receiverId = [self extractUserIdFromSipAddress2:receiverSipId]; // Get receiver user ID
+                NSString *receiverName = cell.displayNameLabel.text;
+                
+                // Get current user SIP
+                LinphoneAccount *defaultAccount = linphone_core_get_default_account(LC);
+                NSString *currentUserId = nil;
+                NSString *currentSenderName = @"John Cena"; // Default value
+                if (defaultAccount != NULL) {
+                    const LinphoneAddress *currentAddr = linphone_account_params_get_identity_address(linphone_account_get_params(defaultAccount));
+                    if (currentAddr) {
+                        char *currentStr = linphone_address_as_string(currentAddr);
+                        if (currentStr) {
+                            NSString *currentSipId = [NSString stringWithUTF8String:currentStr];
+//                            ms_free(currentStr);
+                            currentUserId = [self extractUserIdFromSipAddress2:currentSipId]; // Extract current user ID
+                        }
+                        
+                        const char *displayName = linphone_address_get_display_name(currentAddr);
+                        if (displayName) {
+                            currentSenderName = [NSString stringWithUTF8String:displayName];
+                        }
+                    }
+                }
+                
+                // Create new chat room
+                ChatViewModelWrapper *viewModelWrapper = [[ChatViewModelWrapper alloc] init];
+                NSString *chatId = [viewModelWrapper generateChatIdForUser1:currentUserId user2:receiverId];
+                
+//                [viewModelWrapper sendMessageWithTextt:@"Hello!" senderId:currentUserId senderName:@"John Doe" chatId:chatId user1:currentUserId user2:receiverId];
+                userDict = @{
+                    @"senderId": currentUserId,
+                    @"receiverId": receiverId,
+                    @"senderName": currentSenderName,
+                    @"receiverName": receiverName,
+                    @"chatId": chatId
+                };
+                linphone_address_destroy(addr); // Clean up
+            }
+        }
 
-						 }
-						 completion:nil];
-	} else if (_contactsGroup.count == 1 && !cell.selectedImage.hidden) {
-		[UIView animateWithDuration:0.2
-							  delay:0
-							options:UIViewAnimationOptionCurveEaseOut
-						 animations:^{
-							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
-															_collectionView.frame.origin.y + _collectionView.frame.size.height,
-															tableView.frame.size.width,
-															tableView.frame.size.height - _collectionView.frame.size.height)];
+               
+        [PhoneMainView.instance getOrCreateOneToOneChatRoomFirebase:userDict waitView:_waitView isEncrypted:_isEncrypted];
+        if (!addr) {
+            LOGE(@"Chat room could not be created on server, because null address.");
+            [ChatConversationInfoView displayCreationError];
+        } else {
+//            linphone_address_unref(addr);
+        }
+        return;
+    }
 
-						 }
-						 completion:nil];
-	} else {
-		[UIView animateWithDuration:0.2
-							  delay:0
-							options:UIViewAnimationOptionCurveEaseOut
-						 animations:^{
-							 [tableView setFrame:CGRectMake(tableView.frame.origin.x,
-															_searchBar.frame.origin.y + _searchBar.frame.size.height,
-															tableView.frame.size.width,
-															tableView.frame.size.height + _collectionView.frame.size.height)];
-						 }
-						 completion:nil];
-	}
-	[_collectionView reloadData];
-	if (!cell.selectedImage.hidden) {
-		index = _contactsGroup.count - 1;
-	}
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSInteger index = 0;
+    if(cell.selectedImage.hidden) {
+        if(![_contactsGroup containsObject:cell.addressLabel.text]) {
+            [_contactsGroup addObject:cell.addressLabel.text];
+            [_collectionView registerClass:UIChatCreateCollectionViewCell.class forCellWithReuseIdentifier:cell.addressLabel.text];
+        }
+    } else if([_contactsGroup containsObject:cell.addressLabel.text]) {
+        index = (NSInteger)[_contactsGroup indexOfObject:cell.addressLabel.text];
+        [_contactsGroup removeObject:cell.addressLabel.text];
+        if(index == _contactsGroup.count)
+            index = index-1;
+    }
+    cell.selectedImage.hidden = !cell.selectedImage.hidden;
+    _controllerNextButton.enabled = (_contactsGroup.count > 0) || _isForEditing;
+    if (_contactsGroup.count > 1 || (_contactsGroup.count == 1 && cell.selectedImage.hidden)) {
+        [UIView animateWithDuration:0.2
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+                                                            _collectionView.frame.origin.y + _collectionView.frame.size.height,
+                                                            tableView.frame.size.width,
+                                                            tableView.frame.size.height)];
 
-	dispatch_async(dispatch_get_main_queue(), ^{
-		if(index > 0) {
-			NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
-			[_collectionView scrollToItemAtIndexPath:path
-									atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically)
-											animated:YES];
-		}
-	});
+                         }
+                         completion:nil];
+    } else if (_contactsGroup.count == 1 && !cell.selectedImage.hidden) {
+        [UIView animateWithDuration:0.2
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+                                                            _collectionView.frame.origin.y + _collectionView.frame.size.height,
+                                                            tableView.frame.size.width,
+                                                            tableView.frame.size.height - _collectionView.frame.size.height)];
+
+                         }
+                         completion:nil];
+    } else {
+        [UIView animateWithDuration:0.2
+                              delay:0
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             [tableView setFrame:CGRectMake(tableView.frame.origin.x,
+                                                            _searchBar.frame.origin.y + _searchBar.frame.size.height,
+                                                            tableView.frame.size.width,
+                                                            tableView.frame.size.height + _collectionView.frame.size.height)];
+                         }
+                         completion:nil];
+    }
+    [_collectionView reloadData];
+    if (!cell.selectedImage.hidden) {
+        index = _contactsGroup.count - 1;
+    }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(index > 0) {
+            NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
+            [_collectionView scrollToItemAtIndexPath:path
+                                    atScrollPosition:(UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically)
+                                            animated:YES];
+        }
+    });
 }
 
 #pragma mark - Searchbar delegates

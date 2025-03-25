@@ -19,3 +19,4 @@
 #import "EphemeralSettingsView.h"
 #import "FileTransferDelegate.h"
 #import "LinphoneAppDelegate.h"
+#import "ChatViewModelWrapper.h"

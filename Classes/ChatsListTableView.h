@@ -20,14 +20,15 @@
 #import <UIKit/UIKit.h>
 #include "linphone/linphonecore.h"
 #include "UICheckBoxTableView.h"
+#include "ChatViewModelWrapper.h"
 
 @interface ChatsListTableView : UICheckBoxTableView
 
-@property (nonatomic) NSInteger nbOfChatRoomToDelete;
-@property (nonatomic) bctbx_list_t *chatRooms;
+@property (nonatomic, assign) NSInteger nbOfChatRoomToDelete;
+@property (nonatomic, assign) bctbx_list_t *chatRooms;
 @property (weak, nonatomic) IBOutlet UIView *waitView;
-@property bctbx_list_t *data;
-
+@property (nonatomic, assign) bctbx_list_t *data;
+@property (nonatomic, strong) ChatViewModelWrapper *viewModelWrapper;
 
 - (void)loadData;
 - (void)markCellAsRead:(LinphoneChatRoom *)chatRoom;
