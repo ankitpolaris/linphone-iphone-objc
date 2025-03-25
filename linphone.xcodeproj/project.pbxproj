@@ -59,7 +59,6 @@
 		6112A01E243B5FD500DBD5F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6112A01D243B5FD500DBD5F5 /* GoogleService-Info.plist */; };
 		6135761C240E81BB005304D4 /* UIInterfaceStyleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135761B240E81BA005304D4 /* UIInterfaceStyleButton.m */; };
 		6135761F240E81D0005304D4 /* UIInterfaceStyleToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6135761E240E81D0005304D4 /* UIInterfaceStyleToggleButton.m */; };
-		614D09CE21E74D5400C43EDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 614D09CD21E74D5400C43EDF /* GoogleService-Info.plist */; };
 		61586B81217A16EE0038AC45 /* menu_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 61586B7A217A16EE0038AC45 /* menu_about.png */; };
 		61586B83217A16FD0038AC45 /* menu_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61586B82217A16FD0038AC45 /* menu_about@2x.png */; };
 		61586B85217A17070038AC45 /* menu_assistant.png in Resources */ = {isa = PBXBuildFile; fileRef = 61586B84217A17070038AC45 /* menu_assistant.png */; };
@@ -1185,7 +1184,6 @@
 		6135761D240E81C7005304D4 /* UIInterfaceStyleToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIInterfaceStyleToggleButton.h; sourceTree = "<group>"; };
 		6135761E240E81D0005304D4 /* UIInterfaceStyleToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIInterfaceStyleToggleButton.m; sourceTree = "<group>"; };
 		614C087623D1A35E00217F80 /* linphone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "linphone-Bridging-Header.h"; sourceTree = "<group>"; };
-		614D09CD21E74D5400C43EDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61586B7A217A16EE0038AC45 /* menu_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_about.png; sourceTree = "<group>"; };
 		61586B82217A16FD0038AC45 /* menu_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_about@2x.png"; sourceTree = "<group>"; };
 		61586B84217A17070038AC45 /* menu_assistant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_assistant.png; sourceTree = "<group>"; };
@@ -2754,7 +2752,6 @@
 			isa = PBXGroup;
 			children = (
 				8C23BCB71D82AAC3005F19BB /* linphone.entitlements */,
-				614D09CD21E74D5400C43EDF /* GoogleService-Info.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				61AE364C20C00B370089D9D3 /* linphoneExtension */,
 				EA5F25DA232BD3E200475F2E /* msgNotificationService */,
@@ -4969,7 +4966,6 @@
 				633FEF3B1D3CD55A0014B822 /* security_ko@2x.png in Resources */,
 				C63F72F1285A2F1E0066163B /* conference_schedule_participants_default.png in Resources */,
 				633FEE4A1D3CD5590014B822 /* delete_disabled.png in Resources */,
-				614D09CE21E74D5400C43EDF /* GoogleService-Info.plist in Resources */,
 				C6B4444526AAD0980076C517 /* file_audio_default.png in Resources */,
 				C6A1BB3526E8815400540D50 /* menu_info.png in Resources */,
 				C61B1BF72667EC6B001A4E4A /* ephemeral_messages_color_A.png in Resources */,

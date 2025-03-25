@@ -510,18 +510,24 @@ void deletion_chat_room_state_changed(LinphoneChatRoom *cr, LinphoneChatRoomStat
 	commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	 forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
-		LinphoneChatRoom *chatRoom = (LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row]);
-		NSString *msg = (LinphoneChatRoomCapabilitiesOneToOne & linphone_chat_room_get_capabilities(chatRoom))
-			? [NSString stringWithFormat:NSLocalizedString(@"Do you want to delete this conversation?", nil)]
-			: [NSString stringWithFormat:NSLocalizedString(@"Do you want to leave and delete this conversation?", nil)];
-		[UIConfirmationDialog ShowWithMessage:msg
-								cancelMessage:nil
-							   confirmMessage:nil
-								onCancelClick:^() {}
-						  onConfirmationClick:^() {
-							  _chatRooms = bctbx_list_new((void *)chatRoom);
-							  [self deleteChatRooms];
-						  }];
+        
+        NSDictionary *conversation = self.conversations[indexPath.row];
+        NSString *chatId = conversation[@"chatMetadata"][@"chatId"];
+        [[CouchDBManager sharedInstance] deleteChatWithChatId:chatId];
+
+        
+//		LinphoneChatRoom *chatRoom = (LinphoneChatRoom *)bctbx_list_nth_data(_data, (int)[indexPath row]);
+//		NSString *msg = (LinphoneChatRoomCapabilitiesOneToOne & linphone_chat_room_get_capabilities(chatRoom))
+//			? [NSString stringWithFormat:NSLocalizedString(@"Do you want to delete this conversation?", nil)]
+//			: [NSString stringWithFormat:NSLocalizedString(@"Do you want to leave and delete this conversation?", nil)];
+//		[UIConfirmationDialog ShowWithMessage:msg
+//								cancelMessage:nil
+//							   confirmMessage:nil
+//								onCancelClick:^() {}
+//						  onConfirmationClick:^() {
+//							  _chatRooms = bctbx_list_new((void *)chatRoom);
+//							  [self deleteChatRooms];
+//						  }];
 	}
 }
 
